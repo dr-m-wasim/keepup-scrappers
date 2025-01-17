@@ -1,0 +1,41 @@
+# config.yaml
+
+# General settings
+general:
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36"
+  request_timeout: 10
+  retry_attempts: 3
+  delay_between_requests: 2  # Seconds
+
+# Site-specific configurations
+sites:
+  sochfactcheck:
+    name: "SochFactCheck"
+    base_url: "https://www.sochfactcheck.com/"
+    start_urls:
+      - "https://www.sochfactcheck.com/wp-admin/admin-ajax.php"
+    delay: 2
+    selectors:
+      single_post: 'div.article-box'
+      post_title: 'div.article-box div.article-title-wrap div.title h6 a::text'
+      post_link: "div.article-box div.article-title-wrap div.title h6 a::attr(href)"
+      post_image: 'div.article-box div.featured-image figure a img::attr(src)'
+      post_date: "div.article-box div.article-title-wrap div.article-meta div.article-date::text"
+      post_cat: "div.article-box div.article-title-wrap div.article-meta div.article-cat a::text"
+      content: "section.blog_detail_page_section"
+      author: "div.blog_author_name a::text"
+
+# Storage settings
+storage:
+  method: "database"  # or "file"
+  database:
+    type: "sqlite"
+    name: "scraped_data.db"
+  file:
+    format: "json"
+    directory: "data/raw"
+
+# Logging settings - defined in the settings.py file
+#logging:
+#  level: "INFO"
+#  file: "logs/scraper.log"
