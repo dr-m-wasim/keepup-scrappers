@@ -38,8 +38,39 @@ sites:
       post_link: 'h2.premium-blog-entry-title a::attr(href)'
       post_image: 'div.premium-blog-thumbnail-container img::attr(src)'
       label: 'ul.post-categories li a::text'
-      content: 'div.elementor-widget-wrap'
+      content: 'div.elementor-widget-wrap p::text'
       author: 'span.elementor-heading-title::text'
+      next_page: 'a.next.page-numbers::attr(href)'
+  
+  geofactcheck:
+    name: "GFC"
+    base_url: "https://www.geo.tv/category/geo-fact-check"
+    start_urls:
+      - "https://www.geo.tv/category/geo-fact-check/more_news"
+    delay: 2
+    selectors:
+      single_post: 'div.card'
+      post_title: 'div.card-body a.text-body::text'
+      post_date: 'span.date::text'
+      post_link: 'div.card-body a.text-body::attr(href)'
+      post_image: 'img.card-img-top::attr(src)'
+      content: 'div.story-detail p::text'
+      author: '//div[@class="author_title_img"][2]/a/text()'
+
+  fridaytimesfactcheck:
+    name: "Fridaytimes"
+    base_url: "https://thefridaytimes.com/fact-check"
+    start_urls:
+      - "https://thefridaytimes.com/fact-check"
+    delay: 2
+    selectors:
+      single_post: 'article.zm-post-lay-a1'
+      post_title: 'h2.zm-post-title a::text'
+      post_link: 'h2.zm-post-title a::attr(href)'
+      post_image: 'div.top-center::attr(alt)'
+      post_date: 'ul.zm-post-meta-date span::text'
+      content: 'div.zm-post-custom-content p::text'
+
 
 # Storage settings
 storage:
