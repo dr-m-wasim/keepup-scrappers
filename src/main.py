@@ -2,6 +2,8 @@ from scrapy.crawler import CrawlerProcess
 from keepup_scrappers.settings import BOT_NAME, SPIDER_MODULES
 from keepup_scrappers.spiders.sfc_spider import SFCSpider
 from keepup_scrappers.spiders.iverify_spider import IverifySpider
+from keepup_scrappers.spiders.GFC_spider import GFCSpider
+from keepup_scrappers.spiders.fridytimes_spider import FridayTimesSpider
 
 def run_scrapers():
     process = CrawlerProcess({
@@ -11,7 +13,9 @@ def run_scrapers():
         'LOG_LEVEL': 'INFO',
     })
     #process.crawl(SFCSpider)
-    process.crawl(IverifySpider)
+    #process.crawl(IverifySpider)
+    #process.crawl(GFCSpider)
+    process.crawl(FridayTimesSpider)
     process.start()
 
 if __name__ == '__main__':
