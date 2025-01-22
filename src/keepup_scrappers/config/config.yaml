@@ -61,7 +61,7 @@ sites:
     name: "Fridaytimes"
     base_url: "https://thefridaytimes.com/fact-check"
     start_urls:
-      - "https://thefridaytimes.com/fact-check"
+      - "https://thefridaytimes.com/ajax_post_pagination"
     delay: 2
     selectors:
       single_post: 'article.zm-post-lay-a1'
