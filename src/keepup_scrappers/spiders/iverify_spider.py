@@ -30,7 +30,7 @@ class IverifySpider(BaseSpider):
 
     def parse(self, response):
         
-        for post in response.css('div.premium-blog-post-container'):
+        for post in response.css(self.selectors['single_post']):
 
             item = IVerifyItem()
 
@@ -50,8 +50,7 @@ class IverifySpider(BaseSpider):
         print(f"Page {self.page_counter} completed")
         self.page_counter += 1
 
-        next_page = response.css('a.next.page-numbers::attr(href)').get() 
-        print(f"Following link to next page: {next_page}")
+        next_page = response.css(self.selectors['next_page']).get() 
         if next_page:
             yield scrapy.Request(
                 url=response.urljoin(next_page),
@@ -60,8 +59,7 @@ class IverifySpider(BaseSpider):
     
     def parse_details(self, response):
         item = response.meta['item']
-        item['author'] = response.css('span.elementor-heading-title::text').get().replace(" | ", "")
-        item['content'] = ' '.join(response.css('div.elementor-widget-wrap p::text').getall()).strip()
+        item['author'] = response.css(self.selectors['author']).get().replace(" | ", "")
+        item['content'] = ' '.join(response.css(self.selectors['content']).getall()).strip()
 
         yield item
-
