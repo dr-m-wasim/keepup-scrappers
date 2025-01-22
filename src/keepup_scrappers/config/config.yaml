@@ -25,6 +25,22 @@ sites:
       content: "section.blog_detail_page_section"
       author: "div.blog_author_name a::text"
 
+  iverify:
+    name: "Iverify"
+    base_url: "https://pak.i-verify.org/"
+    start_urls:
+      - "https://pak.i-verify.org/"
+    delay: 2
+    selectors:
+      single_post: 'div.premium-blog-post-container'
+      post_title: 'h2.premium-blog-entry-title a::text'
+      post_date: 'div.premium-blog-post-time span::text'
+      post_link: 'h2.premium-blog-entry-title a::attr(href)'
+      post_image: 'div.premium-blog-thumbnail-container img::attr(src)'
+      label: 'ul.post-categories li a::text'
+      content: 'div.elementor-widget-wrap'
+      author: 'span.elementor-heading-title::text'
+
 # Storage settings
 storage:
   method: "database"  # or "file"
