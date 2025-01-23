@@ -117,7 +117,23 @@ sites:
       author: 'div.m-author__content a::text'
       post_image: 'article.m-textblock p img::attr(src)'
       content: 'article.m-textblock p::text'
+  
 
+  tribune:
+    name: "Tribune"
+    base_url: "https://tribune.com.pk/latest"
+    start_urls:
+      - "https://tribune.com.pk/latest"
+    delay: 2
+    selectors:
+      single_post: 'ul.listing-page li div.row'
+      post_title: 'h2.title-heading::text'
+      post_date: 'div.left-authorbox span::text'
+      post_link: 'a::attr(href)'
+      post_image: 'div.featured-image-global img::attr(src)'
+      content: 'div.storypage-rightside p::text'
+      catagory: 'div.left-authorbox span a::text'
+      next_page: 'a.page-link::attr(href)'
 
 # Storage settings
 storage:

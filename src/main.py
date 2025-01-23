@@ -6,6 +6,7 @@ from keepup_scrappers.spiders.GFC_spider import GFCSpider
 from keepup_scrappers.spiders.fridytimes_spider import FridayTimesSpider
 from keepup_scrappers.spiders.geonews_spider import GNSpider
 from keepup_scrappers.spiders.snopes_spider import SnopesSpider
+from keepup_scrappers.spiders.tribune_spider import tribuneSpider
 
 def run_scrapers():
     process = CrawlerProcess({
@@ -18,10 +19,11 @@ def run_scrapers():
     #process.crawl(IverifySpider)
     #process.crawl(GFCSpider)
 
-    process.crawl(GNSpider)
+    #process.crawl(GNSpider)
+    process.crawl(tribuneSpider)
 
     #process.crawl(FridayTimesSpider)
-    process.crawl(SnopesSpider)
+    #process.crawl(SnopesSpider)
 
     process.start()
 
