@@ -95,7 +95,7 @@ sites:
       - "https://www.politifact.com/factchecks/list/"
     delay: 5
     selectors:
-      single_post: 'article.m-statement'
+      single_post: 'div.m-statement__content'
       post_title: 'div.m-statement__quote a::text'
       label: 'img::attr(alt)'
       post_link: 'div.m-statement__quote a::attr(href)'
@@ -103,6 +103,7 @@ sites:
       author: 'div.m-author__content a::text'
       post_image: 'article.m-textblock p img::attr(src)'
       content: 'article.m-textblock p::text'
+      next_page: '//li/a[text()="Next"]/@href'
 
 
 # Storage settings
