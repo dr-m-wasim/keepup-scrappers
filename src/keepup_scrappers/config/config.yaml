@@ -117,11 +117,8 @@ sites:
       author: 'div.m-author__content a::text'
       post_image: 'article.m-textblock p img::attr(src)'
       content: 'article.m-textblock p::text'
-<<<<<<< HEAD
-  
-=======
+      
       next_page: '//li/a[text()="Next"]/@href'
->>>>>>> c2b5445f566eec2093fedf6b501df5c6f1341c9b
 
   tribune:
     name: "Tribune"

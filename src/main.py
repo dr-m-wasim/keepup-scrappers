@@ -25,8 +25,8 @@ def run_scrapers():
 
     #process.crawl(FridayTimesSpider)
     #process.crawl(SnopesSpider)
-    process.crawl(PolitifactSpider)
-    process.crawl(SnopesSpider)
+    #process.crawl(PolitifactSpider)
+    #process.crawl(SnopesSpider)
 
     process.start()
 
