@@ -71,6 +71,23 @@ sites:
       post_date: 'ul.zm-post-meta-date span::text'
       content: 'div.zm-post-custom-content p::text'
 
+  snopes:
+    name: "Snopes"
+    base_url: "https://www.snopes.com/fact-check/"
+    start_urls:
+      - "https://www.snopes.com/fact-check/"
+    delay: 5
+    selectors:
+      single_post: 'a.outer_article_link_wrapper'
+      post_title: 'h3.article_title::text'
+      post_link: 'a.outer_article_link_wrapper::attr(href)'
+      post_date: 'span.article_date::text'
+      post_image: 'img.lazy-image::attr(data-src)'
+      author: 'span.author_name::text'
+      label: 'div.rating_title_wrap::text'
+      content: 'article#article-content > p::text'
+      next_page: 'a.next-button::attr(href)'
+
 
 # Storage settings
 storage:
