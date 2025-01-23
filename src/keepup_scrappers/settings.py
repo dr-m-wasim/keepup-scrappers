@@ -62,9 +62,9 @@ CONCURRENT_REQUESTS = 32
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "keepup_scrappers.pipelines.ImagesPipeline": 1,
-#}
+ITEM_PIPELINES = {
+    'scrapy.pipelines.images.ImagesPipeline': 1,
+}
 
 # Directory to store images
 #IMAGES_STORE = '../data/images'

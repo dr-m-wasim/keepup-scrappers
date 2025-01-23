@@ -38,7 +38,7 @@ sites:
       post_link: 'h2.premium-blog-entry-title a::attr(href)'
       post_image: 'div.premium-blog-thumbnail-container img::attr(src)'
       label: 'ul.post-categories li a::text'
-      content: 'div.elementor-widget-wrap p::text'
+      content: 'div.elementor-widget-wrap h3::text, div.elementor-widget-wrap p::text'
       author: 'span.elementor-heading-title::text'
       next_page: 'a.next.page-numbers::attr(href)'
   

@@ -24,9 +24,9 @@ class BaseSpider(scrapy.Spider):
 
         # Optionally set Scrapy's custom settings dynamically
         self.custom_settings.update({
-            'DOWNLOAD_DELAY': self.delay
+            'DOWNLOAD_DELAY': self.delay,
+            
         })
-       
 
     def parse(self, response):
         """
