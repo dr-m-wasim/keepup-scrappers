@@ -71,6 +71,20 @@ sites:
       post_date: 'ul.zm-post-meta-date span::text'
       content: 'div.zm-post-custom-content p::text'
 
+  geonews:
+    name: "GeoNews"
+    base_url: "https://www.geo.tv/latest-news"
+    start_urls:
+      - "https://www.geo.tv/latest-news"
+    delay: 2
+    selectors:
+      single_post: 'div.list'
+      post_title: 'div.entry-title h2::text'
+      post_link: 'li.border-box a::attr(href)'
+      post_image: 'div.medium-insert-images.ui-sortable figure[contenteditable="false"] img::attr(src)'
+      post_date: 'p.post-date-time::text'
+      author: 'span.author_agency::text'
+      content: 'div.story-area p::text'
   snopes:
     name: "Snopes"
     base_url: "https://www.snopes.com/fact-check/"
