@@ -35,7 +35,7 @@ class IverifySpider(BaseSpider):
             image_url = post.css(self.selectors['post_image']).get(default='')
             item['image_urls'] = [response.urljoin(image_url)] if image_url else [] 
             item['detail_url'] = post.css(self.selectors['post_link']).get(default='').strip()
-            item['publication_date'] = post.css(self.selectors['post_date']).get(default='').strip()
+            item['publication_date'] = post.css(self.selectors['post_date']).get(default='').replace('by CEJ | ', '').strip()
             item['label'] = post.css(self.selectors['label']).get(default='').strip()
 
             # make sure to get the details page if we have the URL
@@ -61,7 +61,7 @@ class IverifySpider(BaseSpider):
     
     def parse_details(self, response):
         item = response.meta['item']
-        item['author'] = response.css(self.selectors['author']).get(default='').replace(" | ", "")
+        item['author'] = response.css(self.selectors['author']).get(default='').replace("by", "").replace(' |','').strip()
         
         # strip whitespaces before saving the content
         content_paragraphs = response.css(self.selectors['content']).getall()
