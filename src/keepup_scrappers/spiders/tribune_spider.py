@@ -1,6 +1,4 @@
 import scrapy
-import json
-import logging
 from keepup_scrappers.spiders.base_spider import BaseSpider
 from keepup_scrappers.items import TribuneItem
 
