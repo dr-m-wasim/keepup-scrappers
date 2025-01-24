@@ -7,23 +7,24 @@ from keepup_scrappers.items import TribuneItem
 class tribuneSpider(BaseSpider):
     
     name = 'tribune_spider'
+    site_key = 'tribune'
+
     
     custom_settings = {
-        "USER_AGENT" : 'Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148',
-        "ITEM_PIPELINES": {'scrapy.pipelines.images.ImagesPipeline': 1},
-        "IMAGES_STORE": 'data/tribune/images/',
-        "FEEDS": {
-            "data/tribune/data.json": {
-                "format": "json",
-                "encoding": "utf8",
-                "indent": 4,
-            },
+        "IMAGES_STORE": f'data/{site_key}/images/',
+            "FEEDS": {
+                f"data/{site_key}/data.json": {
+                    "format": "json",
+                    "encoding": "utf8",
+                    "indent": 4,
+                }
+            }
         }
-    }
+    
 
     def __init__(self, *args, **kwargs):
         # Pass site_key to the base class
-        kwargs['site_key'] = 'tribune'
+        kwargs['site_key'] = self.site_key
         super().__init__(*args, **kwargs)
         self.page_counter = 1
 
@@ -36,22 +37,20 @@ class tribuneSpider(BaseSpider):
 
             #print('---', post.css(self.selectors['post_title']))
 
-            item['title'] = post.css(self.selectors['post_title']).get().strip()
-            image_url = post.css(self.selectors['post_image']).get()
-            item['image_urls'] = [response.urljoin(image_url)]
-            item['detail_url'] = post.css(self.selectors['post_link']).get().strip()
-            
+            item['title'] = post.css(self.selectors['post_title']).get(default='').strip()
+            image_url = post.css(self.selectors['post_image']).get(default='')
+            item['image_urls'] = [response.urljoin(image_url)] if image_url else []
+            item['detail_url'] = post.css(self.selectors['post_link']).get(default='').strip()
 
-            
-            
-
-            yield scrapy.Request(
-                url=item['detail_url'],
-                callback=self.parse_details,
-                meta={'item': item},
-            )
+            if item['detail_url']:
+                yield scrapy.Request(
+                    url=item['detail_url'],
+                    callback=self.parse_details,
+                    meta={'item': item},
+                    errback=self.handle_error,
+                )
         
-        print(f"Page {self.page_counter} completed")
+        self.logger.info(f"Page {self.page_counter} completed")
         self.page_counter += 1
 
         next_page = response.css(self.selectors['next_page']).get() 
@@ -59,11 +58,12 @@ class tribuneSpider(BaseSpider):
             yield scrapy.Request(
                 url=response.urljoin(next_page),
                 callback=self.parse,
+                errback=self.handle_error,
             )
 
     def parse_details(self, response):
         item = response.meta['item']
-        item['catagory'] = response.css(self.selectors['catagory']).get()
+        item['catagory'] = response.css(self.selectors['catagory']).get(default='')
         item['content'] = ' '.join(response.css(self.selectors['content']).getall()).strip()
         item['publication_date'] = response.css(self.selectors['post_date']).getall()
         cleaned_dates = [text.strip() for text in item['publication_date'] if text.strip()]
@@ -74,3 +74,6 @@ class tribuneSpider(BaseSpider):
         
 
         yield item
+    
+    def handle_error(self, failure):
+        self.logger.error(f"Request Failed: {failure.request.url}")
