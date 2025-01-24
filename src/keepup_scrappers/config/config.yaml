@@ -22,7 +22,7 @@ sites:
       post_image: 'div.article-box div.featured-image figure a img::attr(src)'
       post_date: "div.article-box div.article-title-wrap div.article-meta div.article-date::text"
       post_cat: "div.article-box div.article-title-wrap div.article-meta div.article-cat a::text"
-      content: "section.blog_detail_page_section"
+      content: "div.blog_detail_description p *::text"
       author: "div.blog_author_name a::text"
 
   iverify:
