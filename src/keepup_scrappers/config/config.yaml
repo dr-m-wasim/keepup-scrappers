@@ -168,7 +168,24 @@ sites:
       post_image: "div.media__item img::attr(src)"
       content: "div.story__content p::text"
 
-      
+  dwfactcheck:
+    name: "DWFactcheck"
+    base_url: "https://www.dw.com/en/fact-check/t-56584214/page-1"
+    start_urls:
+      - "https://www.dw.com/en/fact-check/t-56584214/page-1"
+    delay: 2
+    selectors: 
+      single_post: "div.teaser-wrap"
+      post_title: "div.teaser-data h3 a::text"
+      post_link: "div.teaser-data h3 a::attr(href)"
+      post_date: "span.date-time time::text"
+      exerpt: "div.s6kxfng a::text"
+      post_image: "div.teaser-image-wrap img::attr(src)"
+      category: "span.kicker::text"
+      author: "div.author-details span a::text"
+      content: "div.cc0m0op p::text"
+      label: "//p[strong[contains(text(), 'DW Fact check')]]/text()"
+      next_page: "div.sp605kw a.next::attr(href)"
       
 
 
