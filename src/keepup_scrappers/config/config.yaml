@@ -146,10 +146,10 @@ sites:
       single_post: 'li.story-card__tpl-common__1Q7br'
       post_title: 'div.title__title__29EfZ span::text'
       post_date: 'div.kicker-date__kicker-date__2VBU4 time::text'
-      details: 'li.story-card__tpl-common__1Q7br p::text'
+      claim: 'li.story-card__tpl-common__1Q7br p::text'
       post_link: 'div.title__title__29EfZ a::attr(href)'
       post_image: 'div.styles__image-container__3hkY5 img::attr(src)'
-      label: 'div[data-testid="paragraph-18"]::text'
+      label: 'div[data-testid^="paragraph-"]::text'
       content: 'div.article-body__content__17Yit *::text'
       author: 'div.info-content__author-date__1Epi_ a::text'
 
