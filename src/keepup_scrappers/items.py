@@ -104,3 +104,13 @@ class DWItem(scrapy.Item):
     exerpt = scrapy.Field()
     category = scrapy.Field()
     label = scrapy.Field()
+
+class HumEnglishItem(scrapy.Item):
+    title = scrapy.Field()
+    image_urls = scrapy.Field()
+    images = scrapy.Field()
+    detail_url = scrapy.Field()
+    publication_date = scrapy.Field()
+    content = scrapy.Field()
+    exerpt = scrapy.Field()
+    label = scrapy.Field()
