@@ -1,6 +1,7 @@
 import scrapy
 from keepup_scrappers.spiders.base_spider import BaseSpider
 from keepup_scrappers.items import TribuneItem
+import time
 
 class tribuneSpider(BaseSpider):
     
@@ -36,8 +37,7 @@ class tribuneSpider(BaseSpider):
             #print('---', post.css(self.selectors['post_title']))
 
             item['title'] = post.css(self.selectors['post_title']).get(default='').strip()
-            image_url = post.css(self.selectors['post_image']).get(default='')
-            item['image_urls'] = [response.urljoin(image_url)] if image_url else []
+            
             item['detail_url'] = post.css(self.selectors['post_link']).get(default='').strip()
 
             if item['detail_url']:
@@ -61,6 +61,8 @@ class tribuneSpider(BaseSpider):
 
     def parse_details(self, response):
         item = response.meta['item']
+        image_url = response.css(self.selectors['post_image']).get(default='')
+        item['image_urls'] = [response.urljoin(image_url)] if image_url else []
         item['catagory'] = response.css(self.selectors['catagory']).get(default='')
         item['content'] = ' '.join(response.css(self.selectors['content']).getall()).strip()
         item['publication_date'] = response.css(self.selectors['post_date']).getall()
