@@ -74,3 +74,4 @@ class IverifySpider(BaseSpider):
 
     def handle_error(self, failure):
         self.logger.error(f"Request Failed: {failure.request.url}")
+        
