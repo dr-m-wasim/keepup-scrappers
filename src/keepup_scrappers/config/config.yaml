@@ -187,7 +187,23 @@ sites:
       label: "//p[strong[contains(text(), 'DW Fact check')]]/text()"
       next_page: "div.sp605kw a.next::attr(href)"
       
-
+  humenglish:
+    name: "HumEnglish"
+    base_url: "https://humenglish.com/fact-check/"
+    start_urls:
+      - "https://humenglish.com/fact-check/"
+    delay: 2
+    selectors: 
+      single_post: "div.card__post"
+      post_title: "div.card__post__title h5 a::text"
+      post_link: "div.card__post__title h5 a::attr(href)"
+      post_date: "span.text-dark::text"
+      exerpt: "div.card__post__title p::text" 
+      post_image: "div.card__post__transition img::attr(data-lazy-src)"
+      content: "div[id*='post_content'] p::text"
+      label: "//p[strong[contains(text(), 'DW fact check')]]/text()"
+      next_page: "a.next::attr(href)"
+   
 
 # Storage settings
 storage:
