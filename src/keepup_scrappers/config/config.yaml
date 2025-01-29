@@ -75,8 +75,8 @@ sites:
       content: 'div.story-detail p::text'
       author: '//div[@class="author_title_img"][2]/a/text()'
 
-  fridaytimesfactcheck:
-    name: "Fridaytimes"
+  thefridaytimesfactcheck:
+    name: "TheFridaytimes"
     base_url: "https://thefridaytimes.com/fact-check"
     start_urls:
       - "https://thefridaytimes.com/ajax_post_pagination"

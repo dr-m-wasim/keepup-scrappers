@@ -1,13 +1,11 @@
 import scrapy
-import json
-import logging
 from keepup_scrappers.spiders.base_spider import BaseSpider
-from keepup_scrappers.items import FridayTItem
+from keepup_scrappers.items import ThefridaytimesfactcheckItem
 
 class FridayTimesSpider(BaseSpider):
     
-    name = 'ft_spider'
-    site_key = 'fridaytimesfactcheck'
+    name = 'thefridaytimesfactcheck_spider'
+    site_key = 'thefridaytimesfactcheck'
     page_counter = 0
     
     custom_settings = {
@@ -52,7 +50,7 @@ class FridayTimesSpider(BaseSpider):
         
         for post in response.css(self.selectors['single_post']):
 
-            item = FridayTItem()
+            item = ThefridaytimesfactcheckItem()
 
             item['title'] = post.css(self.selectors['post_title']).get(default='').strip()
             image_url = post.css(self.selectors['post_image']).get(default='')

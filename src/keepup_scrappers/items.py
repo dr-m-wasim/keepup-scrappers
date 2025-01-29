@@ -29,7 +29,7 @@ class GeofactcheckItem(scrapy.Item):
     content = scrapy.Field()
     author = scrapy.Field()
 
-class FridayTItem(scrapy.Item):
+class ThefridaytimesfactcheckItem(scrapy.Item):
     title = scrapy.Field()
     image_urls = scrapy.Field()
     images = scrapy.Field()
