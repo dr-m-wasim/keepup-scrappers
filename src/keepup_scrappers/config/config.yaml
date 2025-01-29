@@ -171,18 +171,17 @@ sites:
       content: 'div.article-body__content__17Yit *::text'
       author: 'div.info-content__author-date__1Epi_ a::text'
 
-  dawnnews:
-    name: "DawnNews"
+  dawn:
     base_url: "https://www.dawn.com/latest-news/{date}"
     start_urls:
-      - "https://www.dawn.com/latest-news/2025-01-23"
+      - "https://www.dawn.com/latest-news"
     delay: 2
     selectors: 
       single_post: "article.story"
       post_title: "h2.story__title a::text"
       author: "div.my-3 span.story__byline a.story__byline__link::text"
       post_date: "span.story__time span.timestamp--published span.timestamp--date::text"
-      post_link: "a::attr(href)"
+      post_link: "h2.story__title a::attr(href)"
       post_image: "div.media__item img::attr(src)"
       content: "div.story__content p::text"
 
