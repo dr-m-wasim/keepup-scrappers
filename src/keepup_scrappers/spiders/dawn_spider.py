@@ -8,7 +8,7 @@ class DawnSpider(BaseSpider):
     site_key = 'dawn'
 
     custom_settings = {
-        "IMAGES_STORE": f"data/{name}/images/",
+        "IMAGES_STORE": f"data/{site_key}/images/",
         "FEEDS": {
             f"data/{name}/data.json": {
                 "format": "json",
