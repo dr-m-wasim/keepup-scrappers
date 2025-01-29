@@ -4,7 +4,7 @@ from keepup_scrappers.items import HumEnglishItem
 
 class HumEnglishSpider(BaseSpider):
     
-    name = 'humen_spider'
+    name = 'humenglish_spider'
     site_key = 'humenglish'
     
     custom_settings = {
