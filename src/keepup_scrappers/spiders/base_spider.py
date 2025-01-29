@@ -21,13 +21,6 @@ class BaseSpider(scrapy.Spider):
         self.base_url = self.site_config['base_url']
         self.start_urls = self.site_config['start_urls']
         self.selectors = self.site_config['selectors']
-        self.delay = self.site_config.get('delay', 2)  # 2 by default
-
-        # Optionally set Scrapy's custom settings dynamically
-        self.custom_settings.update({
-            'DOWNLOAD_DELAY': self.delay,
-            
-        })
 
     def parse(self, response):
         """

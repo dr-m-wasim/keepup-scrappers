@@ -114,8 +114,6 @@ class HumEnglishItem(scrapy.Item):
     content = scrapy.Field()
     exerpt = scrapy.Field()
     label = scrapy.Field()
-
-
 class FactcheckorgItem(scrapy.Item):
     title = scrapy.Field()
     image_urls = scrapy.Field()
@@ -125,3 +123,14 @@ class FactcheckorgItem(scrapy.Item):
     content = scrapy.Field()
     exerpt = scrapy.Field()
     author = scrapy.Field()
+class BRecorderItem(scrapy.Item):
+    title = scrapy.Field()
+    image_urls = scrapy.Field()
+    images = scrapy.Field()
+    detail_url = scrapy.Field()
+    category = scrapy.Field()
+    exerpt = scrapy.Field()
+    publication_date = scrapy.Field()
+    content = scrapy.Field()
+    author = scrapy.Field()
+
