@@ -5,15 +5,15 @@ srcdir = '..'
 sys.path.insert(0, os.path.abspath(os.path.join(testdir, srcdir)))
 import yaml
 from scrapy.http import HtmlResponse, Request
-from keepup_scrappers.spiders.iverify_spider import IverifySpider
+from keepup_scrappers.spiders.pakiverify_spider import IverifySpider
 
 class TestIverifySpider:
 
     def setup_method(self):
         
         # sitekey and name intialization
-        self.site_key = 'iverify'
-        self.spider_name = 'iverify_spider'
+        self.site_key = 'pakiverify'
+        self.spider_name = 'pakiverify_spider'
         
         # initialization of spider
         self.spider = IverifySpider()
@@ -24,7 +24,7 @@ class TestIverifySpider:
             self.config = yaml.safe_load(f)
 
         # load site config
-        self.site_config = self.config['sites']['iverify']
+        self.site_config = self.config['sites']['pakiverify']
         self.spider.selectors = self.site_config['selectors']
 
     def test_spider_initialization(self):
