@@ -10,7 +10,7 @@ class SochFactcheckItem(scrapy.Item):
     categories = scrapy.Field()
     publication_date = scrapy.Field()
 
-class IVerifyItem(scrapy.Item):
+class PakIVerifyItem(scrapy.Item):
     title = scrapy.Field()
     image_urls = scrapy.Field()
     images = scrapy.Field()

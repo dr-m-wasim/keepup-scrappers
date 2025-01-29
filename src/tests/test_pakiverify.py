@@ -5,7 +5,7 @@ srcdir = '..'
 sys.path.insert(0, os.path.abspath(os.path.join(testdir, srcdir)))
 import yaml
 from scrapy.http import HtmlResponse, Request
-from keepup_scrappers.spiders.pakiverify_spider import IverifySpider
+from keepup_scrappers.spiders.pakiverify_spider import PakIverifySpider
 
 class TestIverifySpider:
 
@@ -16,7 +16,7 @@ class TestIverifySpider:
         self.spider_name = 'pakiverify_spider'
         
         # initialization of spider
-        self.spider = IverifySpider()
+        self.spider = PakIverifySpider()
         
         # loading config file
         config_path = os.path.join(os.path.dirname(__file__), '..', 'keepup_scrappers', 'config', 'config.yaml')

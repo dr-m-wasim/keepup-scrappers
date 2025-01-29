@@ -1,8 +1,8 @@
 import scrapy
 from keepup_scrappers.spiders.base_spider import BaseSpider
-from keepup_scrappers.items import IVerifyItem
+from keepup_scrappers.items import PakIVerifyItem
 
-class IverifySpider(BaseSpider):
+class PakIverifySpider(BaseSpider):
     
     name = 'pakiverify_spider'
     site_key = 'pakiverify'
@@ -28,7 +28,7 @@ class IverifySpider(BaseSpider):
         
         for post in response.css(self.selectors['single_post']):
 
-            item = IVerifyItem()
+            item = PakIVerifyItem()
 
             # safely extract data
             item['title'] = post.css(self.selectors['post_title']).get(default='').strip()
