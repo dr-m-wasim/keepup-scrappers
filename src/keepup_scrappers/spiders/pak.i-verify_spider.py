@@ -4,8 +4,8 @@ from keepup_scrappers.items import IVerifyItem
 
 class IverifySpider(BaseSpider):
     
-    name = 'iverify_spider'
-    site_key = 'iverify'
+    name = 'pak.i-verify_spider'
+    site_key = 'pak.i-verify'
 
     custom_settings = {
             "IMAGES_STORE": f'data/{site_key}/images/',
