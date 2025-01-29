@@ -1,11 +1,11 @@
 import scrapy
 import time
 from keepup_scrappers.spiders.base_spider import BaseSpider
-from keepup_scrappers.items import DWItem
+from keepup_scrappers.items import DWfactcheckItem
 
-class DWSpider(BaseSpider):
+class DWfactcheckSpider(BaseSpider):
     
-    name = 'dw_spider'
+    name = 'dwfactcheck_spider'
     site_key = 'dwfactcheck'
     page_counter = 2
     

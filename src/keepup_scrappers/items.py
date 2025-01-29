@@ -93,7 +93,7 @@ class DawnnewsItem(scrapy.Item):
     author = scrapy.Field()
     claim = scrapy.Field()
 
-class DWItem(scrapy.Item):
+class DWfactcheckItem(scrapy.Item):
     title = scrapy.Field()
     image_urls = scrapy.Field()
     images = scrapy.Field()
