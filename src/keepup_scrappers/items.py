@@ -1,6 +1,6 @@
 import scrapy
 
-class SFCItem(scrapy.Item):
+class SochFactcheckItem(scrapy.Item):
     title = scrapy.Field()
     image_urls = scrapy.Field()
     images = scrapy.Field()

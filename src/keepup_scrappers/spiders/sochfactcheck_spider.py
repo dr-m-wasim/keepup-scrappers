@@ -2,7 +2,7 @@ import scrapy
 import json
 import logging
 from keepup_scrappers.spiders.base_spider import BaseSpider
-from keepup_scrappers.items import SFCItem
+from keepup_scrappers.items import SochFactcheckItem
 
 class SFCSpider(BaseSpider):
     
@@ -53,7 +53,7 @@ class SFCSpider(BaseSpider):
         for post in all_posts.css(self.selectors['single_post']).getall():
             parsed_post = scrapy.Selector(text=post, type="html")
             
-            item = SFCItem()
+            item = SochFactcheckItem()
 
             item['title'] = parsed_post.css(self.selectors['post_title']).get(default='').strip()
             image_url = parsed_post.css(self.selectors['post_image']).get(default='')
