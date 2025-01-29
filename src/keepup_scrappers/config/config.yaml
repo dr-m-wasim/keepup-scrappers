@@ -61,7 +61,7 @@ sites:
       next_page: 'a.next.page-numbers::attr(href)'
   
   geofactcheck:
-    name: "geo-fact-check"
+    name: "geofactcheck"
     base_url: "https://www.geo.tv/category/geo-fact-check"
     start_urls:
       - "https://www.geo.tv/category/geo-fact-check/more_news"

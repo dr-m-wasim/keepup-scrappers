@@ -5,18 +5,18 @@ srcdir = '..'
 sys.path.insert(0, os.path.abspath(os.path.join(testdir, srcdir)))
 import yaml
 from scrapy.http import HtmlResponse, Request
-from keepup_scrappers.spiders.GFC_spider import GFCSpider
+from keepup_scrappers.spiders.geofactcheck_spider import GeoFactCheckSpider
 
 class TestGFCSpider:
 
     def setup_method(self):
         # Site key and name initialization
         self.site_key = 'geofactcheck'
-        self.spider_name = 'gfc_spider'
+        self.spider_name = 'geofactcheck_spider'
         #start_urls = ['https://www.geo.tv/category/geo-fact-check']
 
         # Initialization of spider
-        self.spider = GFCSpider()
+        self.spider = GeoFactCheckSpider()
 
        # loading config file
         config_path = os.path.join(os.path.dirname(__file__), '..', 'keepup_scrappers', 'config', 'config.yaml')

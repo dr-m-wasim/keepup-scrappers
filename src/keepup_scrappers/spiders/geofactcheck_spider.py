@@ -4,7 +4,7 @@ from keepup_scrappers.items import GeofactcheckItem
 
 class GeoFactCheckSpider(BaseSpider):
     
-    name = 'geo-fact-check_spider'
+    name = 'geofactcheck_spider'
     page_counter = 1
     site_key = 'geofactcheck'
     
