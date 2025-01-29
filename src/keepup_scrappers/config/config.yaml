@@ -11,7 +11,6 @@ general:
 sites:
 
   humenglish:
-    name: "HumEnglish"
     base_url: "https://humenglish.com/fact-check/"
     start_urls:
       - "https://humenglish.com/fact-check/"
@@ -28,7 +27,6 @@ sites:
       next_page: "div.pagination-area a.next::attr(href)"
 
   sochfactcheck:
-    name: "SochFactCheck"
     base_url: "https://www.sochfactcheck.com/"
     start_urls:
       - "https://www.sochfactcheck.com/wp-admin/admin-ajax.php"
@@ -44,7 +42,6 @@ sites:
       author: "div.blog_author_name a::text"
 
   pakiverify:
-    name: "pakiverifyy"
     base_url: "https://pak.i-verify.org/"
     start_urls:
       - "https://pak.i-verify.org/"
@@ -61,7 +58,6 @@ sites:
       next_page: 'a.next.page-numbers::attr(href)'
   
   geofactcheck:
-    name: "geofactcheck"
     base_url: "https://www.geo.tv/category/geo-fact-check"
     start_urls:
       - "https://www.geo.tv/category/geo-fact-check/more_news"
@@ -76,7 +72,6 @@ sites:
       author: '//div[@class="author_title_img"][2]/a/text()'
 
   thefridaytimesfactcheck:
-    name: "TheFridaytimes"
     base_url: "https://thefridaytimes.com/fact-check"
     start_urls:
       - "https://thefridaytimes.com/ajax_post_pagination"
@@ -90,7 +85,6 @@ sites:
       content: 'div.zm-post-custom-content p::text'
 
   geonews:
-    name: "GeoNews"
     base_url: "https://www.geo.tv/latest-news"
     start_urls:
       - "https://www.geo.tv/latest-news"
@@ -103,8 +97,8 @@ sites:
       post_date: 'p.post-date-time::text'
       author: 'span.author_agency::text'
       content: 'div.story-area p::text'
+  
   snopes:
-    name: "Snopes"
     base_url: "https://www.snopes.com/fact-check/"
     start_urls:
       - "https://www.snopes.com/fact-check/"
@@ -121,7 +115,6 @@ sites:
       next_page: 'a.next-button::attr(href)'
 
   politifact:
-    name: "Politifact"
     base_url: "https://www.politifact.com/factchecks/list/"
     start_urls:
       - "https://www.politifact.com/factchecks/list/"
@@ -139,7 +132,6 @@ sites:
       next_page: '//li/a[text()="Next"]/@href'
   
   tribune:
-      name: "Tribune"
       base_url: "https://tribune.com.pk/latest"
       start_urls:
         - "https://tribune.com.pk/latest"
@@ -155,7 +147,6 @@ sites:
         next_page: 'a.page-link::attr(href)'
 
   reuters:
-    name: "Reuters"
     base_url: "https://www.reuters.com/fact-check/"
     start_urls:
       - "https://www.reuters.com/fact-check/"
@@ -186,7 +177,6 @@ sites:
       content: "div.story__content p::text"
 
   dwfactcheck:
-    name: "DWFactcheck"
     base_url: "https://www.dw.com/en/fact-check/t-56584214/page-1"
     start_urls:
       - "https://www.dw.com/en/fact-check/t-56584214/page-1"
@@ -235,7 +225,6 @@ sites:
       next_page: "div.pagination-next a::attr(href)"
 
   factcheckorg:
-    name: "factcheckorg"
     base_url: "https://www.factcheck.org/"
     start_urls:
       - "https://www.factcheck.org/"
@@ -250,7 +239,6 @@ sites:
       author: "div.entry-meta a::text"
       post_date: "div.entry-meta::text"
       next_page: "//li[contains(@class, 'page-item-next')]//a/@href"
-
 
 # Storage settings
 storage:
