@@ -5,7 +5,7 @@ srcdir = '..'
 sys.path.insert(0, os.path.abspath(os.path.join(testdir, srcdir)))
 import yaml
 from scrapy.http import HtmlResponse, Request
-from keepup_scrappers.spiders.geonews_spider import GNSpider
+from keepup_scrappers.spiders.geonews_spider import GeonewsSpider
 
 class TestGNSpider:
 
@@ -13,10 +13,10 @@ class TestGNSpider:
         
         # sitekey and name intialization
         self.site_key = 'geonews'
-        self.spider_name = 'gn_spider'
+        self.spider_name = 'geonews_spider'
         
         # initialization of spider
-        self.spider = GNSpider()
+        self.spider = GeonewsSpider()
         
         # loading config file
         config_path = os.path.join(os.path.dirname(__file__), '..', 'keepup_scrappers', 'config', 'config.yaml')

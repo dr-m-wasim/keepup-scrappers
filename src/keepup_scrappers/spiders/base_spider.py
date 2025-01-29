@@ -18,6 +18,7 @@ class BaseSpider(scrapy.Spider):
             self.config = yaml.safe_load(f)
 
         self.site_config = self.config['sites'][site_key]
+        self.base_url = self.site_config['base_url']
         self.start_urls = self.site_config['start_urls']
         self.selectors = self.site_config['selectors']
 

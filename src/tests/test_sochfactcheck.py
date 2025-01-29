@@ -5,9 +5,9 @@ srcdir = '..'
 sys.path.insert(0, os.path.abspath(os.path.join(testdir, srcdir)))
 import yaml
 from scrapy.http import HtmlResponse, Request
-from keepup_scrappers.spiders.sfc_spider import SFCSpider
+from keepup_scrappers.spiders.sochfactcheck_spider import SochFactCheckSpider
 
-class TestSFCSpider:
+class TestSochFactCheckSpider:
 
     def setup_method(self):
         
@@ -16,7 +16,7 @@ class TestSFCSpider:
         self.spider_name = 'sochfactcheck_spider'
         
         # initialization of spider
-        self.spider = SFCSpider()
+        self.spider = SochFactCheckSpider()
         # loading config file
         config_path = os.path.join(os.path.dirname(__file__), '..', 'keepup_scrappers', 'config', 'config.yaml')
         with open(config_path, 'r') as f:

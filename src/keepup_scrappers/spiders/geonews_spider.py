@@ -4,9 +4,9 @@ import logging
 from keepup_scrappers.spiders.base_spider import BaseSpider
 from keepup_scrappers.items import GeoNewsItem
 
-class GNSpider(BaseSpider):
+class GeonewsSpider(BaseSpider):
     
-    name = 'gn_spider'
+    name = 'geonews_spider'
 
     site_key = 'geonews'
     #page_counter = 1

@@ -1,14 +1,12 @@
 import scrapy
-import json
-import logging
 from keepup_scrappers.spiders.base_spider import BaseSpider
-from keepup_scrappers.items import GFCItem
+from keepup_scrappers.items import ThefridaytimesfactcheckItem
 
-class GFCSpider(BaseSpider):
+class FridayTimesSpider(BaseSpider):
     
-    name = 'gfc_spider'
-    page_counter = 1
-    site_key = 'geofactcheck'
+    name = 'thefridaytimesfactcheck_spider'
+    site_key = 'thefridaytimesfactcheck'
+    page_counter = 0
     
     custom_settings = {
             "IMAGES_STORE": f'data/{site_key}/images/',
@@ -29,8 +27,11 @@ class GFCSpider(BaseSpider):
     def get_payload_headers(self, page_no):
         
         payload = {
-            'offset': str(page_no),
-            'tag': '0'
+            'post_per_page': '20',
+            'post_listing_limit_offset': str(page_no),
+            'directory_name': 'categories_pages',
+            'template_name': 'lazy_loading',
+            'category_name': 'fact-check',
         }
 
         return payload
@@ -43,18 +44,18 @@ class GFCSpider(BaseSpider):
                                  callback = self.parse)
 
     def parse(self, response):
-        if not response.body.strip():
-            self.logger.warning("Empty response received.")
+        if response.text.strip() == "no_more_news":
+            self.logger.warning("No more news available. Stopping.")
             return
+        
         for post in response.css(self.selectors['single_post']):
 
-            item = GFCItem()
+            item = ThefridaytimesfactcheckItem()
 
             item['title'] = post.css(self.selectors['post_title']).get(default='').strip()
             image_url = post.css(self.selectors['post_image']).get(default='')
-            item['image_urls'] = [response.urljoin(image_url)] if image_url else []
-            item['detail_url'] = post.css(self.selectors['post_link']).get(default='').strip()
-            item['publication_date'] = post.css(self.selectors['post_date']).get(default='').strip()
+            item['image_urls'] = [response.urljoin(image_url)] if image_url else []  
+            item['detail_url'] = post.css(self.selectors['post_link']).get(default='')
 
             yield scrapy.Request(
                 url=item['detail_url'],
@@ -62,21 +63,21 @@ class GFCSpider(BaseSpider):
                 meta={'item': item},
                 errback=self.handle_error,
             )
-
-
-        self.page_counter += 1
-        self.logger.info(f"Completed page {self.page_counter - 1}")
+        
+        self.page_counter += 20
+        self.logger.info(f"Completed offset {self.page_counter - 20}")
         payload = self.get_payload_headers(self.page_counter)
 
         yield scrapy.FormRequest(url = self.start_urls[0], 
                                  formdata = payload, 
                                  callback = self.parse,
-                                 errback=self.handle_error)
-        
+                                 errback=self.handle_error,)
+
 
     def parse_details(self, response):
         item = response.meta['item']
-        item['author'] = response.xpath(self.selectors['author']).get(default='')
+        item['publication_date'] = response.css(self.selectors['post_date']).get(default='')
+
         content_paragraphs = response.css(self.selectors['content']).getall()
         item['content'] = ' '.join([p.strip() for p in content_paragraphs if p.strip()])
 
