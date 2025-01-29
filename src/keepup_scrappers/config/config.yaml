@@ -164,7 +164,7 @@ sites:
       single_post: 'li.story-card__tpl-common__1Q7br'
       post_title: 'div.title__title__29EfZ span::text'
       post_date: 'div.kicker-date__kicker-date__2VBU4 time::text'
-      claim: 'li.story-card__tpl-common__1Q7br p::text'
+      exerpt: 'li.story-card__tpl-common__1Q7br p::text'
       post_link: 'div.title__title__29EfZ a::attr(href)'
       post_image: 'div.styles__image-container__3hkY5 img::attr(src)'
       label: 'div[data-testid^="paragraph-"]::text'
@@ -208,7 +208,6 @@ sites:
     base_url: "https://www.brecorder.com/latest-news"
     start_urls:
       - "https://www.brecorder.com/latest-news"
-    delay: 5
     selectors: 
       single_post: "div.flex article.story div.block"
       post_title: "h2.story__title a::text"
@@ -219,6 +218,24 @@ sites:
       content: "div.story__content p::text"
       author: "a.story__byline__link::text"
       post_date: "span.story__time span.timeago::attr(title)"
+
+  dailytimes:
+    base_url: "https://dailytimes.com.pk/tag/latest/"
+    start_urls:
+     - "https://dailytimes.com.pk/tag/latest/"
+    selectors:
+      single_post: "main.content article.type-post"
+      post_title: "header.entry-header h2.entry-title a.entry-title-link::text"
+      exerpt: "div.entry-content p::text"
+      post_link: "header.entry-header h2.entry-title a.entry-title-link::attr(href)"
+      post_image: "a.entry-image-link img::attr(data-lazy-src)"
+      author: "p.author-links a.author-name::text"
+      content: "div.entry-content P::text"
+      post_date: "p.post-date time.entry-time::text"
+      next_page: "div.pagination-next a::attr(href)"
+
+
+
    
 
 # Storage settings
