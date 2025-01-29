@@ -134,3 +134,13 @@ class BRecorderItem(scrapy.Item):
     content = scrapy.Field()
     author = scrapy.Field()
 
+class DailytimesItem(scrapy.Item):
+    title = scrapy.Field()
+    image_urls = scrapy.Field()
+    images = scrapy.Field()
+    detail_url = scrapy.Field()
+    exerpt = scrapy.Field()
+    publication_date = scrapy.Field()
+    content = scrapy.Field()
+    author = scrapy.Field()
+

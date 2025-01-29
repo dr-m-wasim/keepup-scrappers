@@ -1,6 +1,6 @@
 import scrapy
 from keepup_scrappers.spiders.base_spider import BaseSpider
-from keepup_scrappers.items import DailyTimesItem
+from keepup_scrappers.items import DailytimesItem
 
 class DailyTimesSpider(BaseSpider):
     
@@ -30,7 +30,7 @@ class DailyTimesSpider(BaseSpider):
 
         for index, post in enumerate(response.css(self.selectors['single_post'])):
 
-            item = DailyTimesItem()
+            item = DailytimesItem()
             
             item['title'] = post.css(self.selectors['post_title']).get(default='').strip()
             item['detail_url'] = post.css(self.selectors['post_link']).get(default='').strip()
