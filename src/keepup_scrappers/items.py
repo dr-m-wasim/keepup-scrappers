@@ -20,7 +20,7 @@ class IVerifyItem(scrapy.Item):
     content = scrapy.Field()
     author = scrapy.Field()
 
-class GFCItem(scrapy.Item):
+class GeofactcheckItem(scrapy.Item):
     title = scrapy.Field()
     image_urls = scrapy.Field()
     images = scrapy.Field()

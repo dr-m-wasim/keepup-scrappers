@@ -1,12 +1,10 @@
 import scrapy
-import json
-import logging
 from keepup_scrappers.spiders.base_spider import BaseSpider
-from keepup_scrappers.items import GFCItem
+from keepup_scrappers.items import GeofactcheckItem
 
-class GFCSpider(BaseSpider):
+class GeoFactCheckSpider(BaseSpider):
     
-    name = 'gfc_spider'
+    name = 'geo-fact-check_spider'
     page_counter = 1
     site_key = 'geofactcheck'
     
@@ -48,7 +46,7 @@ class GFCSpider(BaseSpider):
             return
         for post in response.css(self.selectors['single_post']):
 
-            item = GFCItem()
+            item = GeofactcheckItem()
 
             item['title'] = post.css(self.selectors['post_title']).get(default='').strip()
             image_url = post.css(self.selectors['post_image']).get(default='')

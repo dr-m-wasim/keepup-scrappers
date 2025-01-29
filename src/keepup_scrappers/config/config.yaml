@@ -43,8 +43,8 @@ sites:
       content: "div.blog_detail_description p *::text"
       author: "div.blog_author_name a::text"
 
-  iverify:
-    name: "Iverify"
+  pak.i-verify:
+    name: "pak.i-verifyy"
     base_url: "https://pak.i-verify.org/"
     start_urls:
       - "https://pak.i-verify.org/"
@@ -61,7 +61,7 @@ sites:
       next_page: 'a.next.page-numbers::attr(href)'
   
   geofactcheck:
-    name: "GFC"
+    name: "geo-fact-check"
     base_url: "https://www.geo.tv/category/geo-fact-check"
     start_urls:
       - "https://www.geo.tv/category/geo-fact-check/more_news"
