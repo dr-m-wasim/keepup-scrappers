@@ -20,7 +20,6 @@ class BaseSpider(scrapy.Spider):
         self.site_config = self.config['sites'][site_key]
         self.start_urls = self.site_config['start_urls']
         self.selectors = self.site_config['selectors']
-        self.delay = self.site_config.get('delay', 2)  # 2 by default
 
     def parse(self, response):
         """
