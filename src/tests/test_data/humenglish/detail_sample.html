@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="1.2.6",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this.t.bind(this),this.touchStartHandler=this.i.bind(this),this.touchMoveHandler=this.o.bind(this),this.touchEndHandler=this.h.bind(this),this.clickHandler=this.u.bind(this),this.interceptedClicks=[],this.interceptedClickListeners=[],this.l(this),window.addEventListener("pageshow",(t=>{this.persisted=t.persisted,this.everythingLoaded&&this.m()})),this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",(t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))})),document.addEventListener("DOMContentLoaded",(()=>{this.k()})),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}p(t){document.hidden?t.t():(this.triggerEvents.forEach((e=>window.addEventListener(e,t.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler))}_(){this.triggerEvents.forEach((t=>window.removeEventListener(t,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}i(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this.L(t.target,!0),this.S(t.target,"onclick","rocket-onclick"),this.C())}o(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this.L(t.target,!1),this.S(t.target,"rocket-onclick","onclick"),this.M()}h(){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}u(t){t.target.removeEventListener("click",this.clickHandler),this.L(t.target,!1),this.S(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this.M()}O(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))}))}l(t){EventTarget.prototype.addEventListenerWPRocketBase=EventTarget.prototype.addEventListener,EventTarget.prototype.addEventListener=function(e,i,o){"click"!==e||t.windowLoaded||i===t.clickHandler||t.interceptedClickListeners.push({target:this,func:i,options:o}),(this||window).addEventListenerWPRocketBase(e,i,o)}}L(t,e){this.interceptedClickListeners.forEach((i=>{i.target===t&&(e?t.removeEventListener("click",i.func,i.options):t.addEventListener("click",i.func,i.options))})),t.parentNode!==document.documentElement&&this.L(t.parentNode,e)}D(){return new Promise((t=>{this.P?this.M=t:t()}))}C(){this.P=!0}M(){this.P=!1}S(t,e,i){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(i,event.target.getAttribute(e)),event.target.removeAttribute(e))}t(){this._(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this.R.bind(this)):this.R()}k(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript][data-rocket-src]").forEach((e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){0===i.indexOf("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}})),t=[...new Map(t.map((t=>[JSON.stringify(t),t]))).values()],this.T(t,"preconnect")}async R(){this.lastBreath=Date.now(),this.j(this),this.F(this),this.I(),this.W(),this.q(),await this.A(this.delayedScripts.normal),await this.A(this.delayedScripts.defer),await this.A(this.delayedScripts.async);try{await this.U(),await this.H(this),await this.J()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.D().then((()=>{this.O()})),this.N()}W(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)}))}async B(t){if(await this.G(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise((e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach((t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))})),t.text&&(i.text=t.text),i.hasAttribute("src")?(i.addEventListener("load",o),i.addEventListener("error",(function(){i.setAttribute("data-rocket-status","failed-network"),e()})),setTimeout((()=>{i.isConnected||e()}),1)):(i.text=t.text,o()),t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o),t.addEventListener("error",(i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: data-uri blocked by CSP -> fallback"),t.removeAttribute("src"),this.B(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())})),s?(t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}}));t.setAttribute("data-rocket-status","skipped")}async A(t){const e=t.shift();return e&&e.isConnected?(await this.B(e),this.A(t)):Promise.resolve()}q(){this.T([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}T(t,e){var i=document.createDocumentFragment();t.forEach((t=>{const o=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(o&&!o.startsWith("data:")){const s=document.createElement("link");s.href=o,s.rel=e,"preconnect"!==e&&(s.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(s.crossOrigin=!0),t.crossOrigin&&(s.crossOrigin=t.crossOrigin),t.integrity&&(s.integrity=t.integrity),i.appendChild(s),this.trash.push(s)}})),document.head.appendChild(i)}j(t){let e={};function i(i,o){return e[o].eventsToRewrite.indexOf(i)>=0&&!t.everythingLoaded?"rocket-"+i:i}function o(t,o){!function(t){e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=i(arguments[0],t),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=i(arguments[0],t),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(o)}function s(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o||function(){},set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}o(document,"DOMContentLoaded"),o(window,"DOMContentLoaded"),o(window,"load"),o(window,"pageshow"),o(document,"readystatechange"),s(document,"onreadystatechange"),s(window,"onload"),s(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}F(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map((t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t)).join(" ")}function o(o){function s(t){const e=o.fn[t];o.fn[t]=o.fn.init.prototype[t]=function(){return this[0]===window&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e}))),e.apply(this,arguments),this}}o&&o.fn&&!t.allJQueries.includes(o)&&(o.fn.ready=o.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(o):document.addEventListener("rocket-DOMContentLoaded",(()=>e.bind(document)(o))),o([])},s("on"),s("one"),t.allJQueries.push(o)),e=o}o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}async H(t){const e=document.querySelector("script[data-webpack]");e&&(await async function(){return new Promise((t=>{e.addEventListener("load",t),e.addEventListener("error",t)}))}(),await t.K(),await t.H(t))}async U(){this.domReadyFired=!0;try{document.readyState="interactive"}catch(t){}await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.G(),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}async J(){try{document.readyState="complete"}catch(t){}await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),window.dispatchEvent(new Event("rocket-load")),await this.G(),window.rocketonload&&window.rocketonload(),await this.G(),this.allJQueries.forEach((t=>t(window).trigger("rocket-jquery-load"))),await this.G();const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.G(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted}),this.windowLoaded=!0}m(){document.onreadystatechange&&document.onreadystatechange(),window.onload&&window.onload(),window.onpageshow&&window.onpageshow({persisted:this.persisted})}I(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript;i||console.error("WPRocket unable to document.write this: "+e);const o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async G(){Date.now()-this.lastBreath>45&&(await this.K(),this.lastBreath=Date.now())}async K(){return document.hidden?new Promise((t=>setTimeout(t))):new Promise((t=>requestAnimationFrame(t)))}N(){this.trash.forEach((t=>t.remove()))}static run(){const t=new RocketLazyLoadScripts;t.p(t)}}RocketLazyLoadScripts.run()})();</script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="google-adsense-account" content="ca-pub-4054659650938153">
+        <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	
+	<!-- This site is optimized with the Yoast SEO plugin v24.3 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Any truth behind the viral Kamala Harris disinformation claims? - HUM News</title>
+	<meta name="description" content="US Vice President Kamala Harris is the center of attention — and disinformation — now that Joe Biden has left the race." />
+	<link rel="canonical" href="https://humenglish.com/world/fact-check-any-truth-behind-the-viral-kamala-harris-claims/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Any truth behind the viral Kamala Harris disinformation claims? - HUM News" />
+	<meta property="og:description" content="US Vice President Kamala Harris is the center of attention — and disinformation — now that Joe Biden has left the race." />
+	<meta property="og:url" content="https://humenglish.com/world/fact-check-any-truth-behind-the-viral-kamala-harris-claims/" />
+	<meta property="og:site_name" content="HUM News" />
+	<meta property="article:publisher" content="https://www.facebook.com/HUMNewsPakistan/" />
+	<meta property="article:published_time" content="2024-07-25T19:22:25+00:00" />
+	<meta property="article:modified_time" content="2024-07-25T20:44:48+00:00" />
+	<meta property="og:image" content="https://humenglish.com/wp-content/uploads/2024/07/69749756_403.jpg" />
+	<meta property="og:image:width" content="940" />
+	<meta property="og:image:height" content="529" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="author" content="DW" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@humnewspakistan" />
+	<meta name="twitter:site" content="@humnewspakistan" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="DW" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="5 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"NewsArticle","@id":"https://humenglish.com/world/fact-check-any-truth-behind-the-viral-kamala-harris-claims/#article","isPartOf":{"@id":"https://humenglish.com/world/fact-check-any-truth-behind-the-viral-kamala-harris-claims/"},"author":{"name":"DW","@id":"https://humenglish.com/#/schema/person/540d7c25a44378fb580ed6bb93122a3d"},"headline":"Any truth behind the viral Kamala Harris disinformation claims?","datePublished":"2024-07-25T19:22:25+00:00","dateModified":"2024-07-25T20:44:48+00:00","mainEntityOfPage":{"@id":"https://humenglish.com/world/fact-check-any-truth-behind-the-viral-kamala-harris-claims/"},"wordCount":1054,"publisher":{"@id":"https://humenglish.com/#organization"},"image":{"@id":"https://humenglish.com/world/fact-check-any-truth-behind-the-viral-kamala-harris-claims/#primaryimage"},"thumbnailUrl":"https://humenglish.com/wp-content/uploads/2024/07/69749756_403.jpg","keywords":["disinformation","Donald Trump","gendered disinformation","Joe Biden","Unfortunately","US presidential election","US Vice President Kamala Harris"],"articleSection":["Fact-check","Latest","World"],"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://humenglish.com/world/fact-check-any-truth-behind-the-viral-kamala-harris-claims/","url":"https://humenglish.com/world/fact-check-any-truth-behind-the-viral-kamala-harris-claims/","name":"Any truth behind the viral Kamala Harris disinformation claims? - HUM News","isPartOf":{"@id":"https://humenglish.com/#website"},"primaryImageOfPage":{"@id":"https://humenglish.com/world/fact-check-any-truth-behind-the-viral-kamala-harris-claims/#primaryimage"},"image":{"@id":"https://humenglish.com/world/fact-check-any-truth-behind-the-viral-kamala-harris-claims/#primaryimage"},"thumbnailUrl":"https://humenglish.com/wp-content/uploads/2024/07/69749756_403.jpg","datePublished":"2024-07-25T19:22:25+00:00","dateModified":"2024-07-25T20:44:48+00:00","description":"US Vice President Kamala Harris is the center of attention — and disinformation — now that Joe Biden has left the race.","breadcrumb":{"@id":"https://humenglish.com/world/fact-check-any-truth-behind-the-viral-kamala-harris-claims/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://humenglish.com/world/fact-check-any-truth-behind-the-viral-kamala-harris-claims/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://humenglish.com/world/fact-check-any-truth-behind-the-viral-kamala-harris-claims/#primaryimage","url":"https://humenglish.com/wp-content/uploads/2024/07/69749756_403.jpg","contentUrl":"https://humenglish.com/wp-content/uploads/2024/07/69749756_403.jpg","width":940,"height":529,"caption":"US Vice President Kamala Harris is the center of attention — and disinformation — now that Joe Biden has left the race."},{"@type":"BreadcrumbList","@id":"https://humenglish.com/world/fact-check-any-truth-behind-the-viral-kamala-harris-claims/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://humenglish.com/"},{"@type":"ListItem","position":2,"name":"Any truth behind the viral Kamala Harris disinformation claims?"}]},{"@type":"WebSite","@id":"https://humenglish.com/#website","url":"https://humenglish.com/","name":"Hum News English","description":"Thinking Ahead","publisher":{"@id":"https://humenglish.com/#organization"},"alternateName":"Hum English","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://humenglish.com/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://humenglish.com/#organization","name":"Hum NEWS","alternateName":"Hum English","url":"https://humenglish.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://humenglish.com/#/schema/logo/image/","url":"https://humenglish.com/wp-content/uploads/2024/03/HUM-English-Logo-1.png","contentUrl":"https://humenglish.com/wp-content/uploads/2024/03/HUM-English-Logo-1.png","width":1080,"height":459,"caption":"Hum NEWS"},"image":{"@id":"https://humenglish.com/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/HUMNewsPakistan/","https://x.com/humnewspakistan"]},{"@type":"Person","@id":"https://humenglish.com/#/schema/person/540d7c25a44378fb580ed6bb93122a3d","name":"DW","image":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://humenglish.com/#/schema/person/image/","url":"https://secure.gravatar.com/avatar/9afcbdaef5934752e86f4e37216f9cd4?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/9afcbdaef5934752e86f4e37216f9cd4?s=96&d=mm&r=g","caption":"DW"},"url":"https://humenglish.com/author/deutsche-welle/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//cdn.canvasjs.com' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link rel="alternate" type="application/rss+xml" title="HUM News &raquo; Feed" href="https://humenglish.com/feed/" />
+<link rel='stylesheet' id='wp-block-library-css' href='https://humenglish.com/wp-includes/css/dist/block-library/style.min.css?ver=6.7.1' type='text/css' media='all' />
+<style id='wp-block-library-theme-inline-css' type='text/css'>
+.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote:where(.has-text-align-right){border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote:where(.has-text-align-center){border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote:where(.is-style-plain){border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+</style>
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #FFFFFF;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--dark-gray: #28303D;--wp--preset--color--gray: #39414D;--wp--preset--color--green: #D1E4DD;--wp--preset--color--blue: #D1DFE4;--wp--preset--color--purple: #D1D1E4;--wp--preset--color--red: #E4D1D1;--wp--preset--color--orange: #E4DAD1;--wp--preset--color--yellow: #EEEADD;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--gradient--purple-to-yellow: linear-gradient(160deg, #D1D1E4 0%, #EEEADD 100%);--wp--preset--gradient--yellow-to-purple: linear-gradient(160deg, #EEEADD 0%, #D1D1E4 100%);--wp--preset--gradient--green-to-yellow: linear-gradient(160deg, #D1E4DD 0%, #EEEADD 100%);--wp--preset--gradient--yellow-to-green: linear-gradient(160deg, #EEEADD 0%, #D1E4DD 100%);--wp--preset--gradient--red-to-yellow: linear-gradient(160deg, #E4D1D1 0%, #EEEADD 100%);--wp--preset--gradient--yellow-to-red: linear-gradient(160deg, #EEEADD 0%, #E4D1D1 100%);--wp--preset--gradient--purple-to-red: linear-gradient(160deg, #D1D1E4 0%, #E4D1D1 100%);--wp--preset--gradient--red-to-purple: linear-gradient(160deg, #E4D1D1 0%, #D1D1E4 100%);--wp--preset--font-size--small: 18px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 24px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--extra-small: 16px;--wp--preset--font-size--normal: 20px;--wp--preset--font-size--extra-large: 40px;--wp--preset--font-size--huge: 96px;--wp--preset--font-size--gigantic: 144px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='humenglish-style-css' href='https://humenglish.com/wp-content/cache/background-css/humenglish.com/wp-content/themes/Humenglish/assets/css/style.css?ver=6.7.1&wpr_t=1738182918' type='text/css' media='all' />
+<link rel='stylesheet' id='humenglish-style-custom-css' href='https://humenglish.com/wp-content/themes/Humenglish/assets/css/custom-style.css?ver=6.7.1' type='text/css' media='all' />
+<link rel='stylesheet' id='humenglish-style-cars-css' href='https://humenglish.com/wp-content/themes/Humenglish/assets/css/cars-widget.css?ver=6.7.1' type='text/css' media='all' />
+<style id='rocket-lazyload-inline-css' type='text/css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:var(--wpr-bg-2ea38536-1687-4213-b5b7-517a49894b95) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}.wp-embed-responsive .wp-has-aspect-ratio .rll-youtube-player{position:absolute;padding-bottom:0;width:100%;height:100%;top:0;bottom:0;left:0;right:0}
+</style>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://humenglish.com/wp-content/cache/min/1/wp-content/themes/Humenglish/assets/js/index.bundle.js?ver=1736909046" id="humenglish-script-js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://humenglish.com/wp-content/cache/min/1/canvasjs.min.js?ver=1736909046" id="humenglish-graphs-script-js" data-rocket-defer defer></script>
+
+<!-- Google tag (gtag.js) snippet added by Site Kit -->
+
+<!-- Google Analytics snippet added by Site Kit -->
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=GT-T94F239F" id="google_gtagjs-js" async></script>
+<script type="text/javascript" id="google_gtagjs-js-after">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["humenglish.com"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-T94F239F");
+/* ]]> */
+</script>
+
+<!-- End Google tag (gtag.js) snippet added by Site Kit -->
+<link rel="https://api.w.org/" href="https://humenglish.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://humenglish.com/wp-json/wp/v2/posts/52275" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://humenglish.com/xmlrpc.php?rsd" />
+<link rel='shortlink' href='https://humenglish.com/?p=52275' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://humenglish.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fhumenglish.com%2Fworld%2Ffact-check-any-truth-behind-the-viral-kamala-harris-claims%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://humenglish.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fhumenglish.com%2Fworld%2Ffact-check-any-truth-behind-the-viral-kamala-harris-claims%2F&#038;format=xml" />
+<meta name="generator" content="Site Kit by Google 1.145.0" />
+<!-- Google Tag Manager snippet added by Site Kit -->
+<script type="text/javascript">
+/* <![CDATA[ */
+
+			( function( w, d, s, l, i ) {
+				w[l] = w[l] || [];
+				w[l].push( {'gtm.start': new Date().getTime(), event: 'gtm.js'} );
+				var f = d.getElementsByTagName( s )[0],
+					j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore( j, f );
+			} )( window, document, 'script', 'dataLayer', 'GTM-N27WN9XC' );
+			
+/* ]]> */
+</script>
+
+<!-- End Google Tag Manager snippet added by Site Kit -->
+<link rel="icon" href="https://humenglish.com/wp-content/uploads/2024/03/cropped-Hum-English-Site-Icon-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://humenglish.com/wp-content/uploads/2024/03/cropped-Hum-English-Site-Icon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://humenglish.com/wp-content/uploads/2024/03/cropped-Hum-English-Site-Icon-180x180.png" />
+<meta name="msapplication-TileImage" content="https://humenglish.com/wp-content/uploads/2024/03/cropped-Hum-English-Site-Icon-270x270.png" />
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>        <script type="rocketlazyloadscript" async="async" data-rocket-src="//www.instagram.com/embed.js"></script>
+        <script type="rocketlazyloadscript" async="async" data-rocket-type="text/javascript">
+            function addAriaLabel(){
+                 var previous = document.querySelectorAll(".slick-prev");
+                 previous.forEach((prev, index) =>{
+                    prev.setAttribute('aria-label','previous');
+                    prev.removeAttribute('style');
+                 });
+                 var next = document.querySelectorAll(".slick-next");
+                 next.forEach((nex, index) =>{
+                    nex.setAttribute('aria-label','next');
+                    nex.removeAttribute('style');
+                 });
+            }
+            window.onload = addAriaLabel;
+        </script>
+        <!-- Ad Slots -->
+        <!-- /2887056/HumNewsEnglishBill -->
+        <script type="rocketlazyloadscript" data-minify="1" async data-rocket-src="https://humenglish.com/wp-content/cache/min/1/tag/js/gpt.js?ver=1736909047"></script>
+<script type="rocketlazyloadscript">
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/2887056/HumNewsBillboard', [970, 250], 'div-gpt-ad-1727446314962-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+        <!-- /2887056/HumNewsEnglishMREC -->
+       <script type="rocketlazyloadscript" data-minify="1" async data-rocket-src="https://humenglish.com/wp-content/cache/min/1/tag/js/gpt.js?ver=1736909047"></script>
+<script type="rocketlazyloadscript">
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/2887056/HumNewsMREC', [300, 250], 'div-gpt-ad-1727446401436-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+        <!-- /2887056/HumNewsEnglishMLB -->
+        <script type="rocketlazyloadscript" data-minify="1" async data-rocket-src="https://humenglish.com/wp-content/cache/min/1/tag/js/gpt.js?ver=1736909047"></script>
+<script type="rocketlazyloadscript">
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/2887056/HumNewsLBROS', [320, 100], 'div-gpt-ad-1727446474035-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+        <!-- /2887056/HumNewsSky -->
+        <script type="rocketlazyloadscript" data-minify="1" async data-rocket-src="https://humenglish.com/wp-content/cache/min/1/tag/js/gpt.js?ver=1736909047"></script>
+        <script type="rocketlazyloadscript">
+          window.googletag = window.googletag || {cmd: []};
+          googletag.cmd.push(function() {
+            googletag.defineSlot('/2887056/HumNewsSky', [300, 600], 'div-gpt-ad-1709901319397-0').addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+          });
+        </script>
+    <style id="wpr-lazyload-bg-container"></style><style id="wpr-lazyload-bg-exclusion"></style>
+<noscript>
+<style id="wpr-lazyload-bg-nostyle">.slick-loading .slick-list{--wpr-bg-d33da20a-2c72-494f-ba57-f84b1e0ce6d7: url('https://humenglish.com/node_modules/slick-carousel/slick-carousel/slick/ajax-loader.gif');}.error-content h1{--wpr-bg-a49ae271-40c5-4ba6-93e4-78b84772ab64: url('https://humenglish.com/wp-content/themes/Humenglish/assets/images/placeholder/1920x960.jpg');}.bg-news-image{--wpr-bg-3f082e37-1da1-4d43-811e-d5adf08ac9a4: url('https://humenglish.com/wp-content/themes/Humenglish/assets/images/placeholder/1920x960.jpg');}.bg-travel-image-center{--wpr-bg-a09f7456-e44e-4cc5-8d9d-c9417d0543d5: url('https://humenglish.com/wp-content/themes/Humenglish/assets/images/placeholder/1920x960.jpg');}.bg-travel-image-left{--wpr-bg-82569c62-10f1-4e95-8518-74ec3ea53519: url('https://humenglish.com/wp-content/themes/Humenglish/assets/images/placeholder/1920x960.jpg');}.bg-travel-image-right{--wpr-bg-38db37b3-8102-428e-99f7-4201fc144919: url('https://humenglish.com/wp-content/themes/Humenglish/assets/images/placeholder/1920x960.jpg');}.bg-theme-three{--wpr-bg-9a161075-78fa-4863-b5f8-363670374a86: url('https://humenglish.com/wp-content/themes/Humenglish/assets/images/placeholder/1920x960.jpg');}.first{--wpr-bg-4eae088f-7556-4d72-9801-f212b2a1bd45: url('https://humenglish.com/wp-content/themes/Humenglish/assets/images/placeholder/1920x960.jpg');}.footer-area{--wpr-bg-2e723f53-e6ff-4a15-907d-c85d44180d38: url('https://humenglish.com/wp-content/themes/Humenglish/assets/images/placeholder/1920x960.jpg');}.rll-youtube-player .play{--wpr-bg-2ea38536-1687-4213-b5b7-517a49894b95: url('https://humenglish.com/wp-content/plugins/wp-rocket/assets/img/youtube.png');}</style>
+</noscript>
+<script type="application/javascript">const rocket_pairs = [{"selector":".slick-loading .slick-list","style":".slick-loading .slick-list{--wpr-bg-d33da20a-2c72-494f-ba57-f84b1e0ce6d7: url('https:\/\/humenglish.com\/node_modules\/slick-carousel\/slick-carousel\/slick\/ajax-loader.gif');}","hash":"d33da20a-2c72-494f-ba57-f84b1e0ce6d7","url":"https:\/\/humenglish.com\/node_modules\/slick-carousel\/slick-carousel\/slick\/ajax-loader.gif"},{"selector":".error-content h1","style":".error-content h1{--wpr-bg-a49ae271-40c5-4ba6-93e4-78b84772ab64: url('https:\/\/humenglish.com\/wp-content\/themes\/Humenglish\/assets\/images\/placeholder\/1920x960.jpg');}","hash":"a49ae271-40c5-4ba6-93e4-78b84772ab64","url":"https:\/\/humenglish.com\/wp-content\/themes\/Humenglish\/assets\/images\/placeholder\/1920x960.jpg"},{"selector":".bg-news-image","style":".bg-news-image{--wpr-bg-3f082e37-1da1-4d43-811e-d5adf08ac9a4: url('https:\/\/humenglish.com\/wp-content\/themes\/Humenglish\/assets\/images\/placeholder\/1920x960.jpg');}","hash":"3f082e37-1da1-4d43-811e-d5adf08ac9a4","url":"https:\/\/humenglish.com\/wp-content\/themes\/Humenglish\/assets\/images\/placeholder\/1920x960.jpg"},{"selector":".bg-travel-image-center","style":".bg-travel-image-center{--wpr-bg-a09f7456-e44e-4cc5-8d9d-c9417d0543d5: url('https:\/\/humenglish.com\/wp-content\/themes\/Humenglish\/assets\/images\/placeholder\/1920x960.jpg');}","hash":"a09f7456-e44e-4cc5-8d9d-c9417d0543d5","url":"https:\/\/humenglish.com\/wp-content\/themes\/Humenglish\/assets\/images\/placeholder\/1920x960.jpg"},{"selector":".bg-travel-image-left","style":".bg-travel-image-left{--wpr-bg-82569c62-10f1-4e95-8518-74ec3ea53519: url('https:\/\/humenglish.com\/wp-content\/themes\/Humenglish\/assets\/images\/placeholder\/1920x960.jpg');}","hash":"82569c62-10f1-4e95-8518-74ec3ea53519","url":"https:\/\/humenglish.com\/wp-content\/themes\/Humenglish\/assets\/images\/placeholder\/1920x960.jpg"},{"selector":".bg-travel-image-right","style":".bg-travel-image-right{--wpr-bg-38db37b3-8102-428e-99f7-4201fc144919: url('https:\/\/humenglish.com\/wp-content\/themes\/Humenglish\/assets\/images\/placeholder\/1920x960.jpg');}","hash":"38db37b3-8102-428e-99f7-4201fc144919","url":"https:\/\/humenglish.com\/wp-content\/themes\/Humenglish\/assets\/images\/placeholder\/1920x960.jpg"},{"selector":".bg-theme-three","style":".bg-theme-three{--wpr-bg-9a161075-78fa-4863-b5f8-363670374a86: url('https:\/\/humenglish.com\/wp-content\/themes\/Humenglish\/assets\/images\/placeholder\/1920x960.jpg');}","hash":"9a161075-78fa-4863-b5f8-363670374a86","url":"https:\/\/humenglish.com\/wp-content\/themes\/Humenglish\/assets\/images\/placeholder\/1920x960.jpg"},{"selector":".first","style":".first{--wpr-bg-4eae088f-7556-4d72-9801-f212b2a1bd45: url('https:\/\/humenglish.com\/wp-content\/themes\/Humenglish\/assets\/images\/placeholder\/1920x960.jpg');}","hash":"4eae088f-7556-4d72-9801-f212b2a1bd45","url":"https:\/\/humenglish.com\/wp-content\/themes\/Humenglish\/assets\/images\/placeholder\/1920x960.jpg"},{"selector":".footer-area","style":".footer-area{--wpr-bg-2e723f53-e6ff-4a15-907d-c85d44180d38: url('https:\/\/humenglish.com\/wp-content\/themes\/Humenglish\/assets\/images\/placeholder\/1920x960.jpg');}","hash":"2e723f53-e6ff-4a15-907d-c85d44180d38","url":"https:\/\/humenglish.com\/wp-content\/themes\/Humenglish\/assets\/images\/placeholder\/1920x960.jpg"},{"selector":".rll-youtube-player .play","style":".rll-youtube-player .play{--wpr-bg-2ea38536-1687-4213-b5b7-517a49894b95: url('https:\/\/humenglish.com\/wp-content\/plugins\/wp-rocket\/assets\/img\/youtube.png');}","hash":"2ea38536-1687-4213-b5b7-517a49894b95","url":"https:\/\/humenglish.com\/wp-content\/plugins\/wp-rocket\/assets\/img\/youtube.png"}]; const rocket_excluded_pairs = [];</script><meta name="generator" content="WP Rocket 3.18" data-wpr-features="wpr_lazyload_css_bg_img wpr_delay_js wpr_defer_js wpr_minify_js wpr_lazyload_images wpr_lazyload_iframes wpr_image_dimensions wpr_desktop wpr_preload_links" /></head>
+    <body class="post-template-default single single-post postid-52275 single-format-standard wp-custom-logo wp-embed-responsive">
+        		<!-- Google Tag Manager (noscript) snippet added by Site Kit -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N27WN9XC" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) snippet added by Site Kit -->
+		        <div data-rocket-location-hash="54257ff4dc2eb7aae68fa23eb5f11e06" id="page" class="site">
+            <!-- Header NEWS Start -->
+            <header >
+                <!-- Navbar Start -->
+                <div class="navigation-wrap navigation-shadow bg-white  border border-0 px-0 mx-0" >
+                    <nav class="navbar navbar-hover py-1 navbar-expand-lg navbar-soft sticky-top" >
+                        <div class="container ">
+                            <a class="mb-0 pr-3" href="https://humenglish.com" aria-label="Hum NEWS Homepage Link" > 
+                               <img width="260px" height="80px" decoding="async" loading="eager" src="https://humenglish.com/wp-content/uploads/2024/03/HUM-English-Logo-1.png">
+                            </a> 
+                            <div class="collapse navbar-collapse justify-content-between " id="main_nav99">
+                                <ul class="navbar-nav ml-auto ">
+                                    <li class="navbar-style">
+                                        <a class="nav-link" style="font-size: 12px !important;font-weight:500;" href="https://humenglish.com/latest/" > LATEST 
+                                        </a>
+                                    </li>
+                                    <li class="navbar-style">
+                                        <a class="nav-link" style="font-size: 12px !important;font-weight:500;" href="https://humenglish.com/pakistan/"> PAKISTAN 
+                                        </a>
+                                    </li>
+                                    <li class="navbar-style" >
+                                        <a class="nav-link" style="font-size: 12px !important;font-weight:500;" href="https://humenglish.com/world/"> WORLD 
+                                        </a>
+                                    </li>
+                                    <li class="navbar-style">
+                                        <a class="nav-link" style="font-size: 12px !important;font-weight:500;" href="https://humenglish.com/business/"> BUSINESS 
+                                        </a>
+                                    </li>
+                                    <li class="navbar-style">
+                                        <a class="nav-link" style="font-size: 12px !important;font-weight:500;" href="https://humenglish.com/sport/"> SPORT 
+
+                                        </a>
+                                    </li>
+                                    <li class="navbar-style">
+                                        <a class="nav-link" style="font-size: 12px !important;font-weight:500;" href="https://humenglish.com/life/"> LIFESTYLE
+                                        </a>
+                                    </li>
+                                    <li class="navbar-style">
+                                        <a class="nav-link" style="font-size: 12px !important;font-weight:500;" href="https://humenglish.com/technology/"> TECHNOLOGY 
+                                        </a>
+                                    </li>
+                                    <li class="navbar-style">
+                                        <a style="font-size: 12px !important;font-weight:500;" class="nav-link" href="https://humenglish.com/opinion/"> OPINION </a>
+                                    </li>
+                                    <li class="navbar-style">
+                                        <a style="font-size: 12px !important;font-weight:500;" class="nav-link" href="https://humenglish.com/campus-news/"> CAMPUS NEWS</a>
+                                    </li>
+                                    <li class="navbar-style">
+                                        <a style="color: #c00;font-size: 12px !important;font-weight:500;" class="nav-link blink" href="https://humenglish.com/live/"> LIVE </a>
+                                    </li>
+                                    <li class="navbar-style">
+                                        <a style="font-size: 12px !important;font-weight:500;" class="nav-link" href="https://humnews.pk/"> URDU </a>
+                                    </li>
+                                </ul>
+                                <ul class="navbar-nav ">
+                                    <li class="navbar-style search hidden-xs hidden-sm mb-1"> <a style="font-size: 12px !important;font-weight:500;" class="nav-link" href="#" aria-label="Search">
+                                            <i class="fa fa-search"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- Search Form Start -->
+                                <div class="top-search navigation-shadow mt-3">
+                                    <div class="container">
+                                        <div class="input-group ">
+                                            <form action="https://humenglish.com" method="get" name="search">
+                                                <div class="row no-gutters mt-3">
+                                                    <div class="col">
+                                                        <input class="form-control border-secondary border-right-0 rounded-0"
+                                                            type="search" name="s" value="" placeholder="Search " id="example-search-input4">
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <input type="submit" name="" class="btn btn-outline-secondary border-left-0 rounded-0 rounded-right" value="Search">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Search Form End -->
+                            </div> 
+                        </div>
+                    </nav>
+                </div>
+                <!-- Mobile Navbar Start -->
+                                <!-- Mobile Navbar End -->
+                <!-- Navbar End -->
+                
+                <!-- Widgets Start -->
+<div data-rocket-location-hash="045a8c6021ed0a4a84651e74af93d51d" class="pt-2 pb-2 mb-3 shadow text-center" style="overflow-x: hidden;">
+    <div class="row justify-content-center">
+        <!-- Button 1: Zakat Calculator -->
+             <div class="col-auto text-center">
+        <a href="https://humenglish.com/year-2024/">
+            <button type="button" class="btn rounded-circle p-2 text-white" title="Year 2024" style="background-color: #EB1C23" >
+                <i class="fa fa-calendar fa-2x"></i>
+            </button>
+            </a>
+            <br/>
+            <small style="color: #565656"><b>2024</b></small>
+        </div>
+         <!--
+          <div class="col-auto text-center">
+        <a href="https://humenglish.com/gd/">
+            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2045%2045'%3E%3C/svg%3E" width="45px" height="45px" data-lazy-src="https://humenglish.com/wp-content/uploads/2024/10/German-Flag.png" /><noscript><img src="https://humenglish.com/wp-content/uploads/2024/10/German-Flag.png" width="45px" height="45px" /></noscript>
+            </a>
+            <br/>
+            <small style="color: #565656"><b>German</b></small>
+        </div>
+        -->
+        <!-- Button 2: Exchange Rate -->
+        <div class="col-auto text-center">
+        <a href="https://humenglish.com/exchange-rate/">
+            <button type="button" class="btn rounded-circle p-2 text-white" title="Exchange Rate" style="background-color: #EB1C23">
+                <i class="fa fa-money fa-2x"></i>
+            </button>
+            </a>
+            <br/>
+            <small style="color: #565656"><b>Exchange</b></small>
+        </div>
+        <!-- Button 3: Tax Calculator -->
+        <div class="col-auto text-center">
+        <a href="https://humenglish.com/tax-calculator/">
+            <button type="button" class="btn rounded-circle p-2 text-white" title="Tax Calculator" style="background-color: #EB1C23">
+                <i class="fa fa-calculator fa-2x"></i>
+            </button>
+            </a>
+            <br/>
+            <small style="color: #556556"><b>Tax</b></small>
+        </div>
+        <!-- Button 4: Cars Price -->
+        <div class="col-auto text-center">
+        <a href="https://humenglish.com/car-types/">
+            <button type="button" class="btn rounded-circle p-2 text-white"  title="Car Types" style="background-color: #EB1C23">
+                <i class="fa fa-car fa-2x"></i>
+            </button>
+            </a>
+            <br/>
+            <small style="color: #556556"><b>Cars</b></small>
+        </div>
+    </div>
+</div>
+
+
+<!-- Widgets End -->
+                
+        </header>
+            <!-- Header NEWS End -->
+            <div data-rocket-location-hash="595d943ee05848cdfea111ae6e6fbd83" id="content" class="site-content">
+                <div data-rocket-location-hash="80e7b013ee3a39d5e25e1e5ef3fe01d3" id="primary" class="content-area">
+                    <main id="main" class="site-main"><div>
+<!-- Billboard Ad Star -->
+	    <!-- /2887056/HumNewsEnglishBill -->
+    <!--
+    <div id='div-gpt-ad-1702623637135-0' style='min-width: 970px; min-height: 250px;text-align: center;'>
+      <script type="rocketlazyloadscript">
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1702623637135-0'); });
+      </script>
+    </div>
+  -->
+  <div class="container mt-1 mb-2" style="text-align: center !important;">
+  <img width="970" height="250" style="width:970px ; height:250px; " src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20970%20250'%3E%3C/svg%3E" data-lazy-src="https://humenglish.com/wp-content/uploads/2024/10/970x250-upd.gif"><noscript><img width="970" height="250" style="width:970px ; height:250px; " src="https://humenglish.com/wp-content/uploads/2024/10/970x250-upd.gif"></noscript>
+  </div>
+<!-- Billboard Ad End -->
+</div>
+<section class="pb-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Breadcrumb Start -->
+                <ul class="breadcrumbs bg-light mb-4">
+                    <li class="breadcrumbs__item">
+        <a href="https://humenglish.com" class="breadcrumbs__url">
+            <i class="fa fa-home"></i> Home </a>
+    </li><li class="breadcrumbs__item breadcrumbs__item--current">Any truth behind the viral Kamala Harris disinformation claims?</li>                </ul>
+                <!-- Breadcrumb End -->
+            </div>
+            <div class="col-md-8">
+				<div class="wrap__article-detail">
+				    <div class="wrap__article-detail-title">
+				        <h1>
+				            Any truth behind the viral Kamala Harris disinformation claims?				        </h1>
+				    </div>
+    				<hr>
+				    <div class="wrap__article-detail-info">
+				        <ul class="list-inline">
+				            <li class="list-inline-item">
+				                <figure class="mb-0 mx-auto " style="width:40px; height: auto;">
+					                <a href="https://humenglish.com">
+					                   <a href="https://humenglish.com/" class="custom-logo-link" rel="home"><img width="1080" height="459" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201080%20459'%3E%3C/svg%3E" class="custom-logo" alt="Hum News English logo" decoding="async" fetchpriority="high" data-lazy-srcset="https://humenglish.com/wp-content/uploads/2024/03/HUM-English-Logo-1.png 1080w, https://humenglish.com/wp-content/uploads/2024/03/HUM-English-Logo-1-300x128.png 300w, https://humenglish.com/wp-content/uploads/2024/03/HUM-English-Logo-1-1024x435.png 1024w, https://humenglish.com/wp-content/uploads/2024/03/HUM-English-Logo-1-768x326.png 768w" data-lazy-sizes="(max-width: 1080px) 100vw, 1080px" data-lazy-src="https://humenglish.com/wp-content/uploads/2024/03/HUM-English-Logo-1.png" /><noscript><img width="1080" height="459" src="https://humenglish.com/wp-content/uploads/2024/03/HUM-English-Logo-1.png" class="custom-logo" alt="Hum News English logo" decoding="async" fetchpriority="high" srcset="https://humenglish.com/wp-content/uploads/2024/03/HUM-English-Logo-1.png 1080w, https://humenglish.com/wp-content/uploads/2024/03/HUM-English-Logo-1-300x128.png 300w, https://humenglish.com/wp-content/uploads/2024/03/HUM-English-Logo-1-1024x435.png 1024w, https://humenglish.com/wp-content/uploads/2024/03/HUM-English-Logo-1-768x326.png 768w" sizes="(max-width: 1080px) 100vw, 1080px" /></noscript></a>					                </a>
+				            </figure>
+				            </li>
+				            <li class="list-inline-item">
+				                <span>
+				                   <a class="text-dark" href="https://humenglish.com/author/deutsche-welle/"> 
+				                            DW</a>
+				                </span>
+				                <span>
+				                  <a class="text-dark" href="https://humenglish.com/author/">
+				                    				                  </a>  
+				                </span>
+				            </li>
+				            <li class="list-inline-item">
+				                <span class="text-dark text-capitalize ml-1">
+				                    Jul 26, 2024				                </span>
+				            </li>
+				        </ul>
+				    </div>
+				    <div class="wrap__article-detail-image mt-4">
+				        				        <figure>
+				            <img width="940" height="529" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20940%20529'%3E%3C/svg%3E" alt="US Vice President Kamala Harris is the center of attention — and disinformation — now that Joe Biden has left the race." class="img-fluid w-100" data-lazy-src="https://humenglish.com/wp-content/uploads/2024/07/69749756_403.jpg"><noscript><img width="940" height="529" src="https://humenglish.com/wp-content/uploads/2024/07/69749756_403.jpg" alt="US Vice President Kamala Harris is the center of attention — and disinformation — now that Joe Biden has left the race." class="img-fluid w-100"></noscript>
+				        </figure>
+				        				    </div>
+    				<div class="wrap__article-detail-content">
+        				<div class="total-views">
+ 						<!--Social Sharing Start -->
+			            				            <ul class="list-inline">
+				                <span class="share">Share on:</span>
+				                <li class="list-inline-item">
+				                    <a class="btn btn-social-o facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhumenglish.com%2Fworld%2Ffact-check-any-truth-behind-the-viral-kamala-harris-claims%2F" target="_blank">
+				                        <i class="fa fa-facebook-f"></i>
+				                        <span>facebook</span>
+				                    </a>
+
+				                </li>
+				                <li class="list-inline-item">
+				                    <a class="btn btn-social-o twitter" href="https://twitter.com/intent/tweet?text=Any%20truth%20behind%20the%20viral%20Kamala%20Harris%20disinformation%20claims?&amp;url=https%3A%2F%2Fhumenglish.com%2Fworld%2Ffact-check-any-truth-behind-the-viral-kamala-harris-claims%2F" target="_blank">
+				                        <i class="fa fa-twitter"></i>
+				                        <span>twitter</span>
+				                    </a>
+				                </li>
+				                <li class="list-inline-item">
+				                    <a class="btn btn-social-o whatsapp" href="whatsapp://send?text=https%3A%2F%2Fhumenglish.com%2Fworld%2Ffact-check-any-truth-behind-the-viral-kamala-harris-claims%2F" target="_blank">
+				                        <i class="fa fa-whatsapp"></i>
+				                        <span>whatsapp</span>
+				                    </a>
+				                </li>
+				            </ul>
+        				</div>
+				        <div id="post_content d-flex justify-content-center">
+				          
+<p>WASHINGTON: United States (US) Vice President Kamala Harris is at the center of attention — and disinformation — now that Joe Biden has withdrawn from the presidential race. We looked into a few claims that have been making the rounds online.</p>
+
+
+
+<p>It will be a first in more ways than one if Kamala Harris becomes the next president of the United States: It would mark the first time a woman holds the post, and also the first time for a person of Jamaican and Indian heritage.</p>
+
+
+
+<p><strong>Read more: </strong><em><a href="https://humenglish.com/world/biden-says-he-announced-exit-to-unite-nation-harris-leads-revitalised-campaign/">Biden says he announced exit to unite nation; Harris leads revitalised campaign</a></em></p>
+
+
+
+<p>The current vice president is not yet the official candidate of the Democratic Party, but since President Joe Biden withdrew from the presidential race on Sunday, she has been the favourite. Harris has become the target of a flurry of false allegations and disinformation, many of them old, many of them racist and many sexist.</p>
+
+
+
+<p>Unfortunately, Harris is not alone in this — women in the public eye are more likely to be discredited by fake news and disinformation than men. This is known as &#8220;gendered disinformation.&#8221; According to a 2016 study conducted by the Inter-Parliamentary Union, almost 42 per cent of women parliamentarians surveyed in some 40 countries reported having seen&#8221;extremely humiliating or sexually charged images&#8221; of themselves spread through social media.</p>
+
+
+
+<p>DW took a closer look at three key claims about Harris.</p>
+
+
+
+<h2 class="wp-block-heading">Yes, Harris is a US citizen and can become president</h2>
+
+
+
+<p><strong>Claim:</strong> According to some, the 59-year-old cannot become president of the US because of her origins. An X post that has garnered over 1 million views reads: &#8220;Reminder that Kamala Harris is not constitutionally eligible to be either President or Vice President and is currently illegally serving as VP.&#8221;</p>
+
+
+
+<p><strong>DW fact check:</strong> False</p>
+
+
+
+<p>Harris&#8217; US citizenship and eligibility were first called into question when she campaigned as Biden&#8217;s running mate four years ago. Now the false allegations are popping up once again.</p>
+
+
+
+<p>In principle, anyone born in the United States receives US citizenship. This is granted by section one of the fourteenth amendment to the US constitution: &#8220;All persons born or naturalised in the United States, and subject to the jurisdiction thereof, are citizens of the United States and of the State wherein they reside.&#8221;</p>
+
+
+
+<p>According to official information, Harris&#8217; mother, Shyamala Gopalan, moved to the US from India at the age of 19 to enroll in a graduate program at the University of Berkeley in California, where she earned her PhD Harris&#8217; Jamaican father, Donald J Harris, also earned his doctorate from Berkeley. Kamala Harris was born on October 20, 1964, in California, US.</p>
+
+
+
+<p>Harris&#8217; birth certificatecan be found online. It was also included in an online article by the Californian daily newspaper <em>The Mercury News</em> in 2020, when the debate about Harris&#8217; origins kicked off in earnest. The author of the article responded to a DW inquiry and said anybody in California could obtain copies of birth certificates for purposes of information, which is what he had done.</p>
+
+
+
+<p>Harris is thus a US citizen by birth and she fullfils the requirements needed to be elected (vice) president. &#8220;No Person except a natural born Citizen, or a Citizen of the United States, at the time of the Adoption of this Constitution, shall be eligible to the Office of President; neither shall any person be eligible to that Office who shall not have attained to the Age of thirty five Years, and been fourteen Years a Resident within the United States,&#8221; states Article II, Section 1 of the US Constitution.</p>
+
+
+
+<h2 class="wp-block-heading">No, Harris did not talk nonsense while drunk</h2>
+
+
+
+<p><strong>Claim</strong>: &#8220;Today is today. And yesterday was today yesterday. Tomorrow will be today tomorrow. So live today, so the future today will be as the past today as it is tomorrow&#8221;: Harris appears to be saying these words in a video circulating on Telegram, X and other social media platforms.</p>
+
+
+
+<p><strong>DW fact check</strong>: Fake.</p>
+
+
+
+<p>Several aspects of the widely shared video are perplexing. Harris&#8217; mouth movements and gestures often do not match what she is saying. The US vice president also appears to be slurring her words at times. The quality of the video is poor, which is typical when footage has been manipulated.</p>
+
+
+
+<p>A reverse image search shows that the video and its audio track have been circulating since May 2023, and also that it has been manipulated, possibly with the help of artificial intelligence. In the original footage, Harris is speaking about reproductive rights at an event at Howard University in 2023. In a video of Harris&#8217; speech that can be found on Facebook, she starts speaking at minute 57. The fake video begins at timecode 01:01:08.</p>
+
+
+
+<p>The signs that people behind her are holding up read &#8220;Reproductive freedom,&#8221; as in some fake versions of Harris&#8217; lectern, also providing clues as to the subject of Harris&#8217; speech. A reverse image search with these elements in the image leads to media reports on the event at her former university.</p>
+
+
+
+<h2 class="wp-block-heading">Harris&#8217; comments on Ukraine taken out of context</h2>
+
+
+
+<p><strong>Claim:</strong> Many accounts have recently shared a screenshot together with an audio recording in which Harris describes Russia&#8217;s war in Ukraine in a very simple way: &#8220;Ukraine is a country in Europe. It&#8217;s next to another country called Russia. Russia is a bigger country. Russia is a powerful country. Russia has decided to invade a smaller country called Ukraine. So basically, that is wrong.&#8221;</p>
+
+
+
+<p>Many, including this X account, have made fun of Harris&#8217; apparently limited understanding of Russia&#8217;s war in Ukraine on the basis of this simplistic description.</p>
+
+
+
+<p><strong>DW fact check:</strong> Confusing</p>
+
+
+
+<p>This disinformation about Harris is also not new. A reverse image search brings up posts from 2022, and it is in March of that year, not long after Russia launched its full-scale invasion of Ukraine, that Harris actually said these words on the radio programme &#8220;The Morning Hustle.&#8221; </p>
+
+
+
+<p><strong>Read more: </strong><em><a href="https://humenglish.com/world/kamala-harris-is-unfit-to-rule-says-trump/">Kamala Harris is unfit to rule, says Trump</a></em></p>
+
+
+
+<p>Listening to the whole interview, it becomes clear why Harris used such simple wording. The presenter asks her specifically to break down the situation &#8220;in layman&#8217;s terms for people who don&#8217;t understand what&#8217;s going on.&#8221; Thus, in the posts circulating now, Harris&#8217; words have been taken out of context and give the wrong impression, particularly if one considers her more detailed comments afterward.</p>
+				        </div>
+	                    <!-- Tags Start -->
+			            <div class="blog-tags">
+			                <ul class="list-inline">
+			                    <li class="list-inline-item">
+			                        <i class="fa fa-tags">
+			                        </i>
+			                    </li>
+			                    			                    <li class="list-inline-item">
+			                        <a href="https://humenglish.com/tag/disinformation/">
+			                       #disinformation 
+			                        </a>
+			                    </li>
+			                    			                    <li class="list-inline-item">
+			                        <a href="https://humenglish.com/tag/donald-trump/">
+			                       #Donald Trump 
+			                        </a>
+			                    </li>
+			                    			                    <li class="list-inline-item">
+			                        <a href="https://humenglish.com/tag/gendered-disinformation/">
+			                       #gendered disinformation 
+			                        </a>
+			                    </li>
+			                    			                    <li class="list-inline-item">
+			                        <a href="https://humenglish.com/tag/joe-biden/">
+			                       #Joe Biden 
+			                        </a>
+			                    </li>
+			                    			                    <li class="list-inline-item">
+			                        <a href="https://humenglish.com/tag/unfortunately/">
+			                       #Unfortunately 
+			                        </a>
+			                    </li>
+			                    			                    <li class="list-inline-item">
+			                        <a href="https://humenglish.com/tag/us-presidential-election/">
+			                       #US presidential election 
+			                        </a>
+			                    </li>
+			                    			                    <li class="list-inline-item">
+			                        <a href="https://humenglish.com/tag/us-vice-president-kamala-harris/">
+			                       #US Vice President Kamala Harris 
+			                        </a>
+			                    </li>
+			                    			                </ul>
+			            </div>
+	                    <!-- Tags End -->
+          			</div>
+				</div>
+            	<div class="clearfix mt-5"></div>
+				<div class="related-article">
+	                <h4>
+	                    You May Also Like
+	                </h4>
+					<div class="article__entry-carousel-three">
+						 
+	    				<div class="item">
+	    					<div class="article__entry">
+							    <div class="article__image">
+							        <a href="https://humenglish.com/fact-check/fact-check-did-cloud-seeding-cause-the-dubai-floods/">
+							            <img width="940" height="529" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20940%20529'%3E%3C/svg%3E" alt="" class="img-fluid" data-lazy-src="https://humenglish.com/wp-content/uploads/2024/04/68858091_403.jpg"><noscript><img width="940" height="529" src="https://humenglish.com/wp-content/uploads/2024/04/68858091_403.jpg" loading="lazy" alt="" class="img-fluid"></noscript>
+							        </a>
+							    </div>
+							    <div class="article__content">
+							        <ul class="list-inline">
+							            <li class="list-inline-item">
+							                <span>
+							                  <a class="text-dark" href="https://humenglish.com/author/deutsche-welle/">DW</a>  
+							                </span>
+							                <span>
+							                  <a class="text-dark" href="https://humenglish.com/author/">
+							                    							                  </a>  
+							                </span>
+							            </li>
+							            <li class="list-inline-item">
+							                <span>
+							                    Apr 20, 2024							                </span>
+							            </li>
+							        </ul>
+							        <h5>
+							            <a style="text-transform: none;" class="truncate" href="https://humenglish.com/fact-check/fact-check-did-cloud-seeding-cause-the-dubai-floods/" title="Fact check: Did cloud seeding cause the Dubai floods?">
+							                Fact check: Did cloud seeding cause the Dubai floods?							            </a>
+							        </h5>
+							    </div>
+							</div>
+						</div>
+						 
+	    				<div class="item">
+	    					<div class="article__entry">
+							    <div class="article__image">
+							        <a href="https://humenglish.com/fact-check/fact-check-javed-akhtar-khan-lund-was-never-declared-the-winner-on-na-184-or-pp-286/">
+							            <img width="452" height="545" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20452%20545'%3E%3C/svg%3E" alt="PP-286 NA-184" class="img-fluid" data-lazy-src="https://humenglish.com/wp-content/uploads/2024/02/Lund.jpeg"><noscript><img width="452" height="545" src="https://humenglish.com/wp-content/uploads/2024/02/Lund.jpeg" loading="lazy" alt="PP-286 NA-184" class="img-fluid"></noscript>
+							        </a>
+							    </div>
+							    <div class="article__content">
+							        <ul class="list-inline">
+							            <li class="list-inline-item">
+							                <span>
+							                  <a class="text-dark" href="https://humenglish.com/author/syeda-masooma/">Web Desk</a>  
+							                </span>
+							                <span>
+							                  <a class="text-dark" href="https://humenglish.com/author/">
+							                    							                  </a>  
+							                </span>
+							            </li>
+							            <li class="list-inline-item">
+							                <span>
+							                    Feb 11, 2024							                </span>
+							            </li>
+							        </ul>
+							        <h5>
+							            <a style="text-transform: none;" class="truncate" href="https://humenglish.com/fact-check/fact-check-javed-akhtar-khan-lund-was-never-declared-the-winner-on-na-184-or-pp-286/" title="FACT CHECK: Javed Akhtar Khan Lund was never declared the winner on NA-184 or PP-286">
+							                FACT CHECK: Javed Akhtar Khan Lund was never declared the winner on NA-184 or PP-286							            </a>
+							        </h5>
+							    </div>
+							</div>
+						</div>
+						 
+	    				<div class="item">
+	    					<div class="article__entry">
+							    <div class="article__image">
+							        <a href="https://humenglish.com/fact-check/illahi-bux-soomro-has-not-passed-away/">
+							            <img width="411" height="380" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20411%20380'%3E%3C/svg%3E" alt="Illahi Bux Soomro" class="img-fluid" data-lazy-src="https://humenglish.com/wp-content/uploads/2024/01/speak.jpg"><noscript><img width="411" height="380" src="https://humenglish.com/wp-content/uploads/2024/01/speak.jpg" loading="lazy" alt="Illahi Bux Soomro" class="img-fluid"></noscript>
+							        </a>
+							    </div>
+							    <div class="article__content">
+							        <ul class="list-inline">
+							            <li class="list-inline-item">
+							                <span>
+							                  <a class="text-dark" href="https://humenglish.com/author/aneela-riazuddin/">Web Desk</a>  
+							                </span>
+							                <span>
+							                  <a class="text-dark" href="https://humenglish.com/author/zafar-ali/">
+							                    Web Desk							                  </a>  
+							                </span>
+							            </li>
+							            <li class="list-inline-item">
+							                <span>
+							                    Jan 25, 2024							                </span>
+							            </li>
+							        </ul>
+							        <h5>
+							            <a style="text-transform: none;" class="truncate" href="https://humenglish.com/fact-check/illahi-bux-soomro-has-not-passed-away/" title="FACT CHECK: Former NA speaker Elahi Bux Soomro has not passed away">
+							                FACT CHECK: Former NA speaker Elahi Bux Soomro has not passed away							            </a>
+							        </h5>
+							    </div>
+							</div>
+						</div>
+						 
+	    				<div class="item">
+	    					<div class="article__entry">
+							    <div class="article__image">
+							        <a href="https://humenglish.com/fact-check/fact-check-ecp-has-not-banned-political-surveys-opinion-polls/">
+							            <img width="680" height="453" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20680%20453'%3E%3C/svg%3E" alt="by-elections" class="img-fluid" data-lazy-src="https://humenglish.com/wp-content/uploads/2023/12/ecp-12345.jpg"><noscript><img width="680" height="453" src="https://humenglish.com/wp-content/uploads/2023/12/ecp-12345.jpg" loading="lazy" alt="by-elections" class="img-fluid"></noscript>
+							        </a>
+							    </div>
+							    <div class="article__content">
+							        <ul class="list-inline">
+							            <li class="list-inline-item">
+							                <span>
+							                  <a class="text-dark" href="https://humenglish.com/author/syeda-masooma/">Web Desk</a>  
+							                </span>
+							                <span>
+							                  <a class="text-dark" href="https://humenglish.com/author/">
+							                    							                  </a>  
+							                </span>
+							            </li>
+							            <li class="list-inline-item">
+							                <span>
+							                    Jan 02, 2024							                </span>
+							            </li>
+							        </ul>
+							        <h5>
+							            <a style="text-transform: none;" class="truncate" href="https://humenglish.com/fact-check/fact-check-ecp-has-not-banned-political-surveys-opinion-polls/" title="Fact Check: ECP has not banned political surveys &#038; opinion polls">
+							                Fact Check: ECP has not banned political surveys &#038; opinion polls							            </a>
+							        </h5>
+							    </div>
+							</div>
+						</div>
+							            	</div>
+	            </div>
+        	</div>  
+	        <!-- Sidebar Start -->
+	        	
+	        <div class="col-md-4">
+	<!-- MREC Ad Start -->
+    	<!-- /2887056/HumNewsEnglishMREC -->
+	<!--
+	<div id='div-gpt-ad-1702623904834-0' style='min-width: 300px; min-height: 250px;text-align: center;'>
+	  <script type="rocketlazyloadscript">
+	    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1702623904834-0'); });
+	  </script>
+	</div>
+	-->
+	<div class="container mb-2" style="text-align: center !important;">
+  <img width="300" height="250" style="width:300px ; height:250px; " src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20250'%3E%3C/svg%3E" data-lazy-src="https://humenglish.com/wp-content/uploads/2024/10/300x250-upd.gif"><noscript><img width="300" height="250" style="width:300px ; height:250px; " src="https://humenglish.com/wp-content/uploads/2024/10/300x250-upd.gif"></noscript>
+  	</div>
+    <!-- MREC Ad End -->
+    <div class="" style="position: sticky; top: 30px;">
+        <aside class="wrapper__list__article ">
+            <h4 class="border_section">
+            	<a style="color: #000; text-decoration: none;" href="https://humenglish.com/latest/">Latest
+            	</a>
+            </h4>
+            <div class="wrapper__list__article-small">
+								<div class="mb-3">
+					<div class="card__post card__post-list">
+					    <div class="image-sm">
+					        <a href="https://humenglish.com/latest/uks-princess-beatrice-gives-birth-to-second-baby-girl/">
+					            <img width="800" height="480" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20480'%3E%3C/svg%3E" class="img-fluid" alt="Princess Beatrice gives birth" data-lazy-src="https://humenglish.com/wp-content/uploads/2025/01/Untitled-1-copy-5.jpg"><noscript><img width="800" height="480" src="https://humenglish.com/wp-content/uploads/2025/01/Untitled-1-copy-5.jpg" loading="lazy" class="img-fluid" alt="Princess Beatrice gives birth"></noscript>
+					        </a>
+					    </div>
+					    <div class="card__post__body ">
+					        <div class="card__post__content">
+					            <div class="card__post__author-info mb-2">
+					                <ul class="list-inline">
+					                    <li class="list-inline-item">
+					                        <span >
+					                            <a class="text-dark" href="https://humenglish.com/author/reuters/">
+					                            	Reuters					                        	</a>
+					                        </span>
+					                        <span>
+					                              <a class="text-dark" href="https://humenglish.com/author/">
+					                                </a>  
+					                        </span>
+					                    </li>
+					                    <li class="list-inline-item">
+					                        <span class="text-dark text-capitalize">
+					                            1 Minute ago					                        </span>
+					                    </li>
+					                </ul>
+					            </div>
+					            <div class="card__post__title">
+					                <h6>
+					                    <a style="text-transform: none;" class="truncate" href="https://humenglish.com/latest/uks-princess-beatrice-gives-birth-to-second-baby-girl/" title="UK&#8217;s Princess Beatrice gives birth to second baby girl">
+					                        UK&#8217;s Princess Beatrice gives birth to second baby girl					                    </a>
+					                </h6>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+								<div class="mb-3">
+					<div class="card__post card__post-list">
+					    <div class="image-sm">
+					        <a href="https://humenglish.com/latest/all-of-donald-trumps-tariff-threats/">
+					            <img width="800" height="480" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20480'%3E%3C/svg%3E" class="img-fluid" alt="trump issued tariff threats" data-lazy-src="https://humenglish.com/wp-content/uploads/2025/01/trump-oath.jpg"><noscript><img width="800" height="480" src="https://humenglish.com/wp-content/uploads/2025/01/trump-oath.jpg" loading="lazy" class="img-fluid" alt="trump issued tariff threats"></noscript>
+					        </a>
+					    </div>
+					    <div class="card__post__body ">
+					        <div class="card__post__content">
+					            <div class="card__post__author-info mb-2">
+					                <ul class="list-inline">
+					                    <li class="list-inline-item">
+					                        <span >
+					                            <a class="text-dark" href="https://humenglish.com/author/reuters/">
+					                            	Reuters					                        	</a>
+					                        </span>
+					                        <span>
+					                              <a class="text-dark" href="https://humenglish.com/author/">
+					                                </a>  
+					                        </span>
+					                    </li>
+					                    <li class="list-inline-item">
+					                        <span class="text-dark text-capitalize">
+					                            25 Minutes ago					                        </span>
+					                    </li>
+					                </ul>
+					            </div>
+					            <div class="card__post__title">
+					                <h6>
+					                    <a style="text-transform: none;" class="truncate" href="https://humenglish.com/latest/all-of-donald-trumps-tariff-threats/" title="All of Donald Trump&#8217;s tariff threats">
+					                        All of Donald Trump&#8217;s tariff threats					                    </a>
+					                </h6>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+								<div class="mb-3">
+					<div class="card__post card__post-list">
+					    <div class="image-sm">
+					        <a href="https://humenglish.com/latest/hamilton-crashes-2023-ferrari-at-barcelona-track/">
+					            <img width="800" height="480" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20480'%3E%3C/svg%3E" class="img-fluid" alt="Hamilton crashes 2023 Ferrari at Barcelona track" data-lazy-src="https://humenglish.com/wp-content/uploads/2025/01/hamilton.jpg"><noscript><img width="800" height="480" src="https://humenglish.com/wp-content/uploads/2025/01/hamilton.jpg" loading="lazy" class="img-fluid" alt="Hamilton crashes 2023 Ferrari at Barcelona track"></noscript>
+					        </a>
+					    </div>
+					    <div class="card__post__body ">
+					        <div class="card__post__content">
+					            <div class="card__post__author-info mb-2">
+					                <ul class="list-inline">
+					                    <li class="list-inline-item">
+					                        <span >
+					                            <a class="text-dark" href="https://humenglish.com/author/reuters/">
+					                            	Reuters					                        	</a>
+					                        </span>
+					                        <span>
+					                              <a class="text-dark" href="https://humenglish.com/author/">
+					                                </a>  
+					                        </span>
+					                    </li>
+					                    <li class="list-inline-item">
+					                        <span class="text-dark text-capitalize">
+					                            52 Minutes ago					                        </span>
+					                    </li>
+					                </ul>
+					            </div>
+					            <div class="card__post__title">
+					                <h6>
+					                    <a style="text-transform: none;" class="truncate" href="https://humenglish.com/latest/hamilton-crashes-2023-ferrari-at-barcelona-track/" title="Hamilton crashes 2023 Ferrari at Barcelona track">
+					                        Hamilton crashes 2023 Ferrari at Barcelona track					                    </a>
+					                </h6>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+								<div class="mb-3">
+					<div class="card__post card__post-list">
+					    <div class="image-sm">
+					        <a href="https://humenglish.com/latest/plane-crashes-in-south-sudan-killing-20-official-says/">
+					            <img width="800" height="480" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20480'%3E%3C/svg%3E" class="img-fluid" alt="Plane crashes in South Sudan" data-lazy-src="https://humenglish.com/wp-content/uploads/2025/01/plane-crash.jpg"><noscript><img width="800" height="480" src="https://humenglish.com/wp-content/uploads/2025/01/plane-crash.jpg" loading="lazy" class="img-fluid" alt="Plane crashes in South Sudan"></noscript>
+					        </a>
+					    </div>
+					    <div class="card__post__body ">
+					        <div class="card__post__content">
+					            <div class="card__post__author-info mb-2">
+					                <ul class="list-inline">
+					                    <li class="list-inline-item">
+					                        <span >
+					                            <a class="text-dark" href="https://humenglish.com/author/reuters/">
+					                            	Reuters					                        	</a>
+					                        </span>
+					                        <span>
+					                              <a class="text-dark" href="https://humenglish.com/author/">
+					                                </a>  
+					                        </span>
+					                    </li>
+					                    <li class="list-inline-item">
+					                        <span class="text-dark text-capitalize">
+					                            58 Minutes ago					                        </span>
+					                    </li>
+					                </ul>
+					            </div>
+					            <div class="card__post__title">
+					                <h6>
+					                    <a style="text-transform: none;" class="truncate" href="https://humenglish.com/latest/plane-crashes-in-south-sudan-killing-20-official-says/" title="Plane crashes in South Sudan, killing 20, official says">
+					                        Plane crashes in South Sudan, killing 20, official says					                    </a>
+					                </h6>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+								<div class="mb-3">
+					<div class="card__post card__post-list">
+					    <div class="image-sm">
+					        <a href="https://humenglish.com/latest/lion-cub-gifted-to-pakistani-youtube-causes-wedding-chaos/">
+					            <img width="800" height="480" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20480'%3E%3C/svg%3E" class="img-fluid" alt="Rajab Butt receiving Lion cub" data-lazy-src="https://humenglish.com/wp-content/uploads/2025/01/rajab-butt.jpg"><noscript><img width="800" height="480" src="https://humenglish.com/wp-content/uploads/2025/01/rajab-butt.jpg" loading="lazy" class="img-fluid" alt="Rajab Butt receiving Lion cub"></noscript>
+					        </a>
+					    </div>
+					    <div class="card__post__body ">
+					        <div class="card__post__content">
+					            <div class="card__post__author-info mb-2">
+					                <ul class="list-inline">
+					                    <li class="list-inline-item">
+					                        <span >
+					                            <a class="text-dark" href="https://humenglish.com/author/adnan-yousaf/">
+					                            	Web Desk					                        	</a>
+					                        </span>
+					                        <span>
+					                              <a class="text-dark" href="https://humenglish.com/author/">
+					                                </a>  
+					                        </span>
+					                    </li>
+					                    <li class="list-inline-item">
+					                        <span class="text-dark text-capitalize">
+					                            3 Hours ago					                        </span>
+					                    </li>
+					                </ul>
+					            </div>
+					            <div class="card__post__title">
+					                <h6>
+					                    <a style="text-transform: none;" class="truncate" href="https://humenglish.com/latest/lion-cub-gifted-to-pakistani-youtube-causes-wedding-chaos/" title="Lion cub gifted to Pakistani YouTube causes wedding chaos">
+					                        Lion cub gifted to Pakistani YouTube causes wedding chaos					                    </a>
+					                </h6>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				
+        	</div>
+    	</aside>
+    	<!-- Sky Ad Start -->
+    	
+	<!-- /2887056/HumNewsSky -->
+	<div id='div-gpt-ad-1709901319397-0' style='min-width: 300px; min-height: 600px;'>
+	  <script type="rocketlazyloadscript">
+	    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1709901319397-0'); });
+	  </script>
+	</div>
+
+	<!-- Sky Ad End -->
+	</div>
+</div>			<!-- Sidebar End -->
+    	</div>
+	</div>
+</section>			</main><!-- #main -->
+		</div><!-- #primary -->
+	</div><!-- #content -->
+<section data-rocket-location-hash="0f73dba6919dd89732dd239e955e0949" class="wrapper__section p-0">
+        <div data-rocket-location-hash="f606fac18f5f0dd6f7b25e3dde03894c" class="wrapper__section__components">
+        <!-- Footer Start -->
+		<footer>
+			<!-- Footer Top Start -->
+		    <div class="wrapper__footer bg__footer-white pb-0 pt-0">
+		        <div class="mt-0">
+		            <div class="container">
+		                <div class="row">
+		                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  p-0 ">
+	                            <ul class="list-inline">
+	                            	<li class="list-inline-item pr-5">
+	                                    <figure class="pl-3" style="width: 120px; height: auto;">
+	                            			<a href="https://humenglish.com/" class="custom-logo-link" rel="home"><img width="1080" height="459" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201080%20459'%3E%3C/svg%3E" class="custom-logo" alt="Hum News English logo" decoding="async" data-lazy-srcset="https://humenglish.com/wp-content/uploads/2024/03/HUM-English-Logo-1.png 1080w, https://humenglish.com/wp-content/uploads/2024/03/HUM-English-Logo-1-300x128.png 300w, https://humenglish.com/wp-content/uploads/2024/03/HUM-English-Logo-1-1024x435.png 1024w, https://humenglish.com/wp-content/uploads/2024/03/HUM-English-Logo-1-768x326.png 768w" data-lazy-sizes="(max-width: 1080px) 100vw, 1080px" data-lazy-src="https://humenglish.com/wp-content/uploads/2024/03/HUM-English-Logo-1.png" /><noscript><img width="1080" height="459" src="https://humenglish.com/wp-content/uploads/2024/03/HUM-English-Logo-1.png" class="custom-logo" alt="Hum News English logo" decoding="async" srcset="https://humenglish.com/wp-content/uploads/2024/03/HUM-English-Logo-1.png 1080w, https://humenglish.com/wp-content/uploads/2024/03/HUM-English-Logo-1-300x128.png 300w, https://humenglish.com/wp-content/uploads/2024/03/HUM-English-Logo-1-1024x435.png 1024w, https://humenglish.com/wp-content/uploads/2024/03/HUM-English-Logo-1-768x326.png 768w" sizes="(max-width: 1080px) 100vw, 1080px" /></noscript></a>	                        			</figure>
+	                                </li>
+	                                <li class="list-inline-item">
+	                                    <a href="https://www.facebook.com/HUMNewsEnglish/" class="btn btn-social rounded text-white facebook">
+	                                        <i class="fa fa-facebook"></i>
+	                                    </a>
+	                                </li>
+	                                <li class="list-inline-item ">
+	                                    <a href="https://twitter.com/humnewspakistan" class="btn btn-social rounded text-white twitter">
+	                                        <i class="fa fa-twitter"></i>
+	                                    </a>
+	                                </li>
+	                                <li class="list-inline-item ">
+	                                    <a href="https://www.youtube.com/@HUMNewsPakistan" class="btn btn-social rounded text-white youtube">
+	                                        <i class="fa fa-youtube"></i>
+	                                    </a>
+	                                </li>
+	                                <li class="list-inline-item ">
+	                                    <a href="https://www.instagram.com/hum.news.pakistan/" class="btn btn-social rounded text-white instagram">
+	                                        <i class="fa fa-instagram"></i>
+	                                    </a>
+	                                </li>
+	                            </ul>
+	                        </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		    <!-- Footer Top End -->
+		    <!-- Footer Bottom Start -->
+		    <div class="wrapper__footer-bottom bg__footer-dark" >
+		        <div class="container ">
+		            <div class="row">
+		                <div class="col-md-12">
+		                    <div class="border-top-1 bg__footer-bottom-section text-center pt-1 pb-1">
+		                       <ul class="list-inline link-column ">
+		                            <li class="list-inline-item">
+		                                <a href="https://humenglish.com/about-us/">
+		                                  About Us  
+		                                </a>
+		                            </li>
+		                            <li class="list-inline-item">
+		                                <a href="https://humenglish.com/contact-us/">
+		                                 Contact Us  
+		                                </a>
+		                            </li>
+		                        
+		                            <li class="list-inline-item">
+										<span>
+		                                   All Copyrights Reserved © 2015-2025 
+		                                    | Managed By <a href="https://humnews.pk/">HUM NEWS</a> | Powered By <a href="https://www.humnetwork.tv/">HUM NETWORK</a>
+		                                </span>
+		                            </li>
+		                        </ul>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		    <!-- Footer Bottom End -->
+		</footer>
+		<!-- Footer End -->
+	</div>
+</section>
+</div><!-- #page -->
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">window.addEventListener('DOMContentLoaded', function() {
+	//<![CDATA
+	jQuery(document).ready(function($) {
+	$('a').each(function() {
+	var a = new RegExp('/' + window.location.host + '/');
+	if (!a.test(this.href)) {
+	$(this).click(function(event) {
+	event.preventDefault();
+	event.stopPropagation();
+	window.open(this.href, '_blank');
+	});
+	}
+	});
+	});
+	//]]>
+});</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+/* <![CDATA[ */
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/humenglish.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+/* <![CDATA[ */
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket_lazyload_css-js-extra">
+/* <![CDATA[ */
+var rocket_lazyload_css_data = {"threshold":"300"};
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket_lazyload_css-js-after">
+/* <![CDATA[ */
+!function o(n,c,a){function u(t,e){if(!c[t]){if(!n[t]){var r="function"==typeof require&&require;if(!e&&r)return r(t,!0);if(s)return s(t,!0);throw(e=new Error("Cannot find module '"+t+"'")).code="MODULE_NOT_FOUND",e}r=c[t]={exports:{}},n[t][0].call(r.exports,function(e){return u(n[t][1][e]||e)},r,r.exports,o,n,c,a)}return c[t].exports}for(var s="function"==typeof require&&require,e=0;e<a.length;e++)u(a[e]);return u}({1:[function(e,t,r){"use strict";{const c="undefined"==typeof rocket_pairs?[]:rocket_pairs,a=(("undefined"==typeof rocket_excluded_pairs?[]:rocket_excluded_pairs).map(t=>{var e=t.selector;document.querySelectorAll(e).forEach(e=>{e.setAttribute("data-rocket-lazy-bg-"+t.hash,"excluded")})}),document.querySelector("#wpr-lazyload-bg-container"));var o=rocket_lazyload_css_data.threshold||300;const u=new IntersectionObserver(e=>{e.forEach(t=>{t.isIntersecting&&c.filter(e=>t.target.matches(e.selector)).map(t=>{var e;t&&((e=document.createElement("style")).textContent=t.style,a.insertAdjacentElement("afterend",e),t.elements.forEach(e=>{u.unobserve(e),e.setAttribute("data-rocket-lazy-bg-"+t.hash,"loaded")}))})})},{rootMargin:o+"px"});function n(){0<(0<arguments.length&&void 0!==arguments[0]?arguments[0]:[]).length&&c.forEach(t=>{try{document.querySelectorAll(t.selector).forEach(e=>{"loaded"!==e.getAttribute("data-rocket-lazy-bg-"+t.hash)&&"excluded"!==e.getAttribute("data-rocket-lazy-bg-"+t.hash)&&(u.observe(e),(t.elements||=[]).push(e))})}catch(e){console.error(e)}})}n(),function(){const r=window.MutationObserver;return function(e,t){if(e&&1===e.nodeType)return(t=new r(t)).observe(e,{attributes:!0,childList:!0,subtree:!0}),t}}()(document.querySelector("body"),n)}},{}]},{},[1]);
+/* ]]> */
+</script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://humenglish.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><script>function lazyLoadThumb(e,alt,l){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';if(l){t=t.replace('data-lazy-','');t=t.replace('loading="lazy"','');t=t.replace(/<noscript>.*?<\/noscript>/g,'');}t=t.replace('alt=""','alt="'+alt+'"');return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?"":"&"+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow","accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var exclusions=[];var e,t,p,u,l,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)(e=document.createElement("div")),(u='https://i.ytimg.com/vi/ID/hqdefault.jpg'),(u=u.replace('ID',a[t].dataset.id)),(l=exclusions.some(exclusion=>u.includes(exclusion))),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query",a[t].dataset.query),e.setAttribute("data-src",a[t].dataset.src),(e.innerHTML=lazyLoadThumb(a[t].dataset.id,a[t].dataset.alt,l)),a[t].appendChild(e),(p=e.querySelector(".play")),(p.onclick=lazyLoadYoutubeIframe)});</script>	<script>var rocket_beacon_data = {"ajax_url":"https:\/\/humenglish.com\/wp-admin\/admin-ajax.php","nonce":"c95a474956","url":"https:\/\/humenglish.com\/world\/fact-check-any-truth-behind-the-viral-kamala-harris-claims","is_mobile":false,"width_threshold":1600,"height_threshold":700,"delay":500,"debug":null,"status":{"atf":true,"lrc":true},"elements":"img, video, picture, p, main, div, li, svg, section, header, span","lrc_threshold":1800}</script><script data-name="wpr-wpr-beacon" src='https://humenglish.com/wp-content/plugins/wp-rocket/assets/js/wpr-beacon.min.js' async></script></body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
