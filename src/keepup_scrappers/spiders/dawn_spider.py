@@ -14,10 +14,9 @@ class DawnSpider(BaseSpider):
                 "format": "json",
                 "encoding": "utf8",
                 "indent": 4,
-                "DOWNLOAD_DELAY": 2,  # Wait 2 seconds between requests
-                "CONCURRENT_REQUESTS": 1,  # Only 1 request at a time
             }
-        }
+        },
+        "DOWNLOAD_DELAY": 3,
     }
 
     def __init__(self, *args, **kwargs):
