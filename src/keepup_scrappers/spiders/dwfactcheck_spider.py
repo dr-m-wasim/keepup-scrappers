@@ -43,7 +43,7 @@ class DWfactcheckSpider(BaseSpider):
     def parse(self, response):
         time.sleep(10)
         for post in response.css(self.selectors['single_post']):
-            item = DWItem()
+            item = DWfactcheckItem()
             item['title'] = post.css(self.selectors['post_title']).get(default='')
             image_urls = response.css(self.selectors['post_image']).getall()
             item['image_urls'] = [response.urljoin(image_urls[0])] if image_urls else []
