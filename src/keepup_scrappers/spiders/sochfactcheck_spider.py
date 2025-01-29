@@ -4,7 +4,7 @@ import logging
 from keepup_scrappers.spiders.base_spider import BaseSpider
 from keepup_scrappers.items import SochFactcheckItem
 
-class SFCSpider(BaseSpider):
+class SochFactCheckSpider(BaseSpider):
     
     name = 'sochfactcheck_spider'
     page_counter = 1
