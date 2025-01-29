@@ -205,7 +205,22 @@ sites:
       label: "//p[strong[contains(text(), 'DW Fact check')]]/text()"
       next_page: "div.sp605kw a.next::attr(href)"
       
-  
+  businessrecorder:
+    name: "BusinessRecorder"
+    base_url: "https://www.brecorder.com/latest-news"
+    start_urls:
+      - "https://www.brecorder.com/latest-news"
+    delay: 2
+    selectors: 
+      single_post: "article.story"
+      post_title: "h2.story__title a::text"
+      post_link: "h2.story__title a::attr(href)"
+      category: "span.badge a span::text"
+      exerpt: "div.story__excerpt::text" 
+      post_image: "div.media__item a picture img::attr(src)"
+      content: "div.story__content p::text"
+      author: "a.story__byline__link::text"
+      post_date: "span.story__time span span::text"
    
 
 # Storage settings
