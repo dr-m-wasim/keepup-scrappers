@@ -43,7 +43,8 @@ class BRecorderSpider(BaseSpider):
             yield scrapy.Request(
                 url = item['detail_url'],
                 callback = self.parse_details,
-                meta = {'item': item}
+                meta = {'item': item},
+                errback=self.handle_error,
             )
 
     def parse_details(self, response):
@@ -54,4 +55,7 @@ class BRecorderSpider(BaseSpider):
         item['content'] = ' '.join([p.strip() for p in content_paragraphs if p.strip()])
 
         yield item
+
+    def handle_error(self, failure):
+        self.logger.error(f"Request Failed: {failure.request.url}")
         
