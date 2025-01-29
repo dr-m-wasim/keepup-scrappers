@@ -220,7 +220,24 @@ sites:
       content: "div.story__content p::text"
       author: "a.story__byline__link::text"
       post_date: "span.story__time span span::text"
-   
+
+  factcheckorg:
+    name: "factcheckorg"
+    base_url: "https://www.factcheck.org/"
+    start_urls:
+      - "https://www.factcheck.org/"
+    delay: 2
+    selectors: 
+      single_post: "main.site-main article.type-post"
+      post_title: "h3.entry-title a::text"
+      post_link: "h3.entry-title a::attr(href)"
+      exerpt: "div.entry-content p::text" 
+      post_image: "div.col-12 img::attr(src)"
+      content: "div.content-area p::text"
+      author: "div.entry-meta a::text"
+      post_date: "div.entry-meta::text"
+      next_page: "//li[contains(@class, 'page-item-next')]//a/@href"
+    #total_pages: 'li.page-item a span.sr-only::text'
 
 # Storage settings
 storage:

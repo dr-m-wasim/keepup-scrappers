@@ -5,7 +5,7 @@ from keepup_scrappers.items import DawnnewsItem
 
 class DawnSpider(BaseSpider):
     name = 'dawn_spider'
-    site_key = 'dawnnews'
+    site_key = 'dawn'
 
     custom_settings = {
         "IMAGES_STORE": f"data/{name}/images/",
@@ -14,6 +14,8 @@ class DawnSpider(BaseSpider):
                 "format": "json",
                 "encoding": "utf8",
                 "indent": 4,
+                "DOWNLOAD_DELAY": 2,  # Wait 2 seconds between requests
+                "CONCURRENT_REQUESTS": 1,  # Only 1 request at a time
             }
         }
     }
@@ -25,21 +27,14 @@ class DawnSpider(BaseSpider):
         if not self.selectors:
             raise ValueError(f"Selectors configuration for site '{self.site_key}' not found.")
 
+        self.current_date = datetime.today()
+
         # Directly define configuration values
-        self.base_url = "https://www.dawn.com/latest-news/{date}"
-        self.start_date = datetime.strptime("2025-01-23", "%Y-%m-%d")
-        self.current_date = self.start_date
+        self.start_urls = [f"https://www.dawn.com/latest-news/{self.current_date.strftime('%Y-%m-%d')}"]
 
-    def start_requests(self):
-        # Generate the formatted date and append to the base URL
-        formatted_date = self.current_date.strftime("%Y-%m-%d")
-        url = self.base_url.format(date=formatted_date)
-        yield scrapy.Request(
-            url=url,
-            callback=self.parse,
-            errback=self.handle_error,
-        )
+        #self.start_urls[0] = f"https://www.dawn.com/latest-news/{self.current_date.strftime("%Y-%m-%d")}"
 
+        
     def parse(self, response):
         for post in response.css(self.selectors['single_post']):
             item = DawnnewsItem()
@@ -55,7 +50,7 @@ class DawnSpider(BaseSpider):
                     errback=self.handle_error,
                 )
 
-        self.logger.info(f"Scraped data for {self.current_date.strftime('%Y-%m-%d')}")
+        self.logger.info(f"Scraped data for {self.current_date.strftime("%Y-%m-%d")}")
 
         # Move to the previous day
         self.current_date -= timedelta(days=1)
@@ -76,11 +71,21 @@ class DawnSpider(BaseSpider):
         item['author'] = response.css(self.selectors['author']).get(default='').strip()
         image_url = response.css(self.selectors['post_image']).get(default='')
         item['image_urls'] = [response.urljoin(image_url)] if image_url else []
-        item['content'] = ' '.join(response.css(self.selectors['content']).getall()).strip()
+        #item['content'] = ' '.join(response.css(self.selectors['content']).getall()).strip()
+        item['content'] = ' '.join(response.css(self.selectors['content']).getall() or []).strip()
+
         item['publication_date'] = response.css(self.selectors['post_date']).get()
 
         yield item
 
+    # def handle_error(self, failure):
+    #     self.logger.error(f"Request Failed: {failure.request.url}")
+    #     self.logger.error(f"Error Details: {failure.value}")
     def handle_error(self, failure):
         self.logger.error(f"Request Failed: {failure.request.url}")
-        self.logger.error(f"Error Details: {failure.value}")
+        if failure.check(scrapy.spidermiddlewares.httperror.HttpError):
+            response = failure.value.response
+            self.logger.error(f"HTTP Error {response.status} for {failure.request.url}")
+        else:
+            self.logger.error(f"Error Details: {failure.value}")
+
