@@ -36,8 +36,6 @@ class JangSpider(BaseSpider):
             image_urls = response.css(self.selectors['post_image']).getall()  
             item['image_urls'] = [image_urls[index]] if image_urls and index < len(image_urls) else []
             item['exerpt']  = post.css(self.selectors['exerpt']).get(default='').strip()
-
-            print(item['title'])
             
             yield scrapy.Request(
                 url = item['detail_url'],

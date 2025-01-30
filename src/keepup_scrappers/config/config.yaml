@@ -284,6 +284,21 @@ sites:
       post_date: "div.post-meta span.rt-meta::text" 
       category: "div.post-header div.catName a::text"
 
+
+  thenation:
+    base_url: "https://www.nation.com.pk/latest"
+    start_urls:
+      - "https://www.nation.com.pk/ajax_post_pagination"
+    selectors:
+      single_post: "div.jeg_posts_wrap div.jeg_posts div.row div.col-lg-4"
+      post_title: "div.jeg_postblock_content h3.jeg_post_title a::text"
+      post_link: "div.jeg_postblock_content h3.jeg_post_title a::attr(href)"
+      post_image: "div.jeg_thumb a div.thumbnail-container div.top-center::attr(style)"
+      author: "div.jeg_meta_author a::text"
+      content: "div.content-inner p::text"
+      post_date: "div.jeg_meta_date::text"
+
+
 # Storage settings
 storage:
   method: "database"  # or "file"
