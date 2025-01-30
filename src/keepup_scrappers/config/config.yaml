@@ -316,6 +316,20 @@ sites:
       post_date: "div.jeg_meta_date::text"
 
 
+  pakistantoday:
+    base_url: "https://www.pakistantoday.com.pk/category/national/"
+    start_urls:
+      - "https://www.pakistantoday.com.pk/category/national/"
+    selectors:
+      single_post: "div.td-pb-span8 div.td-ss-main-content div.td_module_10"
+      post_title: "div.item-details h3.entry-title a::text"
+      post_link: "div.item-details h3.entry-title a::attr(href)"
+      post_image: "div.td-module-thumb a img::attr(data-img-url)"
+      exerpt: "div.item-details div.td-excerpt::text"
+      author: "div.tdb-author-name-wrap a.tdb-author-name::text"
+      content: "div.tdb-block-inner p::text"
+      post_date: "div.tdb-block-inner time.entry-date::text"
+
 
 # Storage settings
 storage:
