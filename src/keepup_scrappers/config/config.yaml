@@ -10,7 +10,7 @@ general:
 # Site-specific configurations
 sites:
 
-  humenglish:
+  humenglishfactcheck:
     base_url: "https://humenglish.com/fact-check/"
     start_urls:
       - "https://humenglish.com/fact-check/"
@@ -228,7 +228,6 @@ sites:
     base_url: "https://www.factcheck.org/"
     start_urls:
       - "https://www.factcheck.org/"
-    delay: 2
     selectors: 
       single_post: "main.site-main article.type-post"
       post_title: "h3.entry-title a::text"
@@ -239,6 +238,19 @@ sites:
       author: "div.entry-meta a::text"
       post_date: "div.entry-meta::text"
       next_page: "//li[contains(@class, 'page-item-next')]//a/@href"
+
+
+  dunyanews: 
+    base_url: "https://dunyanews.tv/en/Pakistan"
+    start_urls:
+      - "https://dunyanews.tv/en/Pakistan"
+    selectors:
+      single_post: "div.container div.row div.dunya-border-top"
+      post_title: "h3.media__title a::text"
+      post_link: "h3.media__title a::attr(href)"
+      post_image: "div.media__image a picture img::attr(src)"
+      post_date: "time.publish-time::attr(datetime)"
+      content: "article p::text"
 
 # Storage settings
 storage:
