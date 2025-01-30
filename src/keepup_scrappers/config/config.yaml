@@ -269,6 +269,21 @@ sites:
       next_page: "a.next::attr(href)"
 
 
+  jang:
+    base_url: "https://jang.com.pk/en/latest"
+    start_urls:
+      - "https://jang.com.pk/en/latest"
+    selectors: 
+      single_post: "div.rt-left-sidebar-sapcer-5 div.post-list-style-4 div.post-item"
+      post_title: "div.post-item div.rt-post div.post-content div.post-title a::text"
+      post_link: "div.post-item div.rt-post div.post-content div.post-title a::attr(href)"
+      exerpt: "div.post-content p.my-2::text"
+      post_image: "div.post-img a img::attr(src)"
+      author: "div.post-meta ul li span span::text"
+      content: "div.detail_content_area div.post-body p::text"
+      post_date: "div.post-meta span.rt-meta::text" 
+      category: "div.post-header div.catName a::text"
+
 # Storage settings
 storage:
   method: "database"  # or "file"
