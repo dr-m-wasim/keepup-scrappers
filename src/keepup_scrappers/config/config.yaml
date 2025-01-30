@@ -330,7 +330,19 @@ sites:
       content: "div.tdb-block-inner p::text"
       post_date: "div.tdb-block-inner time.entry-date::text"
 
-
+  thehindu:
+    base_url: "https://www.thehindu.com/news/international/"
+    start_urls:
+      - "https://www.thehindu.com/news/international/?page=1"
+    selectors:
+      single_post: "div.row-element"
+      post_title: "div.right-content h3.title a::text"
+      post_link: "div.right-content h3.title a::attr(href)"
+      post_image: "div.picture img::attr(data-src-template)"
+      exerpt: "h2.sub-title::text"
+      author: "div.author-name a::text"
+      next_page: "li.page-item.next a.page-link.next::attr(href)"
+      post_date: "div.update-publish-time span::text"
 # Storage settings
 storage:
   method: "database"  # or "file"
