@@ -252,6 +252,23 @@ sites:
       post_date: "time.publish-time::attr(datetime)"
       content: "article p::text"
 
+
+  humenglish:
+    base_url: "https://humenglish.com/latest/"
+    start_urls:
+      - "https://humenglish.com/latest/"
+    selectors:
+      single_post: "div.container div.row div.col-md-8 aside.wrapper__list__article div.card__post"
+      post_title: "div.card__post__title h5 a.truncate::text"
+      post_link: "div.card__post__title h5 a.truncate::attr(href)"
+      exerpt: "div.card__post__title p:nth-of-type(2)::text"
+      post_image: "div.card__post__transition a img::attr(data-lazy-src)"
+      post_date: "li.list-inline-item span.text-dark::text"
+      content: "div[id*='post_content'] p::text"
+      author: "li.list-inline-item span a::text"
+      next_page: "a.next::attr(href)"
+
+
 # Storage settings
 storage:
   method: "database"  # or "file"
