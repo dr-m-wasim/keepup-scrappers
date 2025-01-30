@@ -105,7 +105,7 @@ class DWfactcheckItem(scrapy.Item):
     category = scrapy.Field()
     label = scrapy.Field()
 
-class HumEnglishItem(scrapy.Item):
+class HumEnglishFactcheckItem(scrapy.Item):
     title = scrapy.Field()
     image_urls = scrapy.Field()
     images = scrapy.Field()
@@ -144,6 +144,7 @@ class DailytimesItem(scrapy.Item):
     content = scrapy.Field()
     author = scrapy.Field()
 
+
 class AljazeeraItem(scrapy.Item):
     title = scrapy.Field()
     detail_url = scrapy.Field()
@@ -151,3 +152,34 @@ class AljazeeraItem(scrapy.Item):
     content = scrapy.Field()
     author = scrapy.Field()
     exerpt = scrapy.Field()
+
+class DunyaNewsItem(scrapy.Item):
+    title = scrapy.Field()
+    image_urls = scrapy.Field()
+    images = scrapy.Field()
+    detail_url = scrapy.Field()
+    publication_date = scrapy.Field()
+    content = scrapy.Field()
+
+class HumEnglishItem(scrapy.Item):
+    title = scrapy.Field()
+    image_urls = scrapy.Field()
+    images = scrapy.Field()
+    detail_url = scrapy.Field()
+    exerpt = scrapy.Field()
+    publication_date = scrapy.Field()
+    content = scrapy.Field()
+    author = scrapy.Field()
+
+class JangItem(scrapy.Item):
+    title = scrapy.Field()
+    image_urls = scrapy.Field()
+    images = scrapy.Field()
+    detail_url = scrapy.Field()
+    exerpt = scrapy.Field()
+    publication_date = scrapy.Field()
+    content = scrapy.Field()
+    author = scrapy.Field()
+    content = scrapy.Field()
+    category = scrapy.Field()
+

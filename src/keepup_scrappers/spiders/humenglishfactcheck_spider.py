@@ -1,11 +1,11 @@
 import scrapy
 from keepup_scrappers.spiders.base_spider import BaseSpider
-from keepup_scrappers.items import HumEnglishItem
+from keepup_scrappers.items import HumEnglishFactcheckItem
 
-class HumEnglishSpider(BaseSpider):
+class HumEnglishFactcheckSpider(BaseSpider):
     
-    name = 'humenglish_spider'
-    site_key = 'humenglish'
+    name = 'humenglishfactcheck_spider'
+    site_key = 'humenglishfactcheck'
     
     custom_settings = {
             "IMAGES_STORE": f'data/{site_key}/images/',
@@ -15,8 +15,7 @@ class HumEnglishSpider(BaseSpider):
                     "encoding": "utf8",
                     "indent": 4,
                 }
-            },
-        
+            }
         }
     
     def __init__(self, *args, **kwargs):
@@ -28,13 +27,15 @@ class HumEnglishSpider(BaseSpider):
     def parse(self, response):
 
         for index, post in enumerate(response.css(self.selectors['single_post'])):
-            item = HumEnglishItem()
+            item = HumEnglishFactcheckItem()
 
             item['title'] = post.css(self.selectors['post_title']).get(default='').strip()
             item['detail_url'] = post.css(self.selectors['post_link']).get(default='').strip()
             image_urls = response.css(self.selectors['post_image']).getall()  
             item['image_urls'] = [image_urls[index]] if image_urls and index < len(image_urls) else []
-            item['exerpt']  = post.css(self.selectors['exerpt']).get(default='').strip()
+            item['publication_date'] = post.css(self.selectors['post_date']).get(default='').strip()
+            exerpt = post.css(self.selectors['exerpt']).getall()
+            item['exerpt'] = exerpt[1] if len(exerpt) > 1 else " "
             
             yield scrapy.Request(
                 url = item['detail_url'],
@@ -54,11 +55,10 @@ class HumEnglishSpider(BaseSpider):
                 callback = self.parse,
                 errback = self.handle_error,
             )
-
+    
     def parse_details(self, response):
         item = response.meta['item']
-        item['publication_date'] = response.css(self.selectors['post_date']).get(default='').strip()
-        item['author'] = response.css(self.selectors['author']).get(default='').strip()
+        item['label'] = response.xpath(self.selectors['label']).get(default='').strip()
         content_paragraphs = response.css(self.selectors['content']).getall()
         item['content'] = ' '.join([p.strip() for p in content_paragraphs if p.strip()])
 

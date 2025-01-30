@@ -10,7 +10,7 @@ general:
 # Site-specific configurations
 sites:
 
-  humenglish:
+  humenglishfactcheck:
     base_url: "https://humenglish.com/fact-check/"
     start_urls:
       - "https://humenglish.com/fact-check/"
@@ -228,7 +228,6 @@ sites:
     base_url: "https://www.factcheck.org/"
     start_urls:
       - "https://www.factcheck.org/"
-    delay: 2
     selectors: 
       single_post: "main.site-main article.type-post"
       post_title: "h3.entry-title a::text"
@@ -239,6 +238,7 @@ sites:
       author: "div.entry-meta a::text"
       post_date: "div.entry-meta::text"
       next_page: "//li[contains(@class, 'page-item-next')]//a/@href"
+
 
   aljazeera:
     base_url: "https://www.aljazeera.com/sports/"
@@ -255,6 +255,52 @@ sites:
       post_date: "div.date-simple span.screen-reader-text::text"
       #next_page: "//li[contains(@class, 'page-item-next')]//a/@href"
      
+
+
+  dunyanews: 
+    base_url: "https://dunyanews.tv/en/Pakistan"
+    start_urls:
+      - "https://dunyanews.tv/en/Pakistan"
+    selectors:
+      single_post: "div.container div.row div.dunya-border-top"
+      post_title: "h3.media__title a::text"
+      post_link: "h3.media__title a::attr(href)"
+      post_image: "div.media__image a picture img::attr(src)"
+      post_date: "time.publish-time::attr(datetime)"
+      content: "article p::text"
+
+
+  humenglish:
+    base_url: "https://humenglish.com/latest/"
+    start_urls:
+      - "https://humenglish.com/latest/"
+    selectors:
+      single_post: "div.container div.row div.col-md-8 aside.wrapper__list__article div.card__post"
+      post_title: "div.card__post__title h5 a.truncate::text"
+      post_link: "div.card__post__title h5 a.truncate::attr(href)"
+      exerpt: "div.card__post__title p:nth-of-type(2)::text"
+      post_image: "div.card__post__transition a img::attr(data-lazy-src)"
+      post_date: "li.list-inline-item span.text-dark::text"
+      content: "div[id*='post_content'] p::text"
+      author: "li.list-inline-item span a::text"
+      next_page: "a.next::attr(href)"
+
+
+  jang:
+    base_url: "https://jang.com.pk/en/latest"
+    start_urls:
+      - "https://jang.com.pk/en/latest"
+    selectors: 
+      single_post: "div.rt-left-sidebar-sapcer-5 div.post-list-style-4 div.post-item"
+      post_title: "div.post-item div.rt-post div.post-content div.post-title a::text"
+      post_link: "div.post-item div.rt-post div.post-content div.post-title a::attr(href)"
+      exerpt: "div.post-content p.my-2::text"
+      post_image: "div.post-img a img::attr(src)"
+      author: "div.post-meta ul li span span::text"
+      content: "div.detail_content_area div.post-body p::text"
+      post_date: "div.post-meta span.rt-meta::text" 
+      category: "div.post-header div.catName a::text"
+
 
 # Storage settings
 storage:
