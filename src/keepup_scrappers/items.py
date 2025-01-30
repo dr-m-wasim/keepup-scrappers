@@ -105,7 +105,7 @@ class DWfactcheckItem(scrapy.Item):
     category = scrapy.Field()
     label = scrapy.Field()
 
-class HumEnglishItem(scrapy.Item):
+class HumEnglishFactcheckItem(scrapy.Item):
     title = scrapy.Field()
     image_urls = scrapy.Field()
     images = scrapy.Field()
@@ -143,4 +143,13 @@ class DailytimesItem(scrapy.Item):
     publication_date = scrapy.Field()
     content = scrapy.Field()
     author = scrapy.Field()
+
+
+class DunyaNewsItem(scrapy.Item):
+    title = scrapy.Field()
+    image_urls = scrapy.Field()
+    images = scrapy.Field()
+    detail_url = scrapy.Field()
+    publication_date = scrapy.Field()
+    content = scrapy.Field()
 
