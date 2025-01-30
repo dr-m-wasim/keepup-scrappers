@@ -16,7 +16,8 @@ class FridayTimesSpider(BaseSpider):
                     "encoding": "utf8",
                     "indent": 4,
                 }
-            }
+            },
+            'ROBOTSTXT_OBEY': False
         }
 
     def __init__(self, *args, **kwargs):
@@ -44,10 +45,11 @@ class FridayTimesSpider(BaseSpider):
                                  callback = self.parse)
 
     def parse(self, response):
+
         if response.text.strip() == "no_more_news":
             self.logger.warning("No more news available. Stopping.")
             return
-        
+
         for post in response.css(self.selectors['single_post']):
 
             item = ThefridaytimesfactcheckItem()
