@@ -144,7 +144,6 @@ class DailytimesItem(scrapy.Item):
     content = scrapy.Field()
     author = scrapy.Field()
 
-
 class DunyaNewsItem(scrapy.Item):
     title = scrapy.Field()
     image_urls = scrapy.Field()
@@ -153,3 +152,12 @@ class DunyaNewsItem(scrapy.Item):
     publication_date = scrapy.Field()
     content = scrapy.Field()
 
+class HumEnglishItem(scrapy.Item):
+    title = scrapy.Field()
+    image_urls = scrapy.Field()
+    images = scrapy.Field()
+    detail_url = scrapy.Field()
+    exerpt = scrapy.Field()
+    publication_date = scrapy.Field()
+    content = scrapy.Field()
+    author = scrapy.Field()
