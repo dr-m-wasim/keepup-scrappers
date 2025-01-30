@@ -240,6 +240,23 @@ sites:
       next_page: "//li[contains(@class, 'page-item-next')]//a/@href"
 
 
+  aljazeera:
+    base_url: "https://www.aljazeera.com/sports/"
+    start_urls:
+      - "https://www.aljazeera.com/sports/"
+    delay: 2
+    selectors: 
+      single_post: "article.gc--type-post"
+      post_title: "article.gc--type-post h3.gc__title a span::text"
+      post_link: "article.gc--type-post h3.gc__title a::attr(href)"
+      exerpt: "div.gc__body-wrap div.gc__excerpt p::text" 
+      post_image: "div.col-12 img::attr(src)"
+      content: "div.wysiwyg--all-content p::text"
+      post_date: "div.date-simple span.screen-reader-text::text"
+      #next_page: "//li[contains(@class, 'page-item-next')]//a/@href"
+     
+
+
   dunyanews: 
     base_url: "https://dunyanews.tv/en/Pakistan"
     start_urls:
@@ -297,6 +314,7 @@ sites:
       author: "div.jeg_meta_author a::text"
       content: "div.content-inner p::text"
       post_date: "div.jeg_meta_date::text"
+
 
 
 # Storage settings

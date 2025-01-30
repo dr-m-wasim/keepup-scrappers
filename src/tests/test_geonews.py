@@ -35,7 +35,7 @@ class TestGNSpider:
 
     def test_parse_method(self):
         
-        with open(r'D:\myenv\keepup-scrappers\src\tests\test_data\geonews\listing_sample.html', 'r', encoding='utf-8') as f:
+        with open(r'E:\keepup\keepup-scrappers\src\tests\test_data\geonews\listing_sample.html', 'r', encoding='utf-8') as f:
             html_content = f.read()    
 
         mock_response = HtmlResponse(
@@ -56,7 +56,7 @@ class TestGNSpider:
    
     def test_parse_details_method(self):
 
-        with open(r'D:\myenv\keepup-scrappers\src\tests\test_data\geonews\detail_sample.html', 'r', encoding='utf-8') as f:
+        with open(r'E:\keepup\keepup-scrappers\src\tests\test_data\geonews\detail_sample.html', 'r', encoding='utf-8') as f:
             html_content = f.read()
         
         # example URL
