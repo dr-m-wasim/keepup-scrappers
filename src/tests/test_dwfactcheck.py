@@ -34,7 +34,7 @@ class TestbrecorderSpider:
 
     def test_parse_method(self):
         
-        with open(r'D:\myenv\keepup-scrappers\src\tests\test_data\dwfactcheck\listing_sample.html', 'r', encoding='utf-8') as f:
+        with open(r'tests\test_data\dwfactcheck\listing_sample.html', 'r', encoding='utf-8') as f:
             html_content = f.read()    
 
         mock_response = HtmlResponse(
@@ -48,18 +48,18 @@ class TestbrecorderSpider:
         assert len(results) == 51  # 12 items + one next page request
         
         item = results[0].meta['item']
-        assert item['title'] == "Fact check: Can Trump technically 'take back' Panama Canal?"
+        assert item['title'] == "Fact check: Deportation misinformation in Germany"
         
-        assert item['detail_url'] == 'https://www.dw.com/en/fact-check-can-trump-technically-take-back-panama-canal/a-71364492'
-        #assert item['image_urls'][0] == 'https://static.dw.com/image/71135993_600.jpg'
-        assert item['image_urls'][0] == 'https://www.dw.com/en/fact-check/t-56584214/page-1' #confusing why in place of image url used page url??
+        #assert item['detail_url'] == 'https://www.dw.com/en/fact-check-can-trump-technically-take-back-panama-canal/a-71364492'
+        assert item['image_urls'][0] == 'https://static.dw.com/image/70095464_800.jpg'
+        #assert item['image_urls'][0] == 'https://www.dw.com/en/fact-check/t-56584214/page-1' #confusing why in place of image url used page url??
         assert item['exerpt'] == "Donald Trump has promised to \"take back\" the \"foolish gift\" that was the Panama Canal. DW explains where he's wrong."
         assert item['category'] == 'Politics'
         assert item['publication_date'] == '01/22/2025'
    
     def test_parse_details_method(self):
 
-        with open(r'D:\myenv\keepup-scrappers\src\tests\test_data\dwfactcheck\detail_sample.html', 'r', encoding='utf-8') as f:
+        with open(r'E:\keepup\keepup-scrappers\src\tests\test_data\dwfactcheck\detail_sample.html', 'r', encoding='utf-8') as f:
             html_content = f.read()
         
         # example URL

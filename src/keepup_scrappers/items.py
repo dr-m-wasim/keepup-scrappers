@@ -144,3 +144,10 @@ class DailytimesItem(scrapy.Item):
     content = scrapy.Field()
     author = scrapy.Field()
 
+class AljazeeraItem(scrapy.Item):
+    title = scrapy.Field()
+    detail_url = scrapy.Field()
+    publication_date = scrapy.Field()
+    content = scrapy.Field()
+    author = scrapy.Field()
+    exerpt = scrapy.Field()
