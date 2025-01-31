@@ -319,13 +319,13 @@ sites:
   pakistantoday:
     base_url: "https://www.pakistantoday.com.pk/category/national/"
     start_urls:
-      - "https://www.pakistantoday.com.pk/category/national/"
+      - "https://www.pakistantoday.com.pk/wp-admin/admin-ajax.php?td_theme_name=Newspaper&v=12.1.1"
     selectors:
-      single_post: "div.td-pb-span8 div.td-ss-main-content div.td_module_10"
-      post_title: "div.item-details h3.entry-title a::text"
-      post_link: "div.item-details h3.entry-title a::attr(href)"
-      post_image: "div.td-module-thumb a img::attr(data-img-url)"
-      exerpt: "div.item-details div.td-excerpt::text"
+      single_post: "div.td_module_10"
+      post_title: "h3.entry-title a::attr(title)"
+      post_link: "div.td-module-thumb a::attr(href)"
+      post_image: "div.td-module-thumb a.td-image-wrap img.entry-thumb::attr(src)"
+      exerpt: "div.td-excerpt::text"
       author: "div.tdb-author-name-wrap a.tdb-author-name::text"
       content: "div.tdb-block-inner p::text"
       post_date: "div.tdb-block-inner time.entry-date::text"
