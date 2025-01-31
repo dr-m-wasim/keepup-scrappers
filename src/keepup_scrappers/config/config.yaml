@@ -364,12 +364,12 @@ sites:
     start_urls:
       - "https://arynews.tv/category/pakistan/"
     selectors:
-      single_post: "div.td_block_wrap div.td_block_inner div.tdb_module_loop"
+      single_post: "div.tdb_module_loop.td_module_wrap.td-animation-stack.td-cpt-post"
       post_title: "div.td-module-meta-info h3.entry-title a::text"
       post_link: "div.td-module-meta-info h3.entry-title a::attr(href)"
       post_image: "div.td-image-container div.td-module-thumb a span::attr(data-img-url)"
       author: "div.tdb-author-name-wrap a.tdb-author-name::text"
-      post_date: "div.tdb-block-inner time.entry-date::text"
+      post_date: "div.tdb-block-inner div.tdb-head-date-txt::text"
       exerpt: "div.tdb-block-inner p strong::text"
       content: "div.tdb-block-inner p::text"
 
