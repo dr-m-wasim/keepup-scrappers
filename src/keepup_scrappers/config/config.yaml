@@ -343,6 +343,36 @@ sites:
       author: "div.author-name a::text"
       next_page: "li.page-item.next a.page-link.next::attr(href)"
       post_date: "div.update-publish-time span::text"
+
+  samaatv:
+    base_url: "https://www.samaa.tv/latest-news"
+    start_urls:
+      - "https://www.samaa.tv/latest-news"
+    selectors:
+      single_post: "section.story-section div.story-columns div.row div.col-12"
+      post_title: "article.story-article div.text h3 a::text"
+      post_link: "article.story-article div.text h3 a::attr(href)"
+      post_image: "div.img-frame a img::attr(data-src)"
+      exerpt: "div.text p::text"
+      author: "div.col-7 strong.h4 a::text"
+      post_date: "div.col-7 time::attr(datetime)"
+      content: "div.article-content p::text"
+      next_page: "ul.pagination li.page-item a[rel='next']::attr(href)"
+
+  arynews:
+    base_url: "https://arynews.tv/category/pakistan/"
+    start_urls:
+      - "https://arynews.tv/category/pakistan/"
+    selectors:
+      single_post: "div.td_block_wrap div.td_block_inner div.tdb_module_loop"
+      post_title: "div.td-module-meta-info h3.entry-title a::text"
+      post_link: "div.td-module-meta-info h3.entry-title a::attr(href)"
+      post_image: "div.td-image-container div.td-module-thumb a span::attr(data-img-url)"
+      author: "div.tdb-author-name-wrap a.tdb-author-name::text"
+      post_date: "div.tdb-block-inner time.entry-date::text"
+      exerpt: "div.tdb-block-inner p strong::text"
+      content: "div.tdb-block-inner p::text"
+
 # Storage settings
 storage:
   method: "database"  # or "file"
