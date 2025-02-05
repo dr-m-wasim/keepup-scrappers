@@ -134,7 +134,8 @@ class AljazeeraSpider(BaseSpider):
             item = AljazeeraItem()
 
             item['title'] = post.css(self.selectors['post_title']).get(default='').strip() 
-            item['detail_url'] = post.css(self.selectors['post_link']).get(default='').strip()
+            relative_url = post.css(self.selectors['post_link']).get(default='')
+            item['detail_url'] = response.urljoin(relative_url) if relative_url else []
             item['publication_date'] = post.css(self.selectors['post_date']).get(default='').strip()
             item['exerpt'] = post.css(self.selectors['exerpt']).get(default='').strip()
 
