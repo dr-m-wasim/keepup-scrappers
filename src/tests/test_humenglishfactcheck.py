@@ -7,7 +7,7 @@ import yaml
 from scrapy.http import HtmlResponse, Request
 from keepup_scrappers.spiders.humenglish_spider import HumEnglishSpider
 
-class TestIverifySpider:
+class TesthumenglishfactcheckSpider:
 
     def setup_method(self):
         
