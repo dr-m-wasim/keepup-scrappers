@@ -7,7 +7,7 @@ import yaml
 from scrapy.http import HtmlResponse, Request
 from keepup_scrappers.spiders.dwfactcheck_spider import DWfactcheckSpider
 
-class TestbrecorderSpider:
+class TestdwfactcheckSpider:
 
     def setup_method(self):
         
