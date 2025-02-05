@@ -7,7 +7,7 @@ import yaml
 from scrapy.http import HtmlResponse, Request
 from keepup_scrappers.spiders.thehindu_spider import ThehinduSpider
 
-class TestTribuneSpider:
+class TestthehinduSpider:
 
     def setup_method(self):
         
