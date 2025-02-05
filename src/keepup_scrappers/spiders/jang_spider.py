@@ -46,7 +46,12 @@ class JangSpider(BaseSpider):
 
     def parse_details(self, response):
         item = response.meta['item']
-        item['publication_date'] = response.css(self.selectors['post_date']).extract()[-1].strip()
+        #item['publication_date'] = response.css(self.selectors['post_date']).extract()[-1].strip()
+        dates = response.css(self.selectors['post_date']).extract()
+        if dates:  # Check if list is not empty
+            item['publication_date'] = dates[-1].strip()
+        else:
+            item['publication_date'] = "N/A"  # Or handle it as needed
         item['author'] = response.css(self.selectors['author']).get(default='').strip()
         item['category']  = response.css(self.selectors['category']).get(default='').strip()
         content_paragraphs = response.css(self.selectors['content']).getall()
