@@ -201,8 +201,6 @@ class ThehinduItem(scrapy.Item):
     publication_date = scrapy.Field()
     author = scrapy.Field()
 
-<<<<<<< Updated upstream
-
 class PakistanTodayItem(scrapy.Item):
     title = scrapy.Field()
     image_urls = scrapy.Field()
@@ -232,7 +230,7 @@ class AryNewsItem(scrapy.Item):
     publication_date = scrapy.Field()
     content = scrapy.Field()
     author = scrapy.Field()
-=======
+
 class BBCItem(scrapy.Item):
     title = scrapy.Field()
     exerpt = scrapy.Field()
@@ -240,4 +238,4 @@ class BBCItem(scrapy.Item):
     detail_url = scrapy.Field() 
     content = scrapy.Field()
     publication_date = scrapy.Field()
->>>>>>> Stashed changes
+
