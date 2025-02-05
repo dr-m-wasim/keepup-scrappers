@@ -344,7 +344,6 @@ sites:
       next_page: "li.page-item.next a.page-link.next::attr(href)"
       post_date: "div.update-publish-time span::text"
 
-<<<<<<< Updated upstream
   samaatv:
     base_url: "https://www.samaa.tv/latest-news"
     start_urls:
@@ -374,7 +373,6 @@ sites:
       exerpt: "div.tdb-block-inner p strong::text"
       content: "div.tdb-block-inner p::text"
 
-=======
   bbc:
     base_url: "https://www.bbc.com/news/world"
     start_urls:
@@ -400,7 +398,7 @@ sites:
       country: "div.sc-6fba5bd4-0 span.bHkTZK::text"
       post_date: "div.sc-b42e7a8f-1 time.sc-b42e7a8f-2::text"
       content: "div.sc-18fde0d6-0 p.sc-eb7bd5f6-0::text"
->>>>>>> Stashed changes
+
 # Storage settings
 storage:
   method: "database"  # or "file"
