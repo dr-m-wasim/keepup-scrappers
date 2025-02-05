@@ -7,7 +7,7 @@ import yaml
 from scrapy.http import HtmlResponse, Request
 from keepup_scrappers.spiders.snopes_spider import SnopesSpider
 
-class TestIverifySpider:
+class TestsnopesSpider:
 
     def setup_method(self):
         
