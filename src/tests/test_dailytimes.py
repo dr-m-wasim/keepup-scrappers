@@ -7,7 +7,7 @@ import yaml
 from scrapy.http import HtmlResponse, Request
 from keepup_scrappers.spiders.dailytimes_spider import DailyTimesSpider
 
-class TestfactcheckorgSpider:
+class TestdailytimesSpider:
 
     def setup_method(self):
         
