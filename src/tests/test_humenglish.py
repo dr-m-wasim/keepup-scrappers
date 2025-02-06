@@ -34,7 +34,7 @@ class TesthumenglishSpider:
 
     def test_parse_method(self):
         
-        with open(r'D:tests\test_data\humenglish\listing_sample (2).html', 'r', encoding='utf-8') as f:
+        with open(r'tests\test_data\humenglish\listing_sample (2).html', 'r', encoding='utf-8') as f:
             html_content = f.read()    
 
         mock_response = HtmlResponse(
@@ -57,7 +57,7 @@ class TesthumenglishSpider:
    
     def test_parse_details_method(self):
 
-        with open(r'tests\test_data\dunyanews\detail_sample (2).html', 'r', encoding='utf-8') as f:
+        with open(r'tests\test_data\humenglish\detail_sample (2).html', 'r', encoding='utf-8') as f:
             html_content = f.read()
         
         # example URL
@@ -77,7 +77,7 @@ class TesthumenglishSpider:
         item = results[0]
         assert item['content'] == 'GILGIT: The Gilgit-Baltistan government on Wednesday declared a three-day mourning period across the region and a holiday on Thursday over the demise of the spiritual leader of the Shia Imami Ismaili Muslims Prince Shah Karim Al-Husseini, Aga Khan IV. The 49th hereditary imam or spiritual leader of the world’s 15 million Ismailis passed away in Lisbon on Tuesday aged 88, leaving his followers in mourning across the world. A large number of Ismailis live in Gilgit-Baltistan with a majority of Hunza and Ghizer belonging to the community. “The Government of Gilgit-Baltistan has decided to observe a three-day mourning from February 5 to 7, 2025, over the passing of His Highness Aga Khan IV, spiritual leader of the Ismaili community. During this period, the national flag will remain at half-mast across Gilgit-Baltistan,” reads a statement issued by information department G-B. In a separate notification, the General Administration Department declared a public holiday on February 6. All government offices will remain closed on Thursday in this regard. As the news of his demise spread early Wednesday in the region, the Ismaili community and many others were left in deep sorrow and disbelief. People gathered in large numbers in the community centers, known as jamat khana, to offer prayers and pay their respects to the late Aga Khan IV. The overall mood of the region was somber and markets were deserted. Condolences poured in soon after news of Aga Khan’s death spread. G-B Chief Minister Gulbar Khan, Governor Mehdi Shah, former CMs Khalid Khursheed, Hafiz Hafeezur Rehman, Imamia Masjid Gilgit Khateeb Agha Rahat Hussain Alhussaini, and many other political, social and religious leaders expressed grief over death on Aga Khan IV. According to the Ismaili community’s website, his successor as the 50th Shia Imami Ismaili Imam has been “designated in conformity with the historical Shia Imami Ismaili tradition and practice of nass”. Instructions for the followers published on the website said the designation made by Shah Karim is recorded in his will, which is to be read in Lisbon in the presence of his family and senior international Ismaili leaders. A date has not been announced. “In the Ismaili tradition, the word refers to the transfer of the Imamat from one Imam to the next by explicit designation. It is believed that just as the Prophet Muhammad (SAW) was divinely designated by Allah, the Prophet, through divine support or inspiration, designated Imam Ali as his legatee (wasi) and successor at Ghadir Khumm,” reads the instructions. Thus, according to Ismaili tradition, Imamat is seen as a prerogative bestowed by Allah upon a chosen person from the progeny of the Prophet. Before his death, and through divine support or inspiration, the Imam designates his successor from among his male progeny or a more distant descendant. For the Shia Ismailis, is the formal act of an Imam designating his successor, continuing the Imamat in the line of Imams directly descended from Prophet Muhammad through Hazrat Ali and Hazrat Fatima, and through the lineage of Imam Husayn and his progeny in perpetuity.'
 
-        assert item['publication_date'] == '5 Minutes ago'
+        assert item['publication_date'] == '6 Minutes ago'
        
         assert item['author'] == 'Tanveer Abbas'
         
