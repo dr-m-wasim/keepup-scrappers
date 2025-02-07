@@ -8,7 +8,7 @@ class BBCSpider(BaseSpider):
     
     name = 'bbc_spider'
     site_key = 'bbc'
-    page_counter = 1
+    page_counter = 0
     custom_settings = {
             "IMAGES_STORE": f'data/{site_key}/images/',
             "FEEDS": {
@@ -25,62 +25,72 @@ class BBCSpider(BaseSpider):
         # Pass site_key to the base class
         kwargs['site_key'] = self.site_key
         super().__init__(*args, **kwargs)
-
-    def get_payload_headers(self, page_no):
         
-        payload = {
-            'action': 'load_latest_posts',
-            'page': str(page_no)
-        }
 
-        return payload
+    # def get_payload_headers(self, page_no):
+        
+    #     payload = {
+    #         'country': 'pk',
+    #         'page': str(page_no),
+    #         'size': '9',
+    #         'path': '/news/world'
+    #     }
+
+    #     return payload
     
-    def start_requests(self):     
-        payload = self.get_payload_headers(self.page_counter)
-
-        yield scrapy.Request(url = self.start_urls[0], 
-                                 formdata = payload, 
-                                 callback = self.parse)
+    def start_requests(self):   
+        
+        #payload = self.get_payload_headers(self.page_counter)
+        url = f'{self.start_urls[0]}?page={self.page_counter}'
+        self.logger.info(f"Requesting page {self.page_counter}: {url}")
+        yield scrapy.FormRequest(url = self.start_urls[0], 
+                                    #formdata = payload, 
+                                    callback = self.parse)
 
     def parse(self, response):
-        self.log(f"Processing Page {self.page_counter}", level = logging.INFO)
-        #data = json.loads(response.text)
-        json_response = response.json()
-        # Check if there's more data to scrape
-        has_more = json_response.get('data', {}).get('has_more', False)
+        
 
+        json_response = response.json()
+
+         # Check if there are posts to scrape
+        posts = json_response.get('data', [])
+        if not posts:
+            self.logger.info(f"No posts found on page {self.page_counter}. Stopping scraping.")
+            return  # Stop scraping when there are no posts
+        #print("------", json_response)
+        # Check if there's more data to scrape
+        #more = json_response.get('data', {}).get('more', False)
+        id = json_response.get('page', '')
+        
+        
         for post in json_response.get('data', []):
             item = BBCItem()
+            
+        
 
             item['title'] = post.get('title', '')
             relative_url = post.get('path', '')
-            item['detail_url'] = response.urljoin(relative_url)
+            item['detail_url'] = self.base_url + relative_url
             item['country'] = post.get('topics', [])
             item['exerpt'] = [post.get('summary', '')]
 
-            relative_url = post.get('path', '')
-            item['detail_url'] = response.urljoin(relative_url)
 
             
             yield scrapy.Request(
-                url=item['detail_url'],
-                callback=self.parse_details,
-                meta={'item': item},
+                url = item['detail_url'],
+                callback = self.parse_details,
+                meta = {'item': item},
                 errback=self.handle_error,
             )
-        if has_more:
-            self.page_counter += 1
-            payload = self.get_payload_headers(self.page_counter)
 
-            # Request the next page of data
-            yield scrapy.Request(
-                url=self.start_urls[0], 
-                formdata=payload, 
-                callback=self.parse,
-                errback=self.handle_error,
-            )
-        self.logger.info(f"Page {self.page_counter} completed")
+        self.page_counter += 1
 
+        # Request the next page
+        next_page_url = f'{self.start_urls[0]}?country=pk&page={self.page_counter}'
+        self.logger.info(f"Requesting next page: {next_page_url}")
+        
+        yield scrapy.FormRequest(url=next_page_url, callback=self.parse)
+        
     def parse_details(self, response):
         item = response.meta['item']
         item['publication_date'] = response.css(self.selectors['post_date']).get(default='').strip()
