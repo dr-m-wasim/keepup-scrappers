@@ -410,19 +410,39 @@ sites:
       content: "div.sc-18fde0d6-0 p.sc-eb7bd5f6-0::text"
 
   thenews:
-    base_url: "https://www.thenews.com.pk/latest/category/national"
+    base_url: 
+      - "https://www.thenews.com.pk/latest/category/national"
+      - "https://www.thenews.com.pk/latest/category/sports"
+      - "https://www.thenews.com.pk/latest/category/world"
+      - "https://www.thenews.com.pk/latest-stories"
     start_urls:
       - "https://www.thenews.com.pk/latest/category/national"
+      - "https://www.thenews.com.pk/latest/category/sports"
+      - "https://www.thenews.com.pk/latest/category/world"
+      - "https://www.thenews.com.pk/latest-stories"
+      - "https://www.thenews.com.pk/latest/category/business"
+      - "https://www.thenews.com.pk/latest/category/entertainment"
+      - "https://www.thenews.com.pk/latest/category/sci-tech"
+      - "https://www.thenews.com.pk/latest/category/health"
     selectors:
-      single_post: 'div.detail-content div.detail-center div.writter-list-item ul li div.writter-list-item-story'
-      post_title: 'div.latest-right h2 a::text'
-      post_link: 'div.latest-right h2 a::attr(href)'
-      exerpt: 'div.latest-right p::text'
-      post_image: 'div.writter-list-item-story a.latest-page-img img::attr(src)'
-      author: '//div[@class="category-source"]/span/following-sibling::text()'
-      author2: 'div.category-source span.open-section::text'
-      post_date: 'div.category-date::text'
-      content: 'div.story-detail p::text'
+      latest_stories:
+        single_post: 'div.detail-content div.detail-center div.writter-list-item ul li div.writter-list-item-story'
+        post_title: 'div.latest-right h2 a::text'
+        post_link: 'div.latest-right h2 a::attr(href)'
+        exerpt: 'div.latest-right p::text'
+        post_image: 'div.writter-list-item-story a.latest-page-img img::attr(src)'
+        author: '//div[@class="category-source"]/span/following-sibling::text()'
+        author2: 'div.category-source span.open-section::text'
+        post_date: 'div.category-date::text'
+        content: 'div.story-detail p::text'
+      business:
+        single_post: 'div.container div.col-sm-12 div.new_category div.col-sm-6 div.most-popular-list'
+        post_title: 'div.heading-cat a.open-section::attr(title)'
+        post_link: 'div.heading-cat a.open-section::attr(href)'
+        post_image: 'div.news-pic a img::attr(data-src)'
+        author: '//div[@class="category-source"]/span/following-sibling::text()'
+        post_date: 'div.category-date::text'
+        content: 'div.story-detail p::text'
 
 # Storage settings
 storage:
