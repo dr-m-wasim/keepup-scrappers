@@ -419,10 +419,10 @@ sites:
       post_link: 'div.latest-right h2 a::attr(href)'
       exerpt: 'div.latest-right p::text'
       post_image: 'div.writter-list-item-story a.latest-page-img img::attr(src)'
-      category: 'div.h_title h2::text'
-      author: ''
-      post_date:
-      content:
+      author: '//div[@class="category-source"]/span/following-sibling::text()'
+      author2: 'div.category-source span.open-section::text'
+      post_date: 'div.category-date::text'
+      content: 'div.story-detail p::text'
 
 # Storage settings
 storage:
