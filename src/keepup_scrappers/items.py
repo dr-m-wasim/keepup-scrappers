@@ -239,3 +239,12 @@ class BBCItem(scrapy.Item):
     content = scrapy.Field()
     publication_date = scrapy.Field()
 
+class TheNewsItem(scrapy.Item):
+    title = scrapy.Field()
+    detail_url = scrapy.Field()
+    exerpt = scrapy.Field()
+    image_urls = scrapy.Field()
+    images = scrapy.Field()
+    author = scrapy.Field()
+    publication_date = scrapy.Field()
+    content = scrapy.Field()
