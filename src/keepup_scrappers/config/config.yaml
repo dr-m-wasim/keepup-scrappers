@@ -444,6 +444,21 @@ sites:
         post_date: 'div.category-date::text'
         content: 'div.story-detail p::text'
 
+  bolnews:
+    base_url: "https://www.bolnews.com/politics/"
+    start_urls:
+      - "https://www.bolnews.com/wp-admin/admin-ajax.php"
+    selectors:
+      single_post: 'div.col-lg-6'
+      post_title: 'div.col-lg-6 div.post-box div.post-content h6.title::text'
+      post_link: 'div.col-lg-6 div.post-box a::attr(href)'
+      post_image: 'div.col-lg-6 div.post-box div.post-frame img::attr(src)'
+      author: 'div.figure-wrap figcaption h6.mb-0 a::text'
+      post_date: 'div.figure-wrap div.post-date p span.date::text'
+      content: 'div.typo-txt p::text'
+
+      #section.stripe-bottom-30 div.container div.row div.col-lg-8 div.row
+
 # Storage settings
 storage:
   method: "database"  # or "file"
