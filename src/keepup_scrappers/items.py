@@ -248,3 +248,12 @@ class TheNewsItem(scrapy.Item):
     author = scrapy.Field()
     publication_date = scrapy.Field()
     content = scrapy.Field()
+
+class BolNewsItem(scrapy.Item):
+    title = scrapy.Field()
+    detail_url = scrapy.Field()
+    image_urls = scrapy.Field()
+    images = scrapy.Field()
+    author = scrapy.Field()
+    publication_date = scrapy.Field()
+    content = scrapy.Field()
