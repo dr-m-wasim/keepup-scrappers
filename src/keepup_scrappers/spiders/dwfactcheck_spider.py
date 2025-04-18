@@ -45,8 +45,8 @@ class DWfactcheckSpider(BaseSpider):
         for post in response.css(self.selectors['single_post']):
             item = DWfactcheckItem()
             item['title'] = post.css(self.selectors['post_title']).get(default='')
-            image_urls = response.css(self.selectors['post_image']).getall()
-            item['image_urls'] = [response.urljoin(image_urls[0])] if image_urls else []
+            #image_urls = response.css(self.selectors['post_image']).getall()
+            #item['image_urls'] = [response.urljoin(image_urls[0])] if image_urls else []
             relative_url = post.css(self.selectors['post_link']).get(default='')
             item['detail_url'] = response.urljoin(relative_url) if relative_url else [] 
             item['publication_date'] = post.css(self.selectors['post_date']).get(default='')

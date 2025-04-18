@@ -94,7 +94,7 @@ class DawnnewsItem(scrapy.Item):
 class DWfactcheckItem(scrapy.Item):
     title = scrapy.Field()
     image_urls = scrapy.Field()
-    images = scrapy.Field()
+    #images = scrapy.Field()
     detail_url = scrapy.Field()
     publication_date = scrapy.Field()
     content = scrapy.Field()
