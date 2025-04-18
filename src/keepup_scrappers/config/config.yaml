@@ -376,15 +376,15 @@ sites:
   bbc:
     base_url: "https://www.bbc.com/news/world"
     start_urls:
-      - "https://www.bbc.com/news/world"
+      - "https://web-cdn.api.bbci.co.uk/xd/content-collection/07cedf01-f642-4b92-821f-d7b324b8ba73?country=pk&"
     selectors:
       single_post: 'div[data-testid="liverpool-card"]'
       post_title: "div.sc-8ea7699c-0 h2.sc-8ea7699c-3::text"
-      post_link: "div.sc-c6f6255e-0 a::attr(href)"
+      post_link: 'div.sc-225578b-0 div[data-testid="anchor-inner-wrapper"]'
       exerpt: "p.sc-ae29827d-0::text"
       country: "div.sc-6fba5bd4-0 span.bHkTZK::text"
-      post_date: "div.sc-b42e7a8f-1 time.sc-b42e7a8f-2::text"
-      content: "div.sc-18fde0d6-0 p.sc-eb7bd5f6-0::text"
+      post_date: 'article div[data-component="byline-block"] div[data-testid="byline-new"] div time::attr(datetime)'
+      content: 'article div[data-component="text-block"] p::text'
 
   nytimes:
     base_url: "https://www.nytimes.com/international/section/world"
