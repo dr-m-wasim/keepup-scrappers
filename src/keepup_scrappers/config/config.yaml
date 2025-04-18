@@ -360,19 +360,9 @@ sites:
       next_page: "ul.pagination li.page-item a[rel='next']::attr(href)"
 
   arynews:
-    base_url: 
-      - "https://arynews.tv/category/pakistan/"
-      - "https://arynews.tv/category/international/"
-      - "https://arynews.tv/category/business/"
-      - "https://arynews.tv/category/sports/"
-      - "https://arynews.tv/category/sci-techno/"
-      - "https://arynews.tv/category/lifestyle/"
-      - "https://arynews.tv/category/health-2/"
-      - "https://arynews.tv/category/off-beat/"
-      - "https://arynews.tv/category/latest-blogs/"
-      - "https://arynews.tv/category/multimedia-stories/"
+    base_url: "https://arynews.tv/category/pakistan/"
     start_urls:
-      - "https://arynews.tv/wp-admin/admin-ajax.php?td_theme_name=Newspaper&v=12.6.2"
+      - "https://arynews.tv/category/pakistan/"
     selectors:
       single_post: "div.tdb_module_loop.td_module_wrap.td-animation-stack.td-cpt-post"
       post_title: "div.td-module-meta-info h3.entry-title a::text"
