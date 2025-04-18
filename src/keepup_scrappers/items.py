@@ -58,7 +58,6 @@ class SnopesItem(scrapy.Item):
 class PolitifactItem(scrapy.Item):
     title = scrapy.Field()
     image_urls = scrapy.Field()
-    images = scrapy.Field()
     detail_url = scrapy.Field()
     publication_date = scrapy.Field()
     label = scrapy.Field()
@@ -91,7 +90,6 @@ class DawnnewsItem(scrapy.Item):
     publication_date = scrapy.Field()
     content = scrapy.Field()
     author = scrapy.Field()
-    claim = scrapy.Field()
 
 class DWfactcheckItem(scrapy.Item):
     title = scrapy.Field()
@@ -108,7 +106,6 @@ class DWfactcheckItem(scrapy.Item):
 class HumEnglishFactcheckItem(scrapy.Item):
     title = scrapy.Field()
     image_urls = scrapy.Field()
-    images = scrapy.Field()
     detail_url = scrapy.Field()
     publication_date = scrapy.Field()
     content = scrapy.Field()
@@ -121,7 +118,6 @@ class FactcheckorgItem(scrapy.Item):
     detail_url = scrapy.Field()
     publication_date = scrapy.Field()
     content = scrapy.Field()
-    exerpt = scrapy.Field()
     author = scrapy.Field()
 class BRecorderItem(scrapy.Item):
     title = scrapy.Field()
@@ -150,7 +146,6 @@ class AljazeeraItem(scrapy.Item):
     detail_url = scrapy.Field()
     publication_date = scrapy.Field()
     content = scrapy.Field()
-    author = scrapy.Field()
     exerpt = scrapy.Field()
 
 class DunyaNewsItem(scrapy.Item):
@@ -164,7 +159,6 @@ class DunyaNewsItem(scrapy.Item):
 class HumEnglishItem(scrapy.Item):
     title = scrapy.Field()
     image_urls = scrapy.Field()
-    images = scrapy.Field()
     detail_url = scrapy.Field()
     exerpt = scrapy.Field()
     publication_date = scrapy.Field()
@@ -180,7 +174,7 @@ class JangItem(scrapy.Item):
     publication_date = scrapy.Field()
     content = scrapy.Field()
     author = scrapy.Field()
-    category = scrapy.Field()
+    #category = scrapy.Field()
 
 
 class TheNationItem(scrapy.Item):
