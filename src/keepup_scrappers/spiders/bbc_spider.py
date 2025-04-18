@@ -3,6 +3,7 @@ from keepup_scrappers.spiders.base_spider import BaseSpider
 from keepup_scrappers.items import BBCItem
 import json
 import logging
+from urllib.parse import urljoin
 
 class BBCSpider(BaseSpider):
     
@@ -26,7 +27,6 @@ class BBCSpider(BaseSpider):
         kwargs['site_key'] = self.site_key
         super().__init__(*args, **kwargs)
         
-
     # def get_payload_headers(self, page_no):
         
     #     payload = {
@@ -65,16 +65,12 @@ class BBCSpider(BaseSpider):
         
         for post in json_response.get('data', []):
             item = BBCItem()
-            
         
-
             item['title'] = post.get('title', '')
             relative_url = post.get('path', '')
-            item['detail_url'] = self.base_url + relative_url
+            item['detail_url'] = urljoin("https://www.bbc.com/", relative_url)
             item['country'] = post.get('topics', [])
             item['exerpt'] = [post.get('summary', '')]
-
-
             
             yield scrapy.Request(
                 url = item['detail_url'],
@@ -86,7 +82,7 @@ class BBCSpider(BaseSpider):
         self.page_counter += 1
 
         # Request the next page
-        next_page_url = f'{self.start_urls[0]}?country=pk&page={self.page_counter}'
+        next_page_url = f'{self.start_urls[0]}page={self.page_counter}'
         self.logger.info(f"Requesting next page: {next_page_url}")
         
         yield scrapy.FormRequest(url=next_page_url, callback=self.parse)
