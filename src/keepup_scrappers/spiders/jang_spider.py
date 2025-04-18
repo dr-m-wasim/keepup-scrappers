@@ -53,7 +53,7 @@ class JangSpider(BaseSpider):
         else:
             item['publication_date'] = "N/A"  # Or handle it as needed
         item['author'] = response.css(self.selectors['author']).get(default='').strip()
-        item['category']  = response.css(self.selectors['category']).get(default='').strip()
+        #item['category']  = response.css(self.selectors['category']).get(default='').strip()
         content_paragraphs = response.css(self.selectors['content']).getall()
         item['content'] = ' '.join([p.strip() for p in content_paragraphs if p.strip()])
 
