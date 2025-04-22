@@ -5,6 +5,7 @@ class SochFactcheckItem(scrapy.Item):
     image_urls = scrapy.Field()
     images = scrapy.Field()
     detail_url = scrapy.Field() 
+    label = scrapy.Field()
     content = scrapy.Field()
     author = scrapy.Field()
     categories = scrapy.Field()

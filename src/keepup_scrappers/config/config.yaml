@@ -36,6 +36,7 @@ sites:
       post_title: 'div.article-box div.article-title-wrap div.title h6 a::text'
       post_link: "div.article-box div.article-title-wrap div.title h6 a::attr(href)"
       post_image: 'div.article-box div.featured-image figure a img::attr(src)'
+      label: 'div.article-box div.article-about div.show-label span.label::text'
       post_date: "div.article-box div.article-title-wrap div.article-meta div.article-date::text"
       post_cat: "div.article-box div.article-title-wrap div.article-meta div.article-cat a::text"
       content: "div.blog_detail_description p *::text"

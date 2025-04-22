@@ -59,6 +59,7 @@ class SochFactCheckSpider(BaseSpider):
             image_url = parsed_post.css(self.selectors['post_image']).get(default='')
             item['image_urls'] = [response.urljoin(image_url)] if image_url else []     # urljoin is required to accomodate relative paths
             item['detail_url'] = parsed_post.css(self.selectors['post_link']).get(default='').strip()
+            item['label'] = parsed_post.css(self.selectors['label']).get(default='').strip()
             item['categories'] = parsed_post.css(self.selectors['post_cat']).getall()
             item['publication_date'] = parsed_post.css(self.selectors['post_date']).get(default='').strip()
 
