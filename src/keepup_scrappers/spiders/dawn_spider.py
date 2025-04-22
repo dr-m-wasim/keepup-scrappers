@@ -49,7 +49,7 @@ class DawnSpider(BaseSpider):
                     errback=self.handle_error,
                 )
 
-        self.logger.info(f"Scraped data for {self.current_date.strftime("%Y-%m-%d")}")
+            self.logger.info(f"Scraped data for {self.current_date.strftime('%Y-%m-%d')}")
 
         # Move to the previous day
         self.current_date -= timedelta(days=1)
