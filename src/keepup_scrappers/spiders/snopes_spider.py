@@ -49,8 +49,11 @@ class SnopesSpider(BaseSpider):
         self.logger.info(f"Page {self.page_counter} completed")
         self.page_counter += 1
 
+        next_btn = response.css(self.selectors['next_btn']).get() 
+
         next_page = response.css(self.selectors['next_page']).get() 
-        if next_page:
+        
+        if not 'disabled' in next_btn:
             yield scrapy.Request(
                 url=response.urljoin(next_page),
                 callback=self.parse,

@@ -113,6 +113,7 @@ sites:
       label: 'div.rating_title_wrap::text'
       content: 'article#article-content > p::text'
       next_page: 'a.next-button::attr(href)'
+      next_btn: 'a.next-button::attr(class)'
 
   politifact:
     base_url: "https://www.politifact.com/factchecks/list/"
