@@ -39,8 +39,8 @@ class ThehinduSpider(BaseSpider):
         for post in response.css(self.selectors['single_post']):
             item = ThehinduItem()
             item['title'] = post.css(self.selectors['post_title']).get(default='').strip()
-            image_url = post.css(self.selectors['post_image']).get(default='')
-            item['image_urls'] = [response.urljoin(image_url)] if image_url else []   
+            #image_url = post.css(self.selectors['post_image']).get(default='')
+            #item['image_urls'] = [response.urljoin(image_url)] if image_url else []   
             item['detail_url'] = post.css(self.selectors['post_link']).get(default='')
             
             item['author'] = post.css(self.selectors['author']).get(default='')

@@ -59,9 +59,9 @@ class TheNationSpider(BaseSpider):
             
             item['title'] = post.css(self.selectors['post_title']).get(default='').strip()
             item['detail_url'] = post.css(self.selectors['post_link']).get(default='').strip()
-            image_urls = response.css(self.selectors['post_image']).getall()  
-            image_url = [re.search(r'url\((.*?)\)', url).group(1) if re.search(r'url\((.*?)\)', url) else '' for url in image_urls]
-            item['image_urls'] = [image_url[index]] if image_url and index < len(image_url) else []
+            #image_urls = response.css(self.selectors['post_image']).getall()  
+            #image_url = [re.search(r'url\((.*?)\)', url).group(1) if re.search(r'url\((.*?)\)', url) else '' for url in image_urls]
+            #item['image_urls'] = [image_url[index]] if image_url and index < len(image_url) else []
             
             yield scrapy.Request(
                 url = item['detail_url'],

@@ -61,8 +61,8 @@ class PolitifactSpider(BaseSpider):
         item['publication_date'] = response.css(self.selectors['post_date']).get(default='').strip()
         content_paragraphs = response.css(self.selectors['content']).getall()
         item['content'] = ' '.join([p.strip() for p in content_paragraphs if p.strip()])
-        image_url = response.css(self.selectors['post_image']).get(default='')
-        item['image_urls'] = [response.urljoin(image_url)] if image_url else [] 
+        #image_url = response.css(self.selectors['post_image']).get(default='')
+        #item['image_urls'] = [response.urljoin(image_url)] if image_url else [] 
 
         yield item
 

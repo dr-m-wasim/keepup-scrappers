@@ -35,8 +35,8 @@ class BRecorderSpider(BaseSpider):
             
             item['title'] = post.css(self.selectors['post_title']).get(default='').strip()
             item['detail_url'] = post.css(self.selectors['post_link']).get(default='').strip()
-            image_urls = response.css(self.selectors['post_image']).getall()  
-            item['image_urls'] = [image_urls[index]] if image_urls and index < len(image_urls) else []  
+            #image_urls = response.css(self.selectors['post_image']).getall()  
+            #item['image_urls'] = [image_urls[index]] if image_urls and index < len(image_urls) else []  
             item['exerpt'] = post.css(self.selectors['exerpt']).get(default='').strip()
             item['category'] = post.css(self.selectors['category']).get(default='').strip()
             

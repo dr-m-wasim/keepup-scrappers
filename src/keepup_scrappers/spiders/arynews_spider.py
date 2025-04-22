@@ -41,7 +41,7 @@ class AryNewsSpider(BaseSpider):
             item['detail_url'] = post.css(self.selectors['post_link']).get(default='').strip()
             image_url = post.css(self.selectors['post_image']).get(default='')
             image_url = re.search(r'url\((.*?)\)', image_url).group(1)
-            item['image_urls'] = [response.urljoin(image_url)] if image_url else []
+            #item['image_urls'] = [response.urljoin(image_url)] if image_url else []
             
             yield scrapy.Request(
                 url = item['detail_url'],

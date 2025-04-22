@@ -27,20 +27,9 @@ class BBCSpider(BaseSpider):
         kwargs['site_key'] = self.site_key
         super().__init__(*args, **kwargs)
         
-    # def get_payload_headers(self, page_no):
-        
-    #     payload = {
-    #         'country': 'pk',
-    #         'page': str(page_no),
-    #         'size': '9',
-    #         'path': '/news/world'
-    #     }
-
-    #     return payload
     
     def start_requests(self):   
         
-        #payload = self.get_payload_headers(self.page_counter)
         url = f'{self.start_urls[0]}?page={self.page_counter}'
         self.logger.info(f"Requesting page {self.page_counter}: {url}")
         yield scrapy.FormRequest(url = self.start_urls[0], 
@@ -57,9 +46,7 @@ class BBCSpider(BaseSpider):
         if not posts:
             self.logger.info(f"No posts found on page {self.page_counter}. Stopping scraping.")
             return  # Stop scraping when there are no posts
-        #print("------", json_response)
-        # Check if there's more data to scrape
-        #more = json_response.get('data', {}).get('more', False)
+
         id = json_response.get('page', '')
         
         

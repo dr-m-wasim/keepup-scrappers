@@ -61,8 +61,8 @@ class PakistanTodaySpider(BaseSpider):
 
             item['title'] = post.css(self.selectors['post_title']).get(default='').strip()
             item['detail_url'] = post.css(self.selectors['post_link']).get(default='') 
-            image_urls = post.css(self.selectors['post_image']).getall()
-            item['image_urls'] = image_urls if image_urls else []
+            #image_urls = post.css(self.selectors['post_image']).getall()
+            #item['image_urls'] = image_urls if image_urls else []
             item['exerpt']  = post.css(self.selectors['exerpt']).get(default='').strip()
 
             

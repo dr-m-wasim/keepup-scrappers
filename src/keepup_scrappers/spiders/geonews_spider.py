@@ -52,8 +52,8 @@ class GeonewsSpider(BaseSpider):
         item['author'] = response.css(self.selectors['author']).get()
         item['content'] = ' '.join(response.css(self.selectors['content']).getall()).strip()
         item['publication_date'] = response.css(self.selectors['post_date']).get(default='').strip()
-        image_url = response.css(self.selectors['post_image']).get(default='')
-        item['image_urls'] = [response.urljoin(image_url)] if image_url else []
+        #image_url = response.css(self.selectors['post_image']).get(default='')
+        #item['image_urls'] = [response.urljoin(image_url)] if image_url else []
 
         yield item
 

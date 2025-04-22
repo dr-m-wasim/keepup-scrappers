@@ -31,8 +31,8 @@ class HumEnglishFactcheckSpider(BaseSpider):
 
             item['title'] = post.css(self.selectors['post_title']).get(default='').strip()
             item['detail_url'] = post.css(self.selectors['post_link']).get(default='').strip()
-            image_urls = response.css(self.selectors['post_image']).getall()  
-            item['image_urls'] = [image_urls[index]] if image_urls and index < len(image_urls) else []
+            #image_urls = response.css(self.selectors['post_image']).getall()  
+            #item['image_urls'] = [image_urls[index]] if image_urls and index < len(image_urls) else []
             item['publication_date'] = post.css(self.selectors['post_date']).get(default='').strip()
             exerpt = post.css(self.selectors['exerpt']).getall()
             item['exerpt'] = exerpt[1] if len(exerpt) > 1 else " "

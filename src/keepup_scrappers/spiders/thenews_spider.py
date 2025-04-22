@@ -36,8 +36,8 @@ class TheNewsSpider(BaseSpider):
             
             item['title'] = post.css(selectors['post_title']).get(default='').strip()
             item['detail_url'] = post.css(selectors['post_link']).get(default='').strip()
-            image_urls = response.css(selectors['post_image']).getall()  
-            item['image_urls'] = [image_urls[index]] if image_urls and index < len(image_urls) else []  
+            #image_urls = response.css(selectors['post_image']).getall()  
+            #item['image_urls'] = [image_urls[index]] if image_urls and index < len(image_urls) else []  
             item['exerpt'] = post.css(selectors['exerpt']).get(default='').strip()
             
             

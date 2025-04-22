@@ -32,8 +32,8 @@ class PakIverifySpider(BaseSpider):
 
             # safely extract data
             item['title'] = post.css(self.selectors['post_title']).get(default='').strip()
-            image_url = post.css(self.selectors['post_image']).get(default='')
-            item['image_urls'] = [response.urljoin(image_url)] if image_url else [] 
+            #image_url = post.css(self.selectors['post_image']).get(default='')
+            #item['image_urls'] = [response.urljoin(image_url)] if image_url else [] 
             item['detail_url'] = post.css(self.selectors['post_link']).get(default='').strip()
             publication_date = post.css(self.selectors['post_date']).get(default='')
             date_author = publication_date.split('|')
