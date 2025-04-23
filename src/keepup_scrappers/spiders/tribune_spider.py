@@ -34,8 +34,6 @@ class tribuneSpider(BaseSpider):
 
             item = TribuneItem()
 
-            #print('---', post.css(self.selectors['post_title']))
-
             item['title'] = post.css(self.selectors['post_title']).get(default='').strip()
             
             item['detail_url'] = post.css(self.selectors['post_link']).get(default='').strip()
@@ -51,10 +49,11 @@ class tribuneSpider(BaseSpider):
         self.logger.info(f"Page {self.page_counter} completed")
         self.page_counter += 1
 
-        next_page = response.css(self.selectors['next_page']).get() 
-        if next_page:
+        is_next_page_disabled = len(response.css('ul.pagination li.disabled').getall()) 
+        
+        if self.page_counter == 2 or not is_next_page_disabled:
             yield scrapy.Request(
-                url=response.urljoin(next_page),
+                url=response.urljoin(f'/latest?page={self.page_counter}'),
                 callback=self.parse,
                 errback=self.handle_error,
             )
