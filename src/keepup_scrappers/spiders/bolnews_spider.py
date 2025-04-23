@@ -46,31 +46,34 @@ class BolNewsSpider(BaseSpider):
 
 
     def parse(self, response):
+        posts = response.css(self.selectors['single_post'])
+    
+        if not posts:
+            self.logger.info(f"No posts found on page {self.page_counter}. Stopping pagination.")
+            return  # Stop crawling
 
-        for index, post in enumerate(response.css(self.selectors['single_post'])):
-
+        for index, post in enumerate(posts):
             item = BolNewsItem()
-            
             item['title'] = post.css(self.selectors['post_title']).get(default='').strip()
             item['detail_url'] = post.css(self.selectors['post_link']).get(default='').strip()
-            #image_urls = response.css(self.selectors['post_image']).getall()  
-            #item['image_urls'] = [image_urls[index]] if image_urls and index < len(image_urls) else [] 
-            
+        
             yield scrapy.Request(
-                url = item['detail_url'],
-                callback = self.parse_details,
-                meta = {'item': item},
+                url=item['detail_url'],
+                callback=self.parse_details,
+                meta={'item': item},
                 errback=self.handle_error,
             )
-        
+
         self.logger.info(f"Page {self.page_counter} completed")
         self.page_counter += 1
         payload = self.get_payload_headers(self.page_counter)
 
-        yield scrapy.FormRequest(url = self.start_urls[0], 
-                                 formdata = payload, 
-                                 callback = self.parse,
-                                 errback=self.handle_error,)
+        yield scrapy.FormRequest(
+            url=self.start_urls[0],
+            formdata=payload,
+            callback=self.parse,
+            errback=self.handle_error,
+        )
 
     def parse_details(self, response):
         item = response.meta['item']
