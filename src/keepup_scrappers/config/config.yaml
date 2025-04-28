@@ -102,7 +102,7 @@ sites:
   snopes:
     base_url: "https://www.snopes.com/fact-check/"
     start_urls:
-      - "https://www.snopes.com/fact-check/"
+      - "https://www.snopes.com/fact-check/?pagenum=1"
     delay: 5
     selectors:
       single_post: 'a.outer_article_link_wrapper'
@@ -113,8 +113,8 @@ sites:
       author: 'span.author_name::text'
       label: 'div.rating_title_wrap::text'
       content: 'article#article-content > p::text'
-      next_page: 'a.next-button::attr(href)'
-      next_btn: 'a.next-button::attr(class)'
+      next_page_link : 'a.next-button::attr(href)'
+      next_page_classes: 'a.next-button::attr(class)'
 
   politifact:
     base_url: "https://www.politifact.com/factchecks/list/"
