@@ -364,7 +364,7 @@ sites:
   arynews:
     base_url: "https://arynews.tv/category/pakistan/"
     start_urls:
-      - "https://arynews.tv/category/pakistan/"
+      - "https://arynews.tv/wp-admin/admin-ajax.php?td_theme_name=Newspaper&v=12.6.2"
     selectors:
       single_post: "div.tdb_module_loop.td_module_wrap.td-animation-stack.td-cpt-post"
       post_title: "div.td-module-meta-info h3.entry-title a::text"
