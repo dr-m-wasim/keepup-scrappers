@@ -35,10 +35,6 @@ class DunyaNewsSpider(BaseSpider):
             item['title'] = post.css(self.selectors['post_title']).get(default='').strip()
             relative_url = post.css(self.selectors['post_link']).get(default='')
             item['detail_url'] = response.urljoin(relative_url) if relative_url else [] 
-            #image_urls = response.css(self.selectors['post_image']).getall()  
-            #item['image_urls'] = [image_urls[index]] if image_urls and index < len(image_urls) else []  
-
-            print(item['title'])
             
             yield scrapy.Request(
                 url = item['detail_url'],
