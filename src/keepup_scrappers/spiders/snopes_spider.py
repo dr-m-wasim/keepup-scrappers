@@ -7,10 +7,13 @@ from keepup_scrappers.items import SnopesItem
 class SnopesSpider(BaseSpider):
     
     name = 'snopes_spider'
-    page_counter = 1
     site_key = 'snopes'
     
     custom_settings = {
+            'USER_AGENT': 'snopes-friendly-bot/1.0',
+            'ROBOTSTXT_OBEY': True, 
+            'AUTOTHROTTLE_ENABLED': True,
+            'DOWNLOAD_DELAY': 1.0,
             "IMAGES_STORE": f'data/{site_key}/images/',
             "FEEDS": {
                 f"data/{site_key}/data.json": {
@@ -49,13 +52,12 @@ class SnopesSpider(BaseSpider):
         self.logger.info(f"Page {self.page_counter} completed")
         self.page_counter += 1
 
-        next_btn = response.css(self.selectors['next_btn']).get() 
+        next_page_classes = response.css(self.selectors['next_page_classes']).get() 
+        next_page_link = response.css(self.selectors['next_page_link']).get() 
 
-        next_page = response.css(self.selectors['next_page']).get() 
-        
-        if not 'disabled' in next_btn:
+        if not 'disabled' in next_page_classes:
             yield scrapy.Request(
-                url=response.urljoin(next_page),
+                url=response.urljoin(next_page_link),
                 callback=self.parse,
                 errback=self.handle_error,
             )
