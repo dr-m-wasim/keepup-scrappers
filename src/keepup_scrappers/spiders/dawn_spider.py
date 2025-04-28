@@ -27,19 +27,22 @@ class DawnSpider(BaseSpider):
             raise ValueError(f"Selectors configuration for site '{self.site_key}' not found.")
 
         self.current_date = datetime.today()
-
-        # Directly define configuration values
+        
         self.start_urls = [f"https://www.dawn.com/latest-news/{self.current_date.strftime('%Y-%m-%d')}"]
-
-        #self.start_urls[0] = f"https://www.dawn.com/latest-news/{self.current_date.strftime("%Y-%m-%d")}"
 
         
     def parse(self, response):
-        for post in response.css(self.selectors['single_post']):
+        posts = response.css(self.selectors['single_post'])
+        
+        if not posts:
+            self.logger.info(f"No posts found for {self.current_date.strftime('%Y-%m-%d')}. Stopping the spider.")
+            return  # Stop moving backward if no posts
+
+        for post in posts:
             item = DawnnewsItem()
             item['title'] = post.css(self.selectors['post_title']).get(default='').strip()
             item['detail_url'] = post.css(self.selectors['post_link']).get(default='').strip()
-            item['detail_url'] = response.urljoin(item['detail_url'])  # Convert to full URL if relative
+            item['detail_url'] = response.urljoin(item['detail_url'])
 
             if item['detail_url']:
                 yield scrapy.Request(
@@ -49,37 +52,35 @@ class DawnSpider(BaseSpider):
                     errback=self.handle_error,
                 )
 
-            self.logger.info(f"Scraped data for {self.current_date.strftime('%Y-%m-%d')}")
+        self.logger.info(f"Scraped data for {self.current_date.strftime('%Y-%m-%d')}")
 
         # Move to the previous day
         self.current_date -= timedelta(days=1)
+
+        # STOP if we cross the last date
+        if self.current_date < datetime(2013, 1, 1):
+            self.logger.info("Reached the cutoff date. Stopping the spider.")
+            return
+
+        # Else continue
         formatted_date = self.current_date.strftime("%Y-%m-%d")
         next_url = self.base_url.format(date=formatted_date)
 
-        if response.css(self.selectors['single_post']):
-            yield scrapy.Request(
-                url=next_url,
-                callback=self.parse,
-                errback=self.handle_error,
-            )
-        else:
-            self.logger.info("No more posts available. Stopping the spider.")
+        yield scrapy.Request(
+            url=next_url,
+            callback=self.parse,
+            errback=self.handle_error,
+        )
 
     def parse_details(self, response):
         item = response.meta['item']
         item['author'] = response.css(self.selectors['author']).get(default='').strip()
-        #image_url = response.css(self.selectors['post_image']).get(default='')
-        #item['image_urls'] = [response.urljoin(image_url)] if image_url else []
-        #item['content'] = ' '.join(response.css(self.selectors['content']).getall()).strip()
         item['content'] = ' '.join(response.css(self.selectors['content']).getall() or []).strip()
-
         item['publication_date'] = response.css(self.selectors['post_date']).get()
 
         yield item
 
-    # def handle_error(self, failure):
-    #     self.logger.error(f"Request Failed: {failure.request.url}")
-    #     self.logger.error(f"Error Details: {failure.value}")
+
     def handle_error(self, failure):
         self.logger.error(f"Request Failed: {failure.request.url}")
         if failure.check(scrapy.spidermiddlewares.httperror.HttpError):
